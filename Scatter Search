@@ -1,0 +1,123 @@
+import random
+import heapq
+
+def generate_initial_paths(graph, start, end, num_paths):
+    """Generates diverse initial paths from start to end."""
+    paths = []
+    for _ in range(num_paths):
+        path, cost = random_walk(graph, start, end)
+        if path:
+            paths.append((cost, path))
+    print("Initial paths generated:", paths)  # Debugging step
+    return paths
+
+def random_walk(graph, start, end):
+    """Generates a random path from start to end."""
+    path = [start]
+    cost = 0
+    current = start
+    visited = set()
+    
+    while current != end:
+        visited.add(current)
+        neighbors = [(node, weight) for node, weight in graph[current] if node not in visited]
+        if not neighbors:
+            return None, float('inf')  # No valid path
+        next_node, weight = random.choice(neighbors)
+        path.append(next_node)
+        cost += weight
+        current = next_node
+    
+    return path, cost
+
+def improve_path(graph, path):
+    print("Improving path:", path)  # Check path value
+    if isinstance(path, list):
+        improved = path[:]
+        cost = 0
+        
+        for i in range(len(improved) - 1):
+            for neighbor, weight in graph[improved[i]]:
+                if neighbor == improved[i + 1]:
+                    cost += weight
+                    break
+        
+        return improved, cost
+    else:
+        print("Error: Path is not a list.")
+        return path, float('inf')
+
+def build_reference_set(paths, ref_size):
+    """Selects the best paths based on shortest distance."""
+    print("Paths before sorting:", paths)  # Debugging step
+    paths.sort(key=lambda x: x[0])  # Sort by cost (first element)
+    return paths[:ref_size]
+
+def combine_paths(graph, path1, path2):
+    """Combines two paths to create a new alternative."""
+    if not isinstance(path1, list) or not isinstance(path2, list):
+        return path1, float('inf')  # Ensure valid paths
+    split = len(path1) // 2
+    new_path = path1[:split] + path2[split:]
+    
+    # Calculate the cost of the new combined path
+    cost = sum(next((weight for node, weight in graph[new_path[i]] if node == new_path[i+1]), float('inf')) for i in range(len(new_path)-1))
+    
+    return new_path, cost
+
+def scatter_search(graph, start, end, num_paths, ref_size, iterations):
+    """Finds the shortest path using Scatter Search."""
+    # Step 1: Generate initial paths
+    paths = generate_initial_paths(graph, start, end, num_paths)
+    
+    # Step 2: Improve paths
+    paths = [(improve_path(graph, path)[1], path) for _, path in paths]
+    
+    # Step 3: Build reference set
+    reference_set = build_reference_set(paths, ref_size)
+    
+    for _ in range(iterations):
+        new_paths = []
+        
+        # Step 4.1: Create subsets (pairs of paths in this case)
+        for i in range(len(reference_set) - 1):
+            path1, path2 = reference_set[i][1], reference_set[i + 1][1]
+            
+            # Step 4.2: Generate new paths by combining
+            new_path, new_cost = combine_paths(graph, path1, path2)
+            
+            # Step 4.3: Improve the new path
+            improved_path, improved_cost = improve_path(graph, new_path)
+            new_paths.append((improved_cost, improved_path))
+        
+        # Step 4.4: Update reference set with better paths
+        reference_set.extend(new_paths)
+        reference_set = build_reference_set(reference_set, ref_size)
+    
+    return min(reference_set, key=lambda x: x[0])
+
+# Example Graph Representation (Adjacency List)
+graph = {
+    'A': [('B', 4), ('C', 2), ('E', 3), ('F', 7)],
+    'B': [('A', 4), ('C', 5), ('D', 10), ('E', 1), ('F', 6)],
+    'C': [('A', 2), ('B', 5), ('D', 3), ('E', 4), ('F', 2)],
+    'D': [('B', 10), ('C', 3), ('E', 6), ('G', 1)],
+    'E': [('A', 3), ('B', 1), ('C', 4), ('D', 6), ('F', 3), ('G', 2)],
+    'F': [('A', 7), ('B', 6), ('C', 2), ('D', 8), ('E', 3), ('G', 5)],
+    'G': [('D', 1), ('E', 2), ('F', 5), ('H', 4)],
+    'H': [('G', 4), ('I', 2)],
+    'I': [('H', 2), ('J', 3)],
+    'J': [('I', 3), ('K', 6)],
+    'K': [('J', 6), ('L', 5)],
+    'L': [('K', 5), ('M', 2)],
+    'M': [('L', 2), ('N', 3)],
+    'N': [('M', 3), ('O', 2)],
+    'O': [('N', 2), ('P', 1)],
+    'P': [('O', 1), ('Q', 4)],
+    'Q': [('P', 4), ('R', 6)],
+    'R': [('Q', 6)],
+}
+
+# Running Scatter Search for Shortest Path
+shortest_path = scatter_search(graph, 'A', 'H', num_paths=20, ref_size=8, iterations=15)
+print("Shortest path found:", shortest_path)
