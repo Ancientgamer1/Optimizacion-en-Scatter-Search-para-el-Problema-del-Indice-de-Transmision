@@ -190,6 +190,29 @@ def transmission_index(graph, routing):
 
     return max(edge_load.values()) if edge_load else 0
 
+def print_first_last_matrix(routing, nodes):
+    col_width = 8
+
+    # Header
+    header = " " * col_width
+    for v in nodes:
+        header += f"{v:^{col_width}}"
+    print(header)
+    print("-" * len(header))
+
+    # Rows
+    for s in nodes:
+        row = f"{s:^{col_width}}"
+        for t in nodes:
+            if s == t:
+                cell = "--"
+            else:
+                path = routing[s][t]
+                cell = f"({path[0]}, {path[-1]})"
+            row += f"{cell:^{col_width}}"
+        print(row)
+
+
 routing = scatter_search_routing(
     graph,
     num_paths=20,
@@ -200,3 +223,6 @@ routing = scatter_search_routing(
 pi = transmission_index(graph, routing)
 
 print("Indice de Transmision (Scatter Search):", pi)
+
+nodes = list(graph.keys())
+print_first_last_matrix(routing, nodes)
