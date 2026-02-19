@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>42b9caff-4f80-46b5-9ce6-27c1217fe7d6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Optimizacion_en_Scatter_Search_para_el_Problema_del_Indice_de_Transmision.py</StartupFile>
+    <StartupFile>Scatter Search.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
