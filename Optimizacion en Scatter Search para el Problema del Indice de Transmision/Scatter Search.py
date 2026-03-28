@@ -114,10 +114,7 @@ def scatter_search_routing(graph, num_paths, ref_size, iterations):
             if s == t:
                 routing[s][t] = [s]
             else:
-                _, best_path = scatter_search(
-                    graph, s, t,
-                    num_paths, ref_size, iterations
-                )
+                _, best_path = scatter_search(graph, s, t,num_paths, ref_size, iterations)
                 routing[s][t] = best_path
 
     return routing

@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>42b9caff-4f80-46b5-9ce6-27c1217fe7d6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Scatter Search.py</StartupFile>
+    <StartupFile>Optimizacion_en_Scatter_Search_para_el_Problema_del_Indice_de_Transmision.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Optimizacion_en_Scatter_Search_para_el_Problema_del_Indice_de_Transmision.py" />
-    <Compile Include="Scatter Search.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
