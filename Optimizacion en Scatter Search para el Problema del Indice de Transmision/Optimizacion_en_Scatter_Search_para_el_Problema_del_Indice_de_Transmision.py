@@ -1,302 +1,377 @@
-import random
+Ôªøimport random
 import time
+import os
+from collections import deque
 
-# -----------------------------------
-# GRAFO (sin pesos, como Tabu Search)
-# -----------------------------------
-graph = {
-    'A': ['B', 'C', 'E', 'F'],
-    'B': ['A', 'C', 'D', 'E', 'F'],
-    'C': ['A', 'B', 'D', 'E', 'F'],
-    'D': ['B', 'C', 'E', 'G'],
-    'E': ['A', 'B', 'C', 'D', 'F', 'G'],
-    'F': ['A', 'B', 'C', 'D', 'E', 'G'],
-    'G': ['D', 'E', 'F', 'H'],
-    'H': ['G', 'I'],
-    'I': ['H', 'J'],
-    'J': ['I', 'K'],
-    'K': ['J', 'L'],
-    'L': ['K', 'M'],
-    'M': ['L', 'N'],
-    'N': ['M', 'O'],
-    'O': ['N', 'P'],
-    'P': ['O', 'Q'],
-    'Q': ['P', 'R'],
-    'R': ['Q']
-}
+# =========================================================
+# LECTURA DEL CASO DE PRUEBA
+# =========================================================
+def read_testcase(path):
+    with open(path, 'r') as f:
+        lines = [ln.strip() for ln in f if ln.strip() and not ln.startswith('#')]
 
-# -----------------------------------
-# GENERACI”N DE CAMINOS (diversificaciÛn)
-# -----------------------------------
-def random_path(graph, start, goal):
-    path = [start]
-    visited = set([start])
-    current = start
+    pop, ref, it = map(int, lines[0].split())
 
-    while current != goal:
-        neighbors = [n for n in graph[current] if n not in visited]
+    graph = {}
+    for ln in lines[1:]:
+        parts = ln.split()
+        graph[parts[0]] = parts[1:]
 
-        if not neighbors:
-            return None  # Camino inv·lido
-
-        next_node = random.choice(neighbors)
-        path.append(next_node)
-        visited.add(next_node)
-        current = next_node
-
-    return path
+    return graph, pop, ref, it
 
 
-# -----------------------------------
-# COSTO (longitud del camino)
-# -----------------------------------
-def path_cost(path):
-    return len(path) - 1
+# =========================================================
+# BFS CON CACHE (evita recomputaci√≥n)
+# =========================================================
+bfs_cache = {}
 
-# -----------------------------------
-# METRICA DE DIVERSIDAD (aristas)
-# -----------------------------------
+def bfs_path(graph, start, goal):
+    if (start, goal) in bfs_cache:
+        return bfs_cache[(start, goal)]
 
-def path_distance(p1, p2):
-    edges1 = set((p1[i], p1[i+1]) for i in range(len(p1)-1))
-    edges2 = set((p2[i], p2[i+1]) for i in range(len(p2)-1))
-    return len(edges1 ^ edges2)
+    if start == goal:
+        return [start]
 
-# -----------------------------------
-# MEJORA LOCAL (tipo Tabu simplificado)
-# -----------------------------------
-def improve_path(graph, path):
-    # Intenta acortar el camino eliminando ciclos
-    improved = []
-    seen = set()
+    q = deque([start])
+    parent = {start: None}
 
-    for node in path:
-        if node in seen:
-            break
-        improved.append(node)
-        seen.add(node)
+    while q:
+        u = q.popleft()
 
-    return improved
+        for v in graph[u]:
+            if v not in parent:
+                parent[v] = u
 
+                if v == goal:
+                    path = [v]
+                    while parent[path[-1]] is not None:
+                        path.append(parent[path[-1]])
+                    path = list(reversed(path))
+                    bfs_cache[(start, goal)] = path
+                    return path
 
-# -----------------------------------
-# COMBINACI”N DE CAMINOS
-# -----------------------------------
-def combine_paths(graph, p1, p2, goal):
-    # Precaucion en caso de que los caminos sean muy cortos
-    if min(len(p1), len(p2)) < 2:
-        return None
+                q.append(v)
 
-    # Tomar prefijo de p1 y continuar con p2 si es v·lido
-    cut = random.randint(1, min(len(p1), len(p2)) - 1)
-
-    new_path = p1[:cut]
-
-    current = new_path[-1]
-    visited = set(new_path)
-
-    # Intentar continuar con p2
-    for node in p2:
-        if node not in visited and node in graph[current]:
-            new_path.append(node)
-            visited.add(node)
-            current = node
-
-        if current == goal:
-            return new_path
-
-    # Fallback ? completar con random
-    tail = random_path(graph, current, goal)
-    if tail:
-        return new_path + tail[1:]
-
+    bfs_cache[(start, goal)] = None
     return None
 
 
-# -----------------------------------
-# GENERAR SOLUCIONES INICIALES
-# -----------------------------------
-def generate_initial_population(graph, start, goal, size, max_attempts=1000):
+# =========================================================
+# MUESTREO DE PARES (reduce O(n¬≤) ‚Üí O(k))
+# =========================================================
+def smart_sample_pairs(graph, k=100):
+
+    nodes = list(graph.keys())
+    pairs = set()
+
+    # -------------------------------------------------
+    # 1. PARES LEJANOS (usando BFS)
+    # -------------------------------------------------
+    for s in nodes:
+
+        # calcular distancias desde s
+        visited = {s: 0}
+        queue = [s]
+
+        while queue:
+            u = queue.pop(0)
+
+            for v in graph[u]:
+                if v not in visited:
+                    visited[v] = visited[u] + 1
+                    queue.append(v)
+
+        # ordenar por distancia (descendente)
+        far_nodes = sorted(visited.items(), key=lambda x: -x[1])
+
+        # tomar algunos lejanos
+        for t, _ in far_nodes[:3]:
+            if s != t:
+                pairs.add((s, t))
+
+    # -------------------------------------------------
+    # 2. ASEGURAR COBERTURA (cada nodo participa)
+    # -------------------------------------------------
+    for s in nodes:
+        t = random.choice(nodes)
+        if s != t:
+            pairs.add((s, t))
+
+    # -------------------------------------------------
+    # 3. COMPLETAR CON ALEATORIOS
+    # -------------------------------------------------
+    while len(pairs) < k:
+        s = random.choice(nodes)
+        t = random.choice(nodes)
+
+        if s != t:
+            pairs.add((s, t))
+
+    return list(pairs)
+
+
+# =========================================================
+# √çNDICE DE TRANSMISI√ìN (PARCIAL - ARISTAS)
+# =========================================================
+def transmission_index_partial(routing):
+
+    edge_load = {}
+
+    for (s, t), path in routing.items():
+
+        if not path:
+            continue
+
+        for i in range(len(path) - 1):
+            u, v = path[i], path[i+1]
+
+            # arista no dirigida (sin frozenset)
+            edge = (u, v) if u < v else (v, u)
+
+            edge_load[edge] = edge_load.get(edge, 0) + 1
+
+    return max(edge_load.values()) if edge_load else 0
+
+
+# =========================================================
+# GENERAR ENRUTAMIENTO INICIAL (solo pares muestreados)
+# =========================================================
+def generate_routing(graph, pairs):
+    routing = {}
+
+    for (s, t) in pairs:
+        routing[(s, t)] = bfs_path(graph, s, t)
+
+    return routing
+
+
+# =========================================================
+# PERTURBACI√ìN (mejora local)
+# =========================================================
+def perturb_routing(graph, routing, pairs, intensity=5):
+
+    for _ in range(intensity):
+        s, t = random.choice(pairs)
+
+        new_path = bfs_path(graph, s, t)
+
+        if new_path:
+            routing[(s, t)] = new_path
+
+    return routing
+
+
+# =========================================================
+# DISTANCIA ENTRE SOLUCIONES (diversidad)
+# =========================================================
+def routing_distance(r1, r2, sample_size=20):
+
+    keys = list(r1.keys())
+    dist = 0
+
+    for _ in range(sample_size):
+        k = random.choice(keys)
+
+        if r1[k] != r2[k]:
+            dist += 1
+
+    return dist
+
+
+# =========================================================
+# GENERAR POBLACI√ìN INICIAL
+# =========================================================
+def generate_initial_population(graph, pairs, size):
+
     population = []
-    attempts = 0
 
-    while len(population) < size and attempts < max_attempts:
-        attempts += 1
-        path = random_path(graph, start, goal)
-        if path:
-            population.append((path_cost(path), path))
+    for _ in range(size):
+        routing = generate_routing(graph, pairs)
+        routing = perturb_routing(graph, routing, pairs)
 
-    if len(population) < size:
-        # return whatever was found and log a hint
-        print(f"[WARN] Only generated {len(population)}/{size} initial solutions for {start}->{goal} after {attempts} attempts")
+        cost = transmission_index_partial(routing)
+
+        population.append((cost, routing))
+
     return population
 
 
-# -----------------------------------
-# CONSTRUIR REFSET
-# -----------------------------------
+# =========================================================
+# BUILD REFSET (calidad + diversidad)
+# =========================================================
 def build_refset(population, size):
-    if not population:
-        return []
 
-    population.sort(key=lambda x: x[0])  # Ordenar por costo
+    population.sort(key=lambda x: x[0])
 
-    size = min(size, len(population))
     elite_size = size // 2
-    diverse_size = size - elite_size
-
-    # -----------------------------
-    # 1. Mejores soluciones
-    # -----------------------------
     refset = population[:elite_size]
-
-    # -----------------------------
-    # 2. SelecciÛn diversa
-    # -----------------------------
     candidates = population[elite_size:]
 
     while len(refset) < size and candidates:
-        best_candidate = None
-        max_distance = -1
+
+        best = None
+        max_dist = -1
 
         for cand in candidates:
-            path_cand = cand[1]
+            dist = min(routing_distance(cand[1], r[1]) for r in refset)
 
-            # Distancia mÌnima a refset
-            # Si refset esta vacia, tratamos la distancia como infinita y agarramos un candidato
-            if refset:
-                min_dist = min(path_distance(path_cand, r[1]) for r in refset)
-            else:
-                min_dist = float('inf')
+            if dist > max_dist:
+                max_dist = dist
+                best = cand
 
-            if min_dist > max_distance:
-                max_distance = min_dist
-                best_candidate = cand
-        
-        if best_candidate is None:
+        if not best:
             break
 
-        refset.append(best_candidate)
-        candidates.remove(best_candidate)
+        refset.append(best)
+        candidates.remove(best)
 
     return refset
 
 
-# -----------------------------------
+# =========================================================
+# COMBINACI√ìN DE ENRUTAMIENTOS
+# =========================================================
+def combine_routings(r1, r2):
+
+    new = {}
+
+    for k in r1:
+        new[k] = r1[k] if random.random() < 0.5 else r2[k]
+
+    return new
+
+
+# =========================================================
 # SCATTER SEARCH PRINCIPAL
-# -----------------------------------
-def scatter_search(graph, start, goal, pop_size=20, ref_size=6, iterations=20):
+# =========================================================
+def scatter_search(graph, pop_size, ref_size, iterations, pair_sample=50):
 
-    # DiversificaciÛn
-    population = generate_initial_population(graph, start, goal, pop_size)
+    nodes = list(graph.keys())
+    pairs = smart_sample_pairs(graph, pair_sample)
 
-    # Si no hay soluciones iniciales, retorna un sentinel
-    if not population:
-        return (float('inf'), None)
-
-    # RefSet
+    population = generate_initial_population(graph, pairs, pop_size)
     refset = build_refset(population, ref_size)
 
-    if not refset:
-        return (float('inf'), None)
+    best_cost = float('inf')
+    stagnation = 0
 
     for _ in range(iterations):
 
         new_solutions = []
 
-        # CombinaciÛn sistem·tica
         for i in range(len(refset)):
-            for j in range(i + 1, len(refset)):
+            for j in range(i+1, len(refset)):
 
-                p1 = refset[i][1]
-                p2 = refset[j][1]
+                r1 = refset[i][1]
+                r2 = refset[j][1]
 
-                new_path = combine_paths(graph, p1, p2, goal)
+                new_r = combine_routings(r1, r2)
+                new_r = perturb_routing(graph, new_r, pairs)
 
-                if new_path:
-                    new_path = improve_path(graph, new_path)
-                    new_solutions.append((path_cost(new_path), new_path))
+                cost = transmission_index_partial(new_r)
 
-        # ActualizaciÛn RefSet
+                new_solutions.append((cost, new_r))
+
         refset.extend(new_solutions)
         refset = build_refset(refset, ref_size)
+
+        current_best = refset[0][0]
+
+        if current_best < best_cost:
+            best_cost = current_best
+            stagnation = 0
+        else:
+            stagnation += 1
+
+        if stagnation >= 5:
+            break
 
     return min(refset, key=lambda x: x[0])
 
 
-# -----------------------------------
-# TODOS LOS PARES (igual que Tabu)
-# -----------------------------------
-def scatter_all_pairs(graph):
+# =========================================================
+# EXPANSI√ìN A TODOS LOS PARES (evaluaci√≥n exacta)
+# =========================================================
+def expand_routing_to_all_pairs(graph, partial_routing):
+
     nodes = list(graph.keys())
-    all_paths = {}
+    full_routing = {}
 
     for s in nodes:
-        all_paths[s] = {}
         for t in nodes:
+
             if s == t:
-                all_paths[s][t] = [s]
+                full_routing[(s, t)] = [s]
+                continue
+
+            if (s, t) in partial_routing:
+                full_routing[(s, t)] = partial_routing[(s, t)]
             else:
-                _, path = scatter_search(graph, s, t)
-                all_paths[s][t] = path
+                full_routing[(s, t)] = bfs_path(graph, s, t)
 
-    return all_paths
+    return full_routing
 
 
-# -----------------------------------
-# ÕNDICE DE TRANSMISI”N (igual Tabu)
-# -----------------------------------
-def transmission_index(graph, all_paths):
+# =========================================================
+# √çNDICE DE TRANSMISI√ìN COMPLETO (EXACTO)
+# =========================================================
+def transmission_index_full(routing):
 
     edge_load = {}
 
-    # Inicializar
-    for u in graph:
-        for v in graph[u]:
-            edge_load[frozenset([u, v])] = 0
+    for (s, t), path in routing.items():
 
-    # Contar uso
-    for s in all_paths:
-        for t in all_paths[s]:
-            if s == t:
-                continue
+        if not path:
+            continue
 
-            path = all_paths[s][t]
+        for i in range(len(path) - 1):
+            u, v = path[i], path[i+1]
 
-            for i in range(len(path) - 1):
-                edge = frozenset([path[i], path[i + 1]])
-                edge_load[edge] += 1
+            edge = (u, v) if u < v else (v, u)
 
-    return max(edge_load.values())
+            edge_load[edge] = edge_load.get(edge, 0) + 1
+
+    return max(edge_load.values()), edge_load
 
 
-# -----------------------------------
+# =========================================================
 # MAIN
-# -----------------------------------
+# =========================================================
 if __name__ == "__main__":
 
-    print("STARTING:", __file__)
+    file = next((f for f in os.listdir() if f.endswith(".txt")), None)
+
+    if not file:
+        print("No input file found")
+        exit()
+
+    graph, pop, ref, it = read_testcase(file)
+
+    print("\nArchivo:", file)
+    print("Par√°metros:", pop, ref, it)
+    print("Nodos:", len(graph))
+
     t0 = time.time()
 
-    # Quick check: run a single, small search first to ensure code completes quickly
-    single = scatter_search(graph, 'A', 'H', pop_size=10, ref_size=4, iterations=5)
-    print("Camino mas corto:", single)
+    # üîµ FASE 1: optimizaci√≥n r√°pida
+    best_cost, best_partial = scatter_search(
+        graph,
+        pop_size=pop,
+        ref_size=ref,
+        iterations=it,
+        pair_sample=50
+    )
 
-    # Compute routing for all pairs (no per-pair progress prints)
-    print("Computing routing for all pairs (this may take time)...")
-    nodes = list(graph.keys())
+    print("\n[FASE 1] Mejor costo aproximado:", best_cost)
 
-    all_paths = {}
-    for s in nodes:
-        all_paths[s] = {}
-        for t in nodes:
-            if s == t:
-                all_paths[s][t] = [s]
-            else:
-                # smaller parameters to avoid long runs
-                res_cost, res_path = scatter_search(graph, s, t, pop_size=10, ref_size=4, iterations=5)
-                all_paths[s][t] = res_path
+    # üü¢ FASE 2: evaluaci√≥n exacta
+    print("\n[FASE 2] Expandiendo a todos los pares...")
 
-    pi = transmission_index(graph, all_paths)
-    print("Indice de Transmision (Scatter Search):", pi)
-    print("Elapsed (s):", round(time.time() - t0, 2))
+    full_routing = expand_routing_to_all_pairs(graph, best_partial)
+
+    print("[FASE 2] Calculando √≠ndice exacto...")
+
+    real_cost, _ = transmission_index_full(full_routing)
+
+    print("\n√çndice de transmisi√≥n REAL:", real_cost)
+    print("Tiempo total:", round(time.time() - t0, 2), "s")
