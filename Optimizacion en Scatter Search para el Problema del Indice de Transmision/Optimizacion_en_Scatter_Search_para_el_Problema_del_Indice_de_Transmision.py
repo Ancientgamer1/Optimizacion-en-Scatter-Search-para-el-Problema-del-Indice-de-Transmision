@@ -1,377 +1,303 @@
 ﻿import random
-import time
-import os
-from collections import deque
+import itertools
+from collections import defaultdict, deque
+import copy
 
-# =========================================================
-# LECTURA DEL CASO DE PRUEBA
-# =========================================================
-def read_testcase(path):
-    with open(path, 'r') as f:
-        lines = [ln.strip() for ln in f if ln.strip() and not ln.startswith('#')]
+# =========================
+# GRAFO
+# =========================
+class Graph:
+    def __init__(self):
+        self.adj = defaultdict(list)
 
-    pop, ref, it = map(int, lines[0].split())
+    def add_edge(self, u, v):
+        if v not in self.adj[u]:
+            self.adj[u].append(v)
+        if u not in self.adj[v]:
+            self.adj[v].append(u)
 
-    graph = {}
-    for ln in lines[1:]:
-        parts = ln.split()
-        graph[parts[0]] = parts[1:]
+    def nodes(self):
+        return list(self.adj.keys())
 
-    return graph, pop, ref, it
+    def neighbors(self, u):
+        return self.adj[u]
 
 
-# =========================================================
-# BFS CON CACHE (evita recomputación)
-# =========================================================
-bfs_cache = {}
+# =========================
+# LECTURA
+# =========================
+def read_graph(filename):
+    g = Graph()
+    with open(filename) as f:
+        lines = f.readlines()
 
-def bfs_path(graph, start, goal):
-    if (start, goal) in bfs_cache:
-        return bfs_cache[(start, goal)]
+    pop_size, refset_size, iterations = map(int, lines[0].split())
 
-    if start == goal:
+    for line in lines[1:]:
+        parts = line.split()
+        u = parts[0]
+        for v in parts[1:]:
+            g.add_edge(u, v)
+
+    return g, pop_size, refset_size, iterations
+
+
+# =========================
+# BIDIRECTIONAL BFS (faster for many pairs)
+# =========================
+def _reconstruct_bidir(parents1, parents2, meeting, start, end):
+    path1 = []
+    cur = meeting
+    while cur is not None:
+        path1.append(cur)
+        cur = parents1.get(cur)
+    path1.reverse()  # from start to meeting
+
+    path2 = []
+    cur = parents2.get(meeting)
+    while cur is not None:
+        path2.append(cur)
+        cur = parents2.get(cur)
+    # path2 is from node after meeting to end
+    return path1 + path2
+
+
+def bidir_bfs(graph, start, end):
+    if start == end:
         return [start]
 
-    q = deque([start])
-    parent = {start: None}
+    # parents maps for reconstruction
+    parents1 = {start: None}
+    parents2 = {end: None}
+    q1 = deque([start])
+    q2 = deque([end])
 
-    while q:
-        u = q.popleft()
+    while q1 and q2:
+        # expand smaller frontier first
+        if len(q1) <= len(q2):
+            for _ in range(len(q1)):
+                cur = q1.popleft()
+                for n in graph.neighbors(cur):
+                    if n not in parents1:
+                        parents1[n] = cur
+                        q1.append(n)
+                        if n in parents2:
+                            return _reconstruct_bidir(parents1, parents2, n, start, end)
+        else:
+            for _ in range(len(q2)):
+                cur = q2.popleft()
+                for n in graph.neighbors(cur):
+                    if n not in parents2:
+                        parents2[n] = cur
+                        q2.append(n)
+                        if n in parents1:
+                            return _reconstruct_bidir(parents1, parents2, n, start, end)
 
-        for v in graph[u]:
-            if v not in parent:
-                parent[v] = u
-
-                if v == goal:
-                    path = [v]
-                    while parent[path[-1]] is not None:
-                        path.append(parent[path[-1]])
-                    path = list(reversed(path))
-                    bfs_cache[(start, goal)] = path
-                    return path
-
-                q.append(v)
-
-    bfs_cache[(start, goal)] = None
     return None
 
 
-# =========================================================
-# MUESTREO DE PARES (reduce O(n²) → O(k))
-# =========================================================
-def smart_sample_pairs(graph, k=100):
-
-    nodes = list(graph.keys())
-    pairs = set()
-
-    # -------------------------------------------------
-    # 1. PARES LEJANOS (usando BFS)
-    # -------------------------------------------------
-    for s in nodes:
-
-        # calcular distancias desde s
-        visited = {s: 0}
-        queue = [s]
-
-        while queue:
-            u = queue.pop(0)
-
-            for v in graph[u]:
-                if v not in visited:
-                    visited[v] = visited[u] + 1
-                    queue.append(v)
-
-        # ordenar por distancia (descendente)
-        far_nodes = sorted(visited.items(), key=lambda x: -x[1])
-
-        # tomar algunos lejanos
-        for t, _ in far_nodes[:3]:
-            if s != t:
-                pairs.add((s, t))
-
-    # -------------------------------------------------
-    # 2. ASEGURAR COBERTURA (cada nodo participa)
-    # -------------------------------------------------
-    for s in nodes:
-        t = random.choice(nodes)
-        if s != t:
-            pairs.add((s, t))
-
-    # -------------------------------------------------
-    # 3. COMPLETAR CON ALEATORIOS
-    # -------------------------------------------------
-    while len(pairs) < k:
-        s = random.choice(nodes)
-        t = random.choice(nodes)
-
-        if s != t:
-            pairs.add((s, t))
-
-    return list(pairs)
+# =========================
+# PARES REDUCIDOS
+# =========================
+def sample_pairs(nodes, k=50):
+    all_pairs = list(itertools.permutations(nodes, 2))
+    return random.sample(all_pairs, min(k, len(all_pairs)))
 
 
-# =========================================================
-# ÍNDICE DE TRANSMISIÓN (PARCIAL - ARISTAS)
-# =========================================================
-def transmission_index_partial(routing):
+# =========================
+# SOLUTION WRAPPER: cache edge loads and cost to avoid recompute
+# =========================
+class Solution:
+    def __init__(self, routing=None, edge_load=None, cost=None):
+        self.routing = routing or {}
+        self.edge_load = edge_load or defaultdict(int)
+        self.cost = cost
 
-    edge_load = {}
 
-    for (s, t), path in routing.items():
+def compute_cost_from_edge_load(edge_load, alpha=1.0, beta=0.3):
+    if not edge_load:
+        return 0
+    max_load = max(edge_load.values())
+    avg_load = sum(edge_load.values()) / len(edge_load)
+    return alpha * max_load + beta * avg_load
+
+
+# =========================
+# GENERAR SOLUCIÓN (build edge_load incrementally)
+# =========================
+def generate_solution(graph, pairs, path_cache):
+    routing = {}
+    edge_load = defaultdict(int)
+
+    for u, v in pairs:
+        key = (u, v)
+        path = path_cache.get(key)
+        if path is None:
+            path = bidir_bfs(graph, u, v)
+            path_cache[key] = path
+
+        if path is None:
+            continue
+
+        # pequeña perturbación (still using cache aggressively)
+        if random.random() < 0.2:
+            neighbors = graph.neighbors(u)
+            if neighbors:
+                alt = random.choice(neighbors)
+                alt_key = (alt, v)
+                alt_path = path_cache.get(alt_key)
+                if alt_path is None:
+                    alt_path = bidir_bfs(graph, alt, v)
+                    path_cache[alt_key] = alt_path
+                if alt_path:
+                    path = [u] + alt_path
+
+        routing[key] = path
+
+        for i in range(len(path) - 1):
+            edge = tuple(sorted((path[i], path[i + 1])))
+            edge_load[edge] += 1
+
+    cost = compute_cost_from_edge_load(edge_load)
+    return Solution(routing, edge_load, cost)
+
+
+# =========================
+# COMBINACIÓN (incremental cost construction)
+# =========================
+def combine(s1: Solution, s2: Solution):
+    new_routing = {}
+    new_edge_load = defaultdict(int)
+
+    # iterate over union of keys to be robust
+    keys = set(s1.routing.keys()) | set(s2.routing.keys())
+    for k in keys:
+        # prefer lower-cost parent's path probabilistically
+        pick_from_s1 = random.random() < 0.5
+        path = None
+        if pick_from_s1:
+            path = s1.routing.get(k) or s2.routing.get(k)
+        else:
+            path = s2.routing.get(k) or s1.routing.get(k)
 
         if not path:
             continue
 
+        new_routing[k] = path
         for i in range(len(path) - 1):
-            u, v = path[i], path[i+1]
+            edge = tuple(sorted((path[i], path[i + 1])))
+            new_edge_load[edge] += 1
 
-            # arista no dirigida (sin frozenset)
-            edge = (u, v) if u < v else (v, u)
-
-            edge_load[edge] = edge_load.get(edge, 0) + 1
-
-    return max(edge_load.values()) if edge_load else 0
+    new_cost = compute_cost_from_edge_load(new_edge_load)
+    return Solution(new_routing, new_edge_load, new_cost)
 
 
-# =========================================================
-# GENERAR ENRUTAMIENTO INICIAL (solo pares muestreados)
-# =========================================================
-def generate_routing(graph, pairs):
-    routing = {}
+# =========================
+# MEJORA LOCAL (attempt to replace paths with shorter cached ones and update edge_load minimally)
+# =========================
+def improve(graph, solution: Solution, path_cache):
+    # create copies of routing and edge_load to modify
+    routing = dict(solution.routing)
+    edge_load = defaultdict(int, solution.edge_load)
 
-    for (s, t) in pairs:
-        routing[(s, t)] = bfs_path(graph, s, t)
+    changed = False
 
-    return routing
+    for (u, v), path in list(routing.items()):
+        key = (u, v)
+        best = path_cache.get(key)
+        if best is None:
+            best = bidir_bfs(graph, u, v)
+            path_cache[key] = best
 
+        if best and len(best) < len(path):
+            # decrement counts for old path
+            for i in range(len(path) - 1):
+                edge = tuple(sorted((path[i], path[i + 1])))
+                edge_load[edge] -= 1
+                if edge_load[edge] <= 0:
+                    del edge_load[edge]
 
-# =========================================================
-# PERTURBACIÓN (mejora local)
-# =========================================================
-def perturb_routing(graph, routing, pairs, intensity=5):
+            # apply new path
+            routing[key] = best
+            for i in range(len(best) - 1):
+                edge = tuple(sorted((best[i], best[i + 1])))
+                edge_load[edge] += 1
 
-    for _ in range(intensity):
-        s, t = random.choice(pairs)
+            changed = True
 
-        new_path = bfs_path(graph, s, t)
+    if not changed:
+        return solution  # no change
 
-        if new_path:
-            routing[(s, t)] = new_path
-
-    return routing
-
-
-# =========================================================
-# DISTANCIA ENTRE SOLUCIONES (diversidad)
-# =========================================================
-def routing_distance(r1, r2, sample_size=20):
-
-    keys = list(r1.keys())
-    dist = 0
-
-    for _ in range(sample_size):
-        k = random.choice(keys)
-
-        if r1[k] != r2[k]:
-            dist += 1
-
-    return dist
+    cost = compute_cost_from_edge_load(edge_load)
+    return Solution(routing, edge_load, cost)
 
 
-# =========================================================
-# GENERAR POBLACIÓN INICIAL
-# =========================================================
-def generate_initial_population(graph, pairs, size):
-
-    population = []
-
-    for _ in range(size):
-        routing = generate_routing(graph, pairs)
-        routing = perturb_routing(graph, routing, pairs)
-
-        cost = transmission_index_partial(routing)
-
-        population.append((cost, routing))
-
-    return population
-
-
-# =========================================================
-# BUILD REFSET (calidad + diversidad)
-# =========================================================
+# =========================
+# REFSET (use precomputed costs)
+# =========================
 def build_refset(population, size):
+    scored = sorted(population, key=lambda s: s.cost)
+    best = scored[: max(1, size // 2)]
 
-    population.sort(key=lambda x: x[0])
+    # diversify by picking dissimilar routings (simple approach: random unique)
+    diverse = []
+    attempts = 0
+    while len(diverse) < max(1, size // 2) and attempts < len(population) * 3:
+        candidate = random.choice(population)
+        if candidate not in diverse:
+            diverse.append(candidate)
+        attempts += 1
 
-    elite_size = size // 2
-    refset = population[:elite_size]
-    candidates = population[elite_size:]
-
-    while len(refset) < size and candidates:
-
-        best = None
-        max_dist = -1
-
-        for cand in candidates:
-            dist = min(routing_distance(cand[1], r[1]) for r in refset)
-
-            if dist > max_dist:
-                max_dist = dist
-                best = cand
-
-        if not best:
-            break
-
-        refset.append(best)
-        candidates.remove(best)
-
-    return refset
+    ref = best + diverse
+    # trim to desired size
+    return ref[:size]
 
 
-# =========================================================
-# COMBINACIÓN DE ENRUTAMIENTOS
-# =========================================================
-def combine_routings(r1, r2):
+# =========================
+# SCATTER SEARCH (works with Solution objects)
+# =========================
+def scatter_search(graph, pop_size, refset_size, iterations):
+    nodes = graph.nodes()
+    pairs = sample_pairs(nodes, k=50)
 
-    new = {}
+    path_cache = {}
 
-    for k in r1:
-        new[k] = r1[k] if random.random() < 0.5 else r2[k]
+    population = [
+        generate_solution(graph, pairs, path_cache)
+        for _ in range(pop_size)
+    ]
 
-    return new
-
-
-# =========================================================
-# SCATTER SEARCH PRINCIPAL
-# =========================================================
-def scatter_search(graph, pop_size, ref_size, iterations, pair_sample=50):
-
-    nodes = list(graph.keys())
-    pairs = smart_sample_pairs(graph, pair_sample)
-
-    population = generate_initial_population(graph, pairs, pop_size)
-    refset = build_refset(population, ref_size)
-
+    best_sol = None
     best_cost = float('inf')
-    stagnation = 0
 
     for _ in range(iterations):
+        refset = build_refset(population, refset_size)
+        new_pop = []
 
-        new_solutions = []
+        for r1, r2 in itertools.combinations(refset, 2):
+            child = combine(r1, r2)
+            child = improve(graph, child, path_cache)
 
-        for i in range(len(refset)):
-            for j in range(i+1, len(refset)):
+            if child.cost < best_cost:
+                best_cost = child.cost
+                best_sol = child
 
-                r1 = refset[i][1]
-                r2 = refset[j][1]
+            new_pop.append(child)
 
-                new_r = combine_routings(r1, r2)
-                new_r = perturb_routing(graph, new_r, pairs)
+        population = new_pop if new_pop else population
 
-                cost = transmission_index_partial(new_r)
-
-                new_solutions.append((cost, new_r))
-
-        refset.extend(new_solutions)
-        refset = build_refset(refset, ref_size)
-
-        current_best = refset[0][0]
-
-        if current_best < best_cost:
-            best_cost = current_best
-            stagnation = 0
-        else:
-            stagnation += 1
-
-        if stagnation >= 5:
-            break
-
-    return min(refset, key=lambda x: x[0])
+    return best_sol, best_cost
 
 
-# =========================================================
-# EXPANSIÓN A TODOS LOS PARES (evaluación exacta)
-# =========================================================
-def expand_routing_to_all_pairs(graph, partial_routing):
-
-    nodes = list(graph.keys())
-    full_routing = {}
-
-    for s in nodes:
-        for t in nodes:
-
-            if s == t:
-                full_routing[(s, t)] = [s]
-                continue
-
-            if (s, t) in partial_routing:
-                full_routing[(s, t)] = partial_routing[(s, t)]
-            else:
-                full_routing[(s, t)] = bfs_path(graph, s, t)
-
-    return full_routing
-
-
-# =========================================================
-# ÍNDICE DE TRANSMISIÓN COMPLETO (EXACTO)
-# =========================================================
-def transmission_index_full(routing):
-
-    edge_load = {}
-
-    for (s, t), path in routing.items():
-
-        if not path:
-            continue
-
-        for i in range(len(path) - 1):
-            u, v = path[i], path[i+1]
-
-            edge = (u, v) if u < v else (v, u)
-
-            edge_load[edge] = edge_load.get(edge, 0) + 1
-
-    return max(edge_load.values()), edge_load
-
-
-# =========================================================
+# =========================
 # MAIN
-# =========================================================
+# =========================
 if __name__ == "__main__":
+    graph, pop, refset, iters = read_graph("test1.txt")
 
-    file = next((f for f in os.listdir() if f.endswith(".txt")), None)
+    print("=============Parámetros=============")
+    print(f"Nodos: {pop} Refset: {refset} Iteraciones: {iters}")
 
-    if not file:
-        print("No input file found")
-        exit()
+    sol, cost = scatter_search(graph, pop, refset, iters)
 
-    graph, pop, ref, it = read_testcase(file)
-
-    print("\nArchivo:", file)
-    print("Parámetros:", pop, ref, it)
-    print("Nodos:", len(graph))
-
-    t0 = time.time()
-
-    # 🔵 FASE 1: optimización rápida
-    best_cost, best_partial = scatter_search(
-        graph,
-        pop_size=pop,
-        ref_size=ref,
-        iterations=it,
-        pair_sample=50
-    )
-
-    print("\n[FASE 1] Mejor costo aproximado:", best_cost)
-
-    # 🟢 FASE 2: evaluación exacta
-    print("\n[FASE 2] Expandiendo a todos los pares...")
-
-    full_routing = expand_routing_to_all_pairs(graph, best_partial)
-
-    print("[FASE 2] Calculando índice exacto...")
-
-    real_cost, _ = transmission_index_full(full_routing)
-
-    print("\nÍndice de transmisión REAL:", real_cost)
-    print("Tiempo total:", round(time.time() - t0, 2), "s")
+    print("Mejor costo (aprox índice transmisión):", cost)
