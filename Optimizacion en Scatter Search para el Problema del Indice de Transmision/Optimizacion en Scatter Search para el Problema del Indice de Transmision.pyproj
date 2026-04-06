@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>Optimizacion en Scatter Search para el Problema del Indice de Transmision</Name>
     <RootNamespace>Optimizacion en Scatter Search para el Problema del Indice de Transmision</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

@@ -43,7 +43,7 @@ def read_graph(filename):
     return g, pop_size, refset_size, iterations
 
 
-# =========================
+# ========================
 # BIDIRECTIONAL BFS
 # =========================
 def _reconstruct_bidir(p1, p2, meet):
@@ -98,25 +98,22 @@ def bidir_bfs(graph, start, end):
 # =========================
 # PARES REDUCIDOS
 # =========================
-def sample_pairs(nodes, k=50):
+def sample_pairs(nodes, k):
     all_pairs = list(itertools.permutations(nodes, 2))
     return random.sample(all_pairs, min(k, len(all_pairs)))
 
 
 # =========================
-# MÉTRICAS
+# FUNCIÓN DE CONGESTIÓN (CORRECTA)
 # =========================
-def compute_metrics(edge_load, alpha=1.0, beta=0.3):
-    if not edge_load:
-        return 0, 0, 0
+def compute_max_load(edge_load):
+    undirected = defaultdict(int)
 
-    max_load = max(edge_load.values())
-    avg_load = sum(edge_load.values()) / len(edge_load)
+    for (u, v), load in edge_load.items():
+        key = tuple(sorted((u, v)))
+        undirected[key] += load
 
-    cost = alpha * max_load + beta * avg_load  # heurística
-
-    return max_load, avg_load, cost
-
+    return max(undirected.values()) if undirected else 0
 
 # =========================
 # SOLUCIÓN
@@ -126,46 +123,41 @@ class Solution:
         self.routing = routing or {}
         self.edge_load = edge_load or defaultdict(int)
 
-        self.max_load, self.avg_load, self.cost = compute_metrics(self.edge_load)
+        self.max_load = compute_max_load(self.edge_load)
+        self.avg_load = sum(self.edge_load.values()) / len(self.edge_load)
 
+        self.cost = self.max_load + 0.3 * self.avg_load
+
+# =========================
+# DISTANCIA (OPTIMIZADA)
+# =========================
+def distance(s1, s2):
+    edges = set(s1.edge_load.keys()) | set(s2.edge_load.keys())
+    return sum(abs(s1.edge_load.get(e, 0) - s2.edge_load.get(e, 0)) for e in edges)
 
 # =========================
 # GENERAR SOLUCIÓN
 # =========================
-def generate_solution(graph, pairs, path_cache):
+def generate_solution(graph, pairs, cache):
     routing = {}
     edge_load = defaultdict(int)
 
     for u, v in pairs:
         key = (u, v)
+        path = cache.get(key)
 
-        path = path_cache.get(key)
         if path is None:
             path = bidir_bfs(graph, u, v)
-            path_cache[key] = path
+            cache[key] = path
 
-        if path is None:
+        if not path:
             continue
-
-        # perturbación
-        if random.random() < 0.2:
-            neighbors = graph.neighbors(u)
-            if neighbors:
-                alt = random.choice(neighbors)
-                alt_key = (alt, v)
-
-                alt_path = path_cache.get(alt_key)
-                if alt_path is None:
-                    alt_path = bidir_bfs(graph, alt, v)
-                    path_cache[alt_key] = alt_path
-
-                if alt_path:
-                    path = [u] + alt_path
 
         routing[key] = path
 
+        # 🔥 CAMBIO CLAVE: DIRECCIONAL
         for i in range(len(path) - 1):
-            edge = tuple(sorted((path[i], path[i + 1])))
+            edge = (path[i], path[i + 1])  # NO sorted
             edge_load[edge] += 1
 
     return Solution(routing, edge_load)
@@ -175,51 +167,50 @@ def generate_solution(graph, pairs, path_cache):
 # COMBINACIÓN
 # =========================
 def combine(s1, s2):
-    new_routing = {}
-    new_edge_load = defaultdict(int)
+    routing = {}
+    edge_load = defaultdict(int)
 
-    keys = set(s1.routing.keys()) | set(s2.routing.keys())
+    keys = set(s1.routing) | set(s2.routing)
 
     for k in keys:
         path = s1.routing.get(k) if random.random() < 0.5 else s2.routing.get(k)
         if not path:
+            path = s1.routing.get(k) or s2.routing.get(k)
+
+        if not path:
             continue
 
-        new_routing[k] = path
+        routing[k] = path
 
         for i in range(len(path) - 1):
-            edge = tuple(sorted((path[i], path[i + 1])))
-            new_edge_load[edge] += 1
+            edge = (path[i], path[i + 1])  # DIRECCIONAL
+            edge_load[edge] += 1
 
-    return Solution(new_routing, new_edge_load)
+    return Solution(routing, edge_load)
 
 
 # =========================
 # MEJORA LOCAL
 # =========================
-def improve(graph, solution, path_cache):
-    routing = dict(solution.routing)
-    edge_load = defaultdict(int, solution.edge_load)
+def improve(graph, sol, cache):
+    routing = dict(sol.routing)
+    edge_load = defaultdict(int, sol.edge_load)
 
     for (u, v), path in list(routing.items()):
-        key = (u, v)
-
-        best = path_cache.get(key)
+        best = cache.get((u, v))
         if best is None:
             best = bidir_bfs(graph, u, v)
-            path_cache[key] = best
+            cache[(u, v)] = best
 
         if best and len(best) < len(path):
-
-            # quitar viejo
             for i in range(len(path) - 1):
                 edge = tuple(sorted((path[i], path[i + 1])))
                 edge_load[edge] -= 1
                 if edge_load[edge] <= 0:
                     del edge_load[edge]
 
-            # agregar nuevo
-            routing[key] = best
+            routing[(u, v)] = best
+
             for i in range(len(best) - 1):
                 edge = tuple(sorted((best[i], best[i + 1])))
                 edge_load[edge] += 1
@@ -228,18 +219,30 @@ def improve(graph, solution, path_cache):
 
 
 # =========================
-# REFSET
+# REFSET (DIVERSIDAD CONTROLADA)
 # =========================
 def build_refset(population, size):
     sorted_pop = sorted(population, key=lambda s: s.cost)
-
     best = sorted_pop[: max(1, size // 2)]
 
     diverse = []
+
+    # LIMITAMOS candidatos → evita explosión
+    candidates = random.sample(population, min(30, len(population)))
+
     while len(diverse) < max(1, size // 2):
-        candidate = random.choice(population)
-        if candidate not in diverse:
-            diverse.append(candidate)
+        best_candidate = None
+        best_dist = -1
+
+        for c in candidates:
+            d = min(distance(c, s) for s in best + diverse) if (best or diverse) else 0
+
+            if d > best_dist:
+                best_dist = d
+                best_candidate = c
+
+        if best_candidate:
+            diverse.append(best_candidate)
 
     return (best + diverse)[:size]
 
@@ -247,19 +250,19 @@ def build_refset(population, size):
 # =========================
 # SCATTER SEARCH
 # =========================
-def scatter_search(graph, pop_size, refset_size, iterations):
+def scatter_search(graph, pop_size, refset_size, iterations, sample_size):
     nodes = graph.nodes()
-    pairs = sample_pairs(nodes, k=300)
+    pairs = sample_pairs(nodes, sample_size)
 
-    path_cache = {}
+    cache = {}
 
     population = [
-        generate_solution(graph, pairs, path_cache)
+        generate_solution(graph, pairs, cache)
         for _ in range(pop_size)
     ]
 
     best_sol = None
-    best_max = float('inf')  # ← índice real
+    best_val = float("inf")
 
     for _ in range(iterations):
         refset = build_refset(population, refset_size)
@@ -267,11 +270,10 @@ def scatter_search(graph, pop_size, refset_size, iterations):
 
         for s1, s2 in itertools.combinations(refset, 2):
             child = combine(s1, s2)
-            child = improve(graph, child, path_cache)
+            child = improve(graph, child, cache)
 
-            # ✔ CRITERIO CORRECTO
-            if child.max_load < best_max:
-                best_max = child.max_load
+            if child.max_load < best_val:
+                best_val = child.max_load
                 best_sol = child
 
             new_pop.append(child)
@@ -279,29 +281,27 @@ def scatter_search(graph, pop_size, refset_size, iterations):
         if new_pop:
             population = new_pop
 
-    return best_sol, best_max
+    return best_sol, best_val
 
 
 # =========================
 # MAIN
 # =========================
 if __name__ == "__main__":
+    SAMPLE_SIZE = 300
+
     graph, pop, refset, iters = read_graph("test1.txt")
 
     print("========================Parámetros========================")
     print(f"Nodos: {len(graph.nodes())} | Población: {pop} | RefSet: {refset} | Iteraciónes: {iters}")
 
-    #print("=================Grafo=================")
-    #for node in graph.nodes():
-        #print(f"{node}: {graph.neighbors(node)}")
-
     inicio = time.perf_counter()
 
-    sol, best_index = scatter_search(graph, pop, refset, iters)
+    sol, best_index = scatter_search(graph, pop, refset, iters, SAMPLE_SIZE)
 
     fin = time.perf_counter()
 
-    print("=================Resultado==================")
+    print("========================Resultados========================")
 
     print("Índice de Transmisión aproximado:", best_index)
     print(f"Tiempo de ejecución: {fin - inicio:.4f} segundos")
