@@ -1,0 +1,1536 @@
+========================Parámetros========================
+Nodos: 100 | Población: 40 | RefSet: 20 | Iteraciones: 30
+Precomputando caminos...
+Construyendo población...
+Construyendo RefSet...
+Iteración 1: real=1862 cost=333526398.0000
+
+--- Iteración 1 ---
+PR parent dist: 1812 child-A: 19 child-B: 1793
+PR parent dist: 1854 child-A: 13 child-B: 1841
+PR parent dist: 1765 child-A: 29 child-B: 1736
+PR parent dist: 1848 child-A: 19 child-B: 1829
+PR parent dist: 1826 child-A: 17 child-B: 1809
+PR parent dist: 1820 child-A: 25 child-B: 1795
+PR parent dist: 1786 child-A: 16 child-B: 1770
+PR parent dist: 1810 child-A: 27 child-B: 1783
+PR parent dist: 1824 child-A: 24 child-B: 1800
+PR parent dist: 1837 child-A: 12 child-B: 1825
+PR parent dist: 1807 child-A: 12 child-B: 1795
+PR parent dist: 1809 child-A: 23 child-B: 1786
+PR parent dist: 1778 child-A: 14 child-B: 1764
+PR parent dist: 1812 child-A: 28 child-B: 1784
+PR parent dist: 1808 child-A: 14 child-B: 1794
+PR parent dist: 1814 child-A: 19 child-B: 1795
+PR parent dist: 1827 child-A: 14 child-B: 1813
+PR parent dist: 1815 child-A: 23 child-B: 1792
+PR parent dist: 1847 child-A: 22 child-B: 1825
+PR parent dist: 1820 child-A: 23 child-B: 1797
+Hijos útiles:  10
+[select_diverse_candidates] candidates=10 normalized=10 filtered=10 pool=10 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1859 cost=333791102
+  real=1860 cost=334532894
+  real=1862 cost=335389578
+  real=1863 cost=335555334
+  real=1864 cost=334526622
+  real=1864 cost=335971994
+  real=1865 cost=334285662
+  real=1868 cost=335205146
+[select_diverse_candidates] selected[0] -> real=1859 cost=333791102
+[select_diverse_candidates] picked index=8 dmin=1867 -> real=1878 cost=337009246 selected_count=2
+[select_diverse_candidates] picked index=2 dmin=1831 -> real=1863 cost=335555334 selected_count=3
+[select_diverse_candidates] picked index=5 dmin=1804 -> real=1868 cost=335205146 selected_count=4
+[select_diverse_candidates] picked index=5 dmin=1802 -> real=1870 cost=334216366 selected_count=5
+[select_diverse_candidates] picked index=4 dmin=1779 -> real=1865 cost=334285662 selected_count=6
+[select_diverse_candidates] picked index=1 dmin=1740 -> real=1862 cost=335389578 selected_count=7
+[select_diverse_candidates] picked index=1 dmin=53 -> real=1864 cost=334526622 selected_count=8
+[select_diverse_candidates] picked index=0 dmin=50 -> real=1860 cost=334532894 selected_count=9
+[select_diverse_candidates] picked index=0 dmin=39 -> real=1864 cost=335971994 selected_count=10
+Min dist: 28 Avg dist: 1773.275 Threshold: 12
+Min dist: 19 Avg dist: 1763.7560975609756 Threshold: 6
+Min dist: 16 Avg dist: 1772.904761904762 Threshold: 12
+Min dist: 29 Avg dist: 1780.6046511627908 Threshold: 12
+Min dist: 23 Avg dist: 1774.3636363636363 Threshold: 12
+Min dist: 17 Avg dist: 1776.7555555555555 Threshold: 12
+Min dist: 18 Avg dist: 1777.4347826086957 Threshold: 12
+Min dist: 25 Avg dist: 1743.5531914893618 Threshold: 9
+Min dist: 27 Avg dist: 1745.8125 Threshold: 12
+Min dist: 23 Avg dist: 1744.1020408163265 Threshold: 6
+Hijos insertados:  10
+Iter 1: Mejor = 333791102.0000
+Real index: 1859
+[1794, 1800, 1801, 1804, 1806, 1807, 1807, 1807, 1808, 1808]
+[1859, 1857, 1855, 1854, 1854, 1853, 1850, 1849, 1849, 1848]
+
+--- Iteración 2 ---
+PR parent dist: 1795 child-A: 21 child-B: 1774
+PR parent dist: 1807 child-A: 26 child-B: 1781
+PR parent dist: 1880 child-A: 18 child-B: 1862
+PR parent dist: 1819 child-A: 23 child-B: 1796
+PR parent dist: 1852 child-A: 30 child-B: 1822
+PR parent dist: 1839 child-A: 20 child-B: 1819
+PR parent dist: 1873 child-A: 21 child-B: 1852
+PR parent dist: 1861 child-A: 24 child-B: 1837
+PR parent dist: 1875 child-A: 14 child-B: 1861
+PR parent dist: 1815 child-A: 14 child-B: 1801
+PR parent dist: 1811 child-A: 17 child-B: 1794
+PR parent dist: 1815 child-A: 24 child-B: 1791
+PR parent dist: 1801 child-A: 10 child-B: 1791
+PR parent dist: 1844 child-A: 21 child-B: 1823
+PR parent dist: 1878 child-A: 25 child-B: 1853
+PR parent dist: 1846 child-A: 26 child-B: 1820
+PR parent dist: 1732 child-A: 23 child-B: 1709
+PR parent dist: 1810 child-A: 29 child-B: 1781
+PR parent dist: 1821 child-A: 29 child-B: 1792
+PR parent dist: 1803 child-A: 28 child-B: 1775
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1853 cost=333597574
+  real=1857 cost=331971330
+  real=1859 cost=334911686
+  real=1862 cost=333883106
+  real=1864 cost=335017550
+  real=1864 cost=335772078
+  real=1878 cost=333065514
+  real=1879 cost=339086390
+[select_diverse_candidates] selected[0] -> real=1853 cost=333597574
+[select_diverse_candidates] picked index=4 dmin=1847 -> real=1864 cost=335772078 selected_count=2
+[select_diverse_candidates] picked index=5 dmin=1812 -> real=1879 cost=339086390 selected_count=3
+[select_diverse_candidates] picked index=4 dmin=1800 -> real=1878 cost=333065514 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=1735 -> real=1857 cost=331971330 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=91 -> real=1862 cost=333883106 selected_count=6
+[select_diverse_candidates] picked index=1 dmin=59 -> real=1864 cost=335017550 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=50 -> real=1859 cost=334911686 selected_count=8
+Min dist: 27 Avg dist: 1725.575 Threshold: 12
+Min dist: 23 Avg dist: 1688.0 Threshold: 6
+Min dist: 24 Avg dist: 1736.4761904761904 Threshold: 12
+Min dist: 27 Avg dist: 1776.3255813953488 Threshold: 12
+Min dist: 24 Avg dist: 1691.6818181818182 Threshold: 12
+Min dist: 14 Avg dist: 1659.6666666666667 Threshold: 6
+Min dist: 14 Avg dist: 1693.4565217391305 Threshold: 12
+Min dist: 23 Avg dist: 1662.2978723404256 Threshold: 12
+Hijos insertados:  8
+Iter 2: Mejor = 333597574.0000
+Real index: 1853
+[1796, 1797, 1799, 1801, 1802, 1804, 1805, 1806, 1806, 1807]
+[1853, 1853, 1850, 1846, 1845, 1845, 1844, 1844, 1843, 1843]
+
+--- Iteración 3 ---
+PR parent dist: 1844 child-A: 28 child-B: 1816
+PR parent dist: 77 child-A: 21 child-B: 56
+PR parent dist: 1817 child-A: 16 child-B: 1801
+PR parent dist: 1794 child-A: 25 child-B: 1769
+PR parent dist: 1863 child-A: 12 child-B: 1851
+PR parent dist: 1828 child-A: 16 child-B: 1812
+PR parent dist: 1832 child-A: 25 child-B: 1807
+PR parent dist: 1816 child-A: 12 child-B: 1804
+PR parent dist: 1775 child-A: 19 child-B: 1756
+PR parent dist: 1819 child-A: 10 child-B: 1809
+PR parent dist: 1863 child-A: 11 child-B: 1852
+PR parent dist: 1821 child-A: 29 child-B: 1792
+PR parent dist: 91 child-A: 11 child-B: 80
+PR parent dist: 1822 child-A: 20 child-B: 1802
+PR parent dist: 1829 child-A: 21 child-B: 1808
+PR parent dist: 1815 child-A: 19 child-B: 1796
+PR parent dist: 1736 child-A: 20 child-B: 1716
+PR parent dist: 1838 child-A: 24 child-B: 1814
+PR parent dist: 1822 child-A: 27 child-B: 1795
+PR parent dist: 1861 child-A: 10 child-B: 1851
+Hijos útiles:  11
+[select_diverse_candidates] candidates=11 normalized=11 filtered=11 pool=11 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1847 cost=332616574
+  real=1856 cost=332224222
+  real=1856 cost=335015466
+  real=1857 cost=332267710
+  real=1857 cost=334222354
+  real=1858 cost=334992322
+  real=1859 cost=333443898
+  real=1859 cost=334068938
+[select_diverse_candidates] selected[0] -> real=1847 cost=332616574
+[select_diverse_candidates] picked index=5 dmin=1841 -> real=1859 cost=333443898 selected_count=2
+[select_diverse_candidates] picked index=8 dmin=1799 -> real=1884 cost=340941758 selected_count=3
+[select_diverse_candidates] picked index=5 dmin=1749 -> real=1859 cost=334068938 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=99 -> real=1856 cost=335015466 selected_count=5
+[select_diverse_candidates] picked index=5 dmin=91 -> real=1860 cost=333882586 selected_count=6
+[select_diverse_candidates] picked index=3 dmin=75 -> real=1858 cost=334992322 selected_count=7
+[select_diverse_candidates] picked index=3 dmin=55 -> real=1859 cost=335965434 selected_count=8
+[select_diverse_candidates] picked index=1 dmin=54 -> real=1857 cost=332267710 selected_count=9
+[select_diverse_candidates] picked index=1 dmin=41 -> real=1857 cost=334222354 selected_count=10
+Min dist: 22 Avg dist: 1589.825 Threshold: 12
+Min dist: 19 Avg dist: 1688.9268292682927 Threshold: 6
+Min dist: 1777 Avg dist: 1810.0 Threshold: 12
+Min dist: 29 Avg dist: 1569.2558139534883 Threshold: 12
+Min dist: 28 Avg dist: 1609.090909090909 Threshold: 12
+Min dist: 28 Avg dist: 1537.0 Threshold: 12
+Min dist: 27 Avg dist: 1506.0217391304348 Threshold: 12
+Min dist: 20 Avg dist: 1578.0 Threshold: 12
+Min dist: 15 Avg dist: 1475.25 Threshold: 12
+Hijos insertados:  9
+Iter 3: Mejor = 332616574.0000
+Real index: 1847
+[1793, 1799, 1800, 1801, 1802, 1802, 1803, 1804, 1806, 1808]
+[1847, 1845, 1845, 1845, 1842, 1842, 1841, 1840, 1840, 1839]
+
+--- Iteración 4 ---
+PR parent dist: 44 child-A: 11 child-B: 33
+PR parent dist: 1840 child-A: 18 child-B: 1822
+PR parent dist: 1791 child-A: 11 child-B: 1780
+PR parent dist: 1843 child-A: 14 child-B: 1829
+PR parent dist: 1841 child-A: 19 child-B: 1822
+PR parent dist: 1795 child-A: 25 child-B: 1770
+PR parent dist: 1804 child-A: 16 child-B: 1788
+PR parent dist: 1843 child-A: 12 child-B: 1831
+PR parent dist: 1841 child-A: 27 child-B: 1814
+PR parent dist: 1797 child-A: 15 child-B: 1782
+PR parent dist: 1821 child-A: 13 child-B: 1808
+PR parent dist: 1814 child-A: 23 child-B: 1791
+PR parent dist: 1814 child-A: 19 child-B: 1795
+PR parent dist: 1839 child-A: 16 child-B: 1823
+PR parent dist: 1813 child-A: 16 child-B: 1797
+PR parent dist: 1800 child-A: 20 child-B: 1780
+PR parent dist: 1795 child-A: 21 child-B: 1774
+PR parent dist: 1805 child-A: 23 child-B: 1782
+PR parent dist: 1814 child-A: 28 child-B: 1786
+PR parent dist: 1806 child-A: 21 child-B: 1785
+Hijos útiles:  6
+[select_diverse_candidates] candidates=6 normalized=6 filtered=6 pool=6 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1849 cost=333705270
+  real=1853 cost=334518702
+  real=1856 cost=332926522
+  real=1856 cost=333265918
+  real=1859 cost=335400698
+  real=1879 cost=336938178
+[select_diverse_candidates] selected[0] -> real=1849 cost=333705270
+[select_diverse_candidates] picked index=1 dmin=1817 -> real=1856 cost=332926522 selected_count=2
+[select_diverse_candidates] picked index=3 dmin=1803 -> real=1879 cost=336938178 selected_count=3
+[select_diverse_candidates] picked index=0 dmin=122 -> real=1853 cost=334518702 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=83 -> real=1856 cost=333265918 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=64 -> real=1859 cost=335400698 selected_count=6
+Min dist: 22 Avg dist: 1364.35 Threshold: 12
+Min dist: 18 Avg dist: 1648.658536585366 Threshold: 12
+Min dist: 1766 Avg dist: 1817.1666666666667 Threshold: 12
+Min dist: 23 Avg dist: 1363.6046511627908 Threshold: 12
+Min dist: 19 Avg dist: 1325.25 Threshold: 12
+Min dist: 16 Avg dist: 1301.2444444444445 Threshold: 12
+Hijos insertados:  6
+Sin mejora.
+
+--- Iteración 5 ---
+PR parent dist: 1815 child-A: 30 child-B: 1785
+PR parent dist: 1822 child-A: 23 child-B: 1799
+PR parent dist: 1834 child-A: 20 child-B: 1814
+PR parent dist: 1814 child-A: 27 child-B: 1787
+PR parent dist: 1806 child-A: 20 child-B: 1786
+PR parent dist: 1805 child-A: 20 child-B: 1785
+PR parent dist: 1797 child-A: 27 child-B: 1770
+PR parent dist: 1844 child-A: 10 child-B: 1834
+PR parent dist: 79 child-A: 12 child-B: 67
+PR parent dist: 1791 child-A: 14 child-B: 1777
+PR parent dist: 88 child-A: 25 child-B: 63
+PR parent dist: 1798 child-A: 14 child-B: 1784
+PR parent dist: 86 child-A: 22 child-B: 64
+PR parent dist: 1802 child-A: 15 child-B: 1787
+PR parent dist: 1837 child-A: 20 child-B: 1817
+PR parent dist: 1814 child-A: 21 child-B: 1793
+PR parent dist: 1801 child-A: 19 child-B: 1782
+PR parent dist: 1815 child-A: 12 child-B: 1803
+PR parent dist: 1841 child-A: 29 child-B: 1812
+PR parent dist: 1828 child-A: 12 child-B: 1816
+Hijos útiles:  12
+[select_diverse_candidates] candidates=12 normalized=12 filtered=12 pool=12 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1845 cost=333410618
+  real=1846 cost=331500490
+  real=1847 cost=332632430
+  real=1850 cost=334203106
+  real=1851 cost=334328994
+  real=1852 cost=333668338
+  real=1852 cost=333782650
+  real=1856 cost=331524314
+[select_diverse_candidates] selected[0] -> real=1845 cost=333410618
+[select_diverse_candidates] picked index=9 dmin=1821 -> real=1884 cost=338836218 selected_count=2
+[select_diverse_candidates] picked index=9 dmin=1818 -> real=1885 cost=334122910 selected_count=3
+[select_diverse_candidates] picked index=8 dmin=1802 -> real=1870 cost=334230266 selected_count=4
+[select_diverse_candidates] picked index=6 dmin=1720 -> real=1856 cost=331524314 selected_count=5
+[select_diverse_candidates] picked index=5 dmin=147 -> real=1852 cost=333782650 selected_count=6
+[select_diverse_candidates] picked index=4 dmin=98 -> real=1852 cost=333668338 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=75 -> real=1846 cost=331500490 selected_count=8
+[select_diverse_candidates] picked index=0 dmin=61 -> real=1847 cost=332632430 selected_count=9
+[select_diverse_candidates] picked index=1 dmin=44 -> real=1851 cost=334328994 selected_count=10
+Min dist: 1780 Avg dist: 1826.95 Threshold: 12
+Min dist: 1792 Avg dist: 1817.4878048780488 Threshold: 12
+Min dist: 1791 Avg dist: 1822.6904761904761 Threshold: 12
+Min dist: 27 Avg dist: 1502.139534883721 Threshold: 12
+Min dist: 17 Avg dist: 1260.7727272727273 Threshold: 12
+Min dist: 17 Avg dist: 1226.088888888889 Threshold: 12
+Min dist: 21 Avg dist: 1204.0434782608695 Threshold: 12
+Min dist: 25 Avg dist: 1182.0212765957447 Threshold: 6
+Min dist: 12 Avg dist: 1147.6041666666667 Threshold: 9
+Hijos insertados:  9
+Iter 5: Mejor = 331500490.0000
+Real index: 1846
+[1792, 1794, 1801, 1801, 1802, 1802, 1803, 1804, 1805, 1805]
+[1846, 1842, 1841, 1840, 1840, 1838, 1837, 1837, 1836, 1835]
+
+--- Iteración 6 ---
+PR parent dist: 1804 child-A: 12 child-B: 1792
+PR parent dist: 1806 child-A: 16 child-B: 1790
+PR parent dist: 1834 child-A: 18 child-B: 1816
+PR parent dist: 1820 child-A: 25 child-B: 1795
+PR parent dist: 1824 child-A: 18 child-B: 1806
+PR parent dist: 88 child-A: 26 child-B: 62
+PR parent dist: 1841 child-A: 18 child-B: 1823
+PR parent dist: 1817 child-A: 24 child-B: 1793
+PR parent dist: 1796 child-A: 15 child-B: 1781
+PR parent dist: 1845 child-A: 19 child-B: 1826
+PR parent dist: 141 child-A: 19 child-B: 122
+PR parent dist: 1814 child-A: 17 child-B: 1797
+PR parent dist: 1813 child-A: 29 child-B: 1784
+PR parent dist: 65 child-A: 22 child-B: 43
+PR parent dist: 137 child-A: 23 child-B: 114
+PR parent dist: 1720 child-A: 14 child-B: 1706
+PR parent dist: 99 child-A: 16 child-B: 83
+PR parent dist: 102 child-A: 25 child-B: 77
+PR parent dist: 1795 child-A: 30 child-B: 1765
+PR parent dist: 1810 child-A: 14 child-B: 1796
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1838 cost=328639586
+  real=1845 cost=332205778
+  real=1846 cost=332623334
+  real=1846 cost=333061362
+  real=1846 cost=333187438
+  real=1847 cost=331494258
+  real=1882 cost=340730238
+  real=1883 cost=340897562
+[select_diverse_candidates] selected[0] -> real=1838 cost=328639586
+[select_diverse_candidates] picked index=6 dmin=1804 -> real=1883 cost=340897562 selected_count=2
+[select_diverse_candidates] picked index=4 dmin=177 -> real=1847 cost=331494258 selected_count=3
+[select_diverse_candidates] picked index=3 dmin=108 -> real=1846 cost=333187438 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=50 -> real=1846 cost=332623334 selected_count=5
+[select_diverse_candidates] picked index=2 dmin=44 -> real=1882 cost=340730238 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=40 -> real=1845 cost=332205778 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=38 -> real=1846 cost=333061362 selected_count=8
+Min dist: 28 Avg dist: 988.35 Threshold: 12
+Min dist: 1774 Avg dist: 1805.5121951219512 Threshold: 6
+Min dist: 23 Avg dist: 972.1428571428571 Threshold: 12
+Min dist: 22 Avg dist: 957.5813953488372 Threshold: 9
+Min dist: 44 Avg dist: 1765.7727272727273 Threshold: 9
+Min dist: 28 Avg dist: 957.8444444444444 Threshold: 12
+Min dist: 15 Avg dist: 938.6739130434783 Threshold: 6
+Hijos insertados:  7
+Iter 6: Mejor = 328639586.0000
+Real index: 1838
+[1778, 1788, 1789, 1794, 1795, 1795, 1795, 1796, 1797, 1797]
+[1838, 1836, 1833, 1833, 1833, 1832, 1832, 1831, 1830, 1828]
+
+--- Iteración 7 ---
+PR parent dist: 1803 child-A: 25 child-B: 1778
+PR parent dist: 1819 child-A: 18 child-B: 1801
+PR parent dist: 1805 child-A: 23 child-B: 1782
+PR parent dist: 29 child-A: 19 child-B: 10
+PR parent dist: 43 child-A: 20 child-B: 23
+PR parent dist: 1805 child-A: 30 child-B: 1775
+PR parent dist: 1800 child-A: 26 child-B: 1774
+PR parent dist: 1820 child-A: 30 child-B: 1790
+PR parent dist: 1849 child-A: 24 child-B: 1825
+PR parent dist: 167 child-A: 26 child-B: 141
+PR parent dist: 1813 child-A: 18 child-B: 1795
+PR parent dist: 49 child-A: 10 child-B: 39
+PR parent dist: 1829 child-A: 21 child-B: 1808
+PR parent dist: 1812 child-A: 12 child-B: 1800
+PR parent dist: 76 child-A: 17 child-B: 59
+PR parent dist: 1817 child-A: 14 child-B: 1803
+PR parent dist: 1791 child-A: 22 child-B: 1769
+PR parent dist: 49 child-A: 21 child-B: 28
+PR parent dist: 1810 child-A: 15 child-B: 1795
+PR parent dist: 122 child-A: 27 child-B: 95
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1835 cost=330153542
+  real=1838 cost=326632270
+  real=1840 cost=331767066
+  real=1844 cost=332092574
+  real=1845 cost=332055706
+  real=1846 cost=333323878
+  real=1846 cost=333534074
+  real=1879 cost=333350562
+[select_diverse_candidates] selected[0] -> real=1835 cost=330153542
+[select_diverse_candidates] picked index=6 dmin=1806 -> real=1879 cost=333350562 selected_count=2
+[select_diverse_candidates] picked index=1 dmin=110 -> real=1840 cost=331767066 selected_count=3
+[select_diverse_candidates] picked index=1 dmin=93 -> real=1844 cost=332092574 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=83 -> real=1838 cost=326632270 selected_count=5
+[select_diverse_candidates] picked index=2 dmin=50 -> real=1846 cost=333534074 selected_count=6
+[select_diverse_candidates] picked index=1 dmin=41 -> real=1846 cost=333323878 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=31 -> real=1845 cost=332055706 selected_count=8
+Min dist: 22 Avg dist: 764.75 Threshold: 12
+Min dist: 1783 Avg dist: 1809.4634146341464 Threshold: 6
+Min dist: 20 Avg dist: 768.7142857142857 Threshold: 12
+Min dist: 26 Avg dist: 761.3255813953489 Threshold: 12
+Min dist: 20 Avg dist: 735.0681818181819 Threshold: 9
+Min dist: 21 Avg dist: 728.7777777777778 Threshold: 12
+Hijos insertados:  6
+Iter 7: Mejor = 330153542.0000
+Real index: 1835
+[1785, 1792, 1793, 1794, 1795, 1796, 1798, 1798, 1799, 1799]
+[1835, 1835, 1835, 1834, 1833, 1832, 1832, 1832, 1831, 1831]
+
+--- Iteración 8 ---
+PR parent dist: 1823 child-A: 22 child-B: 1801
+PR parent dist: 119 child-A: 10 child-B: 109
+PR parent dist: 1831 child-A: 17 child-B: 1814
+PR parent dist: 1814 child-A: 20 child-B: 1794
+PR parent dist: 106 child-A: 10 child-B: 96
+PR parent dist: 1847 child-A: 13 child-B: 1834
+PR parent dist: 1802 child-A: 20 child-B: 1782
+PR parent dist: 1842 child-A: 29 child-B: 1813
+PR parent dist: 60 child-A: 26 child-B: 34
+PR parent dist: 1817 child-A: 26 child-B: 1791
+PR parent dist: 1801 child-A: 28 child-B: 1773
+PR parent dist: 1819 child-A: 19 child-B: 1800
+PR parent dist: 26 child-A: 10 child-B: 16
+PR parent dist: 1797 child-A: 12 child-B: 1785
+PR parent dist: 1829 child-A: 10 child-B: 1819
+PR parent dist: 1834 child-A: 18 child-B: 1816
+PR parent dist: 1806 child-A: 24 child-B: 1782
+PR parent dist: 41 child-A: 29 child-B: 12
+PR parent dist: 122 child-A: 24 child-B: 98
+PR parent dist: 1790 child-A: 26 child-B: 1764
+Hijos útiles:  10
+[select_diverse_candidates] candidates=10 normalized=10 filtered=10 pool=10 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1833 cost=327638158
+  real=1833 cost=327917182
+  real=1837 cost=328087586
+  real=1838 cost=326365574
+  real=1838 cost=326451670
+  real=1839 cost=329830534
+  real=1841 cost=331754546
+  real=1843 cost=330548950
+[select_diverse_candidates] selected[0] -> real=1833 cost=327638158
+[select_diverse_candidates] picked index=8 dmin=1777 -> real=1882 cost=340324382 selected_count=2
+[select_diverse_candidates] picked index=4 dmin=174 -> real=1839 cost=329830534 selected_count=3
+[select_diverse_candidates] picked index=6 dmin=134 -> real=1845 cost=331565966 selected_count=4
+[select_diverse_candidates] picked index=5 dmin=107 -> real=1843 cost=330548950 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=83 -> real=1833 cost=327917182 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=44 -> real=1837 cost=328087586 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=40 -> real=1838 cost=326365574 selected_count=8
+[select_diverse_candidates] picked index=1 dmin=40 -> real=1841 cost=331754546 selected_count=9
+[select_diverse_candidates] picked index=0 dmin=20 -> real=1838 cost=326451670 selected_count=10
+Min dist: 27 Avg dist: 615.75 Threshold: 6
+Min dist: 1777 Avg dist: 1805.6829268292684 Threshold: 6
+Min dist: 19 Avg dist: 618.4047619047619 Threshold: 12
+Min dist: 30 Avg dist: 609.7209302325581 Threshold: 12
+Min dist: 30 Avg dist: 610.5454545454545 Threshold: 12
+Min dist: 17 Avg dist: 590.1555555555556 Threshold: 6
+Hijos insertados:  6
+Iter 8: Mejor = 327638158.0000
+Real index: 1833
+[1783, 1785, 1790, 1791, 1791, 1792, 1792, 1792, 1794, 1795]
+[1833, 1832, 1830, 1830, 1829, 1829, 1829, 1827, 1827, 1826]
+
+--- Iteración 9 ---
+PR parent dist: 1810 child-A: 21 child-B: 1789
+PR parent dist: 1847 child-A: 25 child-B: 1822
+PR parent dist: 1803 child-A: 23 child-B: 1780
+PR parent dist: 162 child-A: 22 child-B: 140
+PR parent dist: 160 child-A: 19 child-B: 141
+PR parent dist: 1822 child-A: 24 child-B: 1798
+PR parent dist: 172 child-A: 12 child-B: 160
+PR parent dist: 1831 child-A: 15 child-B: 1816
+PR parent dist: 123 child-A: 25 child-B: 98
+PR parent dist: 1782 child-A: 14 child-B: 1768
+PR parent dist: 1817 child-A: 29 child-B: 1788
+PR parent dist: 1762 child-A: 22 child-B: 1740
+PR parent dist: 1807 child-A: 20 child-B: 1787
+PR parent dist: 1800 child-A: 18 child-B: 1782
+PR parent dist: 1828 child-A: 20 child-B: 1808
+PR parent dist: 1791 child-A: 16 child-B: 1775
+PR parent dist: 1797 child-A: 26 child-B: 1771
+PR parent dist: 137 child-A: 12 child-B: 125
+PR parent dist: 71 child-A: 27 child-B: 44
+PR parent dist: 150 child-A: 28 child-B: 122
+Hijos útiles:  12
+[select_diverse_candidates] candidates=12 normalized=12 filtered=12 pool=12 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1830 cost=327222914
+  real=1831 cost=325953330
+  real=1833 cost=327082578
+  real=1835 cost=327063606
+  real=1835 cost=329376402
+  real=1837 cost=329081962
+  real=1839 cost=331446142
+  real=1842 cost=332030438
+[select_diverse_candidates] selected[0] -> real=1830 cost=327222914
+[select_diverse_candidates] picked index=10 dmin=1816 -> real=1883 cost=340395674 selected_count=2
+[select_diverse_candidates] picked index=8 dmin=1739 -> real=1870 cost=332571474 selected_count=3
+[select_diverse_candidates] picked index=6 dmin=199 -> real=1842 cost=332030438 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=125 -> real=1833 cost=327082578 selected_count=5
+[select_diverse_candidates] picked index=2 dmin=87 -> real=1835 cost=329376402 selected_count=6
+[select_diverse_candidates] picked index=1 dmin=72 -> real=1835 cost=327063606 selected_count=7
+[select_diverse_candidates] picked index=1 dmin=64 -> real=1837 cost=329081962 selected_count=8
+[select_diverse_candidates] picked index=1 dmin=57 -> real=1839 cost=331446142 selected_count=9
+[select_diverse_candidates] picked index=0 dmin=51 -> real=1831 cost=325953330 selected_count=10
+Min dist: 25 Avg dist: 507.525 Threshold: 12
+Min dist: 1790 Avg dist: 1825.1463414634147 Threshold: 6
+Min dist: 1739 Avg dist: 1805.3095238095239 Threshold: 12
+Min dist: 25 Avg dist: 546.8604651162791 Threshold: 12
+Min dist: 17 Avg dist: 544.7954545454545 Threshold: 12
+Min dist: 28 Avg dist: 501.9555555555556 Threshold: 9
+Min dist: 25 Avg dist: 496.8695652173913 Threshold: 12
+Min dist: 28 Avg dist: 495.9148936170213 Threshold: 12
+Min dist: 26 Avg dist: 509.4166666666667 Threshold: 12
+Hijos insertados:  9
+Iter 9: Mejor = 327222914.0000
+Real index: 1830
+[1765, 1778, 1781, 1786, 1786, 1786, 1788, 1788, 1789, 1791]
+[1830, 1829, 1829, 1828, 1828, 1828, 1827, 1827, 1827, 1826]
+
+--- Iteración 10 ---
+PR parent dist: 26 child-A: 23 child-B: 3
+PR parent dist: 1786 child-A: 17 child-B: 1769
+PR parent dist: 1824 child-A: 22 child-B: 1802
+PR parent dist: 1805 child-A: 17 child-B: 1788
+PR parent dist: 1794 child-A: 27 child-B: 1767
+PR parent dist: 64 child-A: 21 child-B: 43
+PR parent dist: 1843 child-A: 11 child-B: 1832
+PR parent dist: 1818 child-A: 17 child-B: 1801
+PR parent dist: 1787 child-A: 24 child-B: 1763
+PR parent dist: 1752 child-A: 12 child-B: 1740
+PR parent dist: 1833 child-A: 22 child-B: 1811
+PR parent dist: 1819 child-A: 20 child-B: 1799
+PR parent dist: 1821 child-A: 13 child-B: 1808
+PR parent dist: 79 child-A: 17 child-B: 62
+PR parent dist: 1803 child-A: 11 child-B: 1792
+PR parent dist: 1782 child-A: 21 child-B: 1761
+PR parent dist: 125 child-A: 22 child-B: 103
+PR parent dist: 1814 child-A: 22 child-B: 1792
+PR parent dist: 1794 child-A: 13 child-B: 1781
+PR parent dist: 1785 child-A: 15 child-B: 1770
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1825 cost=324483810
+  real=1828 cost=326487870
+  real=1829 cost=326805786
+  real=1830 cost=326974386
+  real=1831 cost=325887814
+  real=1831 cost=326850546
+  real=1883 cost=339900578
+[select_diverse_candidates] selected[0] -> real=1825 cost=324483810
+[select_diverse_candidates] picked index=5 dmin=1791 -> real=1883 cost=339900578 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=163 -> real=1828 cost=326487870 selected_count=3
+[select_diverse_candidates] picked index=0 dmin=73 -> real=1829 cost=326805786 selected_count=4
+[select_diverse_candidates] picked index=2 dmin=69 -> real=1831 cost=326850546 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=46 -> real=1831 cost=325887814 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=38 -> real=1830 cost=326974386 selected_count=7
+Min dist: 1774 Avg dist: 1799.35 Threshold: 12
+Min dist: 29 Avg dist: 385.609756097561 Threshold: 12
+Min dist: 22 Avg dist: 365.85714285714283 Threshold: 6
+Min dist: 23 Avg dist: 356.5348837209302 Threshold: 6
+Min dist: 17 Avg dist: 356.84090909090907 Threshold: 12
+Hijos insertados:  5
+Iter 10: Mejor = 326487870.0000
+Real index: 1828
+[1783, 1783, 1785, 1786, 1786, 1787, 1788, 1788, 1789, 1790]
+[1828, 1828, 1828, 1827, 1827, 1825, 1825, 1823, 1823, 1823]
+
+--- Iteración 11 ---
+PR parent dist: 1853 child-A: 16 child-B: 1837
+PR parent dist: 69 child-A: 19 child-B: 50
+PR parent dist: 1799 child-A: 11 child-B: 1788
+PR parent dist: 1824 child-A: 10 child-B: 1814
+PR parent dist: 1807 child-A: 18 child-B: 1789
+PR parent dist: 83 child-A: 20 child-B: 63
+PR parent dist: 1799 child-A: 12 child-B: 1787
+PR parent dist: 25 child-A: 25 child-B: 0
+PR parent dist: 1822 child-A: 11 child-B: 1811
+PR parent dist: 151 child-A: 20 child-B: 131
+PR parent dist: 1796 child-A: 26 child-B: 1770
+PR parent dist: 1781 child-A: 10 child-B: 1771
+PR parent dist: 1814 child-A: 10 child-B: 1804
+PR parent dist: 1779 child-A: 16 child-B: 1763
+PR parent dist: 1787 child-A: 12 child-B: 1775
+PR parent dist: 1828 child-A: 12 child-B: 1816
+PR parent dist: 1856 child-A: 18 child-B: 1838
+PR parent dist: 1800 child-A: 15 child-B: 1785
+PR parent dist: 1863 child-A: 15 child-B: 1848
+PR parent dist: 1818 child-A: 25 child-B: 1793
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1825 cost=325080798
+  real=1828 cost=326571750
+  real=1832 cost=326404554
+  real=1833 cost=327172106
+  real=1833 cost=327733762
+  real=1833 cost=327875706
+  real=1835 cost=328177842
+  real=1886 cost=341310658
+[select_diverse_candidates] selected[0] -> real=1825 cost=325080798
+[select_diverse_candidates] picked index=6 dmin=1777 -> real=1886 cost=341310658 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=141 -> real=1828 cost=326571750 selected_count=3
+[select_diverse_candidates] picked index=4 dmin=113 -> real=1835 cost=328177842 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=62 -> real=1833 cost=327172106 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=53 -> real=1833 cost=327733762 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=41 -> real=1832 cost=326404554 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=32 -> real=1833 cost=327875706 selected_count=8
+Min dist: 27 Avg dist: 262.4 Threshold: 6
+Min dist: 1771 Avg dist: 1797.878048780488 Threshold: 6
+Min dist: 13 Avg dist: 294.5 Threshold: 12
+Min dist: 14 Avg dist: 260.2325581395349 Threshold: 9
+Min dist: 20 Avg dist: 252.0 Threshold: 12
+Min dist: 26 Avg dist: 279.7111111111111 Threshold: 12
+Min dist: 15 Avg dist: 266.6304347826087 Threshold: 12
+Hijos insertados:  7
+Iter 11: Mejor = 325080798.0000
+Real index: 1825
+[1777, 1780, 1780, 1780, 1781, 1783, 1783, 1783, 1783, 1783]
+[1825, 1825, 1824, 1822, 1822, 1821, 1821, 1820, 1819, 1817]
+
+--- Iteración 12 ---
+PR parent dist: 145 child-A: 26 child-B: 119
+PR parent dist: 41 child-A: 14 child-B: 27
+PR parent dist: 1772 child-A: 24 child-B: 1748
+PR parent dist: 123 child-A: 23 child-B: 100
+PR parent dist: 1796 child-A: 26 child-B: 1770
+PR parent dist: 44 child-A: 28 child-B: 16
+PR parent dist: 1791 child-A: 15 child-B: 1776
+PR parent dist: 150 child-A: 20 child-B: 130
+PR parent dist: 130 child-A: 20 child-B: 110
+PR parent dist: 1792 child-A: 26 child-B: 1766
+PR parent dist: 1809 child-A: 18 child-B: 1791
+PR parent dist: 55 child-A: 16 child-B: 39
+PR parent dist: 1823 child-A: 27 child-B: 1796
+PR parent dist: 1818 child-A: 19 child-B: 1799
+PR parent dist: 1826 child-A: 30 child-B: 1796
+PR parent dist: 139 child-A: 14 child-B: 125
+PR parent dist: 1783 child-A: 10 child-B: 1773
+PR parent dist: 1825 child-A: 27 child-B: 1798
+PR parent dist: 46 child-A: 13 child-B: 33
+PR parent dist: 1785 child-A: 26 child-B: 1759
+Hijos útiles:  10
+[select_diverse_candidates] candidates=10 normalized=10 filtered=10 pool=10 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1824 cost=323713682
+  real=1827 cost=327403218
+  real=1828 cost=324590858
+  real=1828 cost=325690914
+  real=1829 cost=326611102
+  real=1829 cost=327008526
+  real=1830 cost=326128150
+  real=1830 cost=326366278
+[select_diverse_candidates] selected[0] -> real=1824 cost=323713682
+[select_diverse_candidates] picked index=2 dmin=184 -> real=1828 cost=325690914 selected_count=2
+[select_diverse_candidates] picked index=1 dmin=96 -> real=1828 cost=324590858 selected_count=3
+[select_diverse_candidates] picked index=3 dmin=93 -> real=1830 cost=326128150 selected_count=4
+[select_diverse_candidates] picked index=2 dmin=77 -> real=1829 cost=327008526 selected_count=5
+[select_diverse_candidates] picked index=4 dmin=59 -> real=1833 cost=326066070 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=50 -> real=1827 cost=327403218 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=49 -> real=1829 cost=326611102 selected_count=8
+[select_diverse_candidates] picked index=0 dmin=38 -> real=1830 cost=326366278 selected_count=9
+[select_diverse_candidates] picked index=0 dmin=30 -> real=1831 cost=325686762 selected_count=10
+Min dist: 13 Avg dist: 138.95 Threshold: 12
+Min dist: 29 Avg dist: 150.09756097560975 Threshold: 6
+Min dist: 24 Avg dist: 122.42857142857143 Threshold: 12
+Min dist: 29 Avg dist: 149.27906976744185 Threshold: 12
+Min dist: 26 Avg dist: 141.0681818181818 Threshold: 12
+Min dist: 19 Avg dist: 119.08888888888889 Threshold: 12
+Min dist: 24 Avg dist: 116.1086956521739 Threshold: 12
+Min dist: 20 Avg dist: 135.93617021276594 Threshold: 12
+Min dist: 14 Avg dist: 116.27083333333333 Threshold: 12
+Min dist: 14 Avg dist: 116.36734693877551 Threshold: 12
+Hijos insertados:  10
+Iter 12: Mejor = 323713682.0000
+Real index: 1824
+[1774, 1776, 1776, 1777, 1777, 1777, 1778, 1778, 1778, 1780]
+[1824, 1822, 1821, 1820, 1819, 1819, 1818, 1818, 1816, 1816]
+
+--- Iteración 13 ---
+PR parent dist: 1809 child-A: 24 child-B: 1785
+PR parent dist: 1745 child-A: 20 child-B: 1725
+PR parent dist: 1777 child-A: 11 child-B: 1766
+PR parent dist: 1841 child-A: 22 child-B: 1819
+PR parent dist: 49 child-A: 14 child-B: 35
+PR parent dist: 1784 child-A: 29 child-B: 1755
+PR parent dist: 1823 child-A: 24 child-B: 1799
+PR parent dist: 1815 child-A: 27 child-B: 1788
+PR parent dist: 1796 child-A: 13 child-B: 1783
+PR parent dist: 172 child-A: 28 child-B: 144
+PR parent dist: 1798 child-A: 15 child-B: 1783
+PR parent dist: 1825 child-A: 18 child-B: 1807
+PR parent dist: 1801 child-A: 18 child-B: 1783
+PR parent dist: 1828 child-A: 17 child-B: 1811
+PR parent dist: 74 child-A: 23 child-B: 51
+PR parent dist: 1791 child-A: 16 child-B: 1775
+PR parent dist: 181 child-A: 16 child-B: 165
+PR parent dist: 1799 child-A: 29 child-B: 1770
+PR parent dist: 131 child-A: 15 child-B: 116
+PR parent dist: 1856 child-A: 30 child-B: 1826
+Hijos útiles:  6
+[select_diverse_candidates] candidates=6 normalized=6 filtered=6 pool=6 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1820 cost=324263682
+  real=1825 cost=324380194
+  real=1825 cost=324852262
+  real=1827 cost=325038834
+  real=1829 cost=326141970
+  real=1886 cost=343859586
+[select_diverse_candidates] selected[0] -> real=1820 cost=324263682
+[select_diverse_candidates] picked index=4 dmin=1773 -> real=1886 cost=343859586 selected_count=2
+[select_diverse_candidates] picked index=2 dmin=135 -> real=1827 cost=325038834 selected_count=3
+[select_diverse_candidates] picked index=0 dmin=82 -> real=1825 cost=324380194 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=78 -> real=1825 cost=324852262 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=44 -> real=1829 cost=326141970 selected_count=6
+Min dist: 23 Avg dist: 110.675 Threshold: 12
+Min dist: 1773 Avg dist: 1787.6097560975609 Threshold: 6
+Min dist: 29 Avg dist: 155.1904761904762 Threshold: 12
+Min dist: 19 Avg dist: 173.1860465116279 Threshold: 12
+Min dist: 21 Avg dist: 147.97727272727272 Threshold: 12
+Min dist: 20 Avg dist: 151.95555555555555 Threshold: 12
+Hijos insertados:  6
+Iter 13: Mejor = 324263682.0000
+Real index: 1820
+[1763, 1778, 1781, 1782, 1784, 1784, 1785, 1786, 1787, 1787]
+[1820, 1819, 1819, 1818, 1818, 1817, 1817, 1817, 1816, 1815]
+
+--- Iteración 14 ---
+PR parent dist: 1784 child-A: 17 child-B: 1767
+PR parent dist: 1799 child-A: 24 child-B: 1775
+PR parent dist: 166 child-A: 29 child-B: 137
+PR parent dist: 1800 child-A: 17 child-B: 1783
+PR parent dist: 78 child-A: 15 child-B: 63
+PR parent dist: 1784 child-A: 28 child-B: 1756
+PR parent dist: 84 child-A: 24 child-B: 60
+PR parent dist: 1756 child-A: 10 child-B: 1746
+PR parent dist: 1769 child-A: 15 child-B: 1754
+PR parent dist: 1785 child-A: 24 child-B: 1761
+PR parent dist: 1790 child-A: 19 child-B: 1771
+PR parent dist: 1805 child-A: 23 child-B: 1782
+PR parent dist: 1796 child-A: 13 child-B: 1783
+PR parent dist: 1802 child-A: 30 child-B: 1772
+PR parent dist: 151 child-A: 29 child-B: 122
+PR parent dist: 168 child-A: 22 child-B: 146
+PR parent dist: 71 child-A: 28 child-B: 43
+PR parent dist: 1790 child-A: 28 child-B: 1762
+PR parent dist: 173 child-A: 15 child-B: 158
+PR parent dist: 1798 child-A: 18 child-B: 1780
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1822 cost=324573542
+  real=1823 cost=323326278
+  real=1824 cost=324190982
+  real=1824 cost=324687698
+  real=1824 cost=324930538
+  real=1825 cost=325072718
+  real=1825 cost=326341914
+  real=1827 cost=324193022
+[select_diverse_candidates] selected[0] -> real=1822 cost=324573542
+[select_diverse_candidates] picked index=4 dmin=171 -> real=1825 cost=325072718 selected_count=2
+[select_diverse_candidates] picked index=5 dmin=125 -> real=1827 cost=324193022 selected_count=3
+[select_diverse_candidates] picked index=4 dmin=114 -> real=1825 cost=326341914 selected_count=4
+[select_diverse_candidates] picked index=2 dmin=79 -> real=1824 cost=324687698 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=48 -> real=1823 cost=323326278 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=43 -> real=1824 cost=324190982 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=42 -> real=1824 cost=324930538 selected_count=8
+Min dist: 24 Avg dist: 124.95 Threshold: 12
+Min dist: 22 Avg dist: 123.78048780487805 Threshold: 12
+Min dist: 18 Avg dist: 118.92857142857143 Threshold: 12
+Min dist: 20 Avg dist: 112.51162790697674 Threshold: 12
+Min dist: 21 Avg dist: 137.13636363636363 Threshold: 12
+Min dist: 27 Avg dist: 120.4 Threshold: 12
+Min dist: 29 Avg dist: 125.82608695652173 Threshold: 12
+Min dist: 18 Avg dist: 119.1063829787234 Threshold: 12
+Hijos insertados:  8
+Sin mejora.
+
+--- Iteración 15 ---
+PR parent dist: 153 child-A: 10 child-B: 143
+PR parent dist: 24 child-A: 23 child-B: 1
+PR parent dist: 1776 child-A: 10 child-B: 1766
+PR parent dist: 1760 child-A: 12 child-B: 1748
+PR parent dist: 1791 child-A: 28 child-B: 1763
+PR parent dist: 167 child-A: 17 child-B: 150
+PR parent dist: 1805 child-A: 30 child-B: 1775
+PR parent dist: 21 child-A: 12 child-B: 9
+PR parent dist: 1735 child-A: 21 child-B: 1714
+PR parent dist: 1844 child-A: 11 child-B: 1833
+PR parent dist: 1787 child-A: 15 child-B: 1772
+PR parent dist: 105 child-A: 25 child-B: 80
+PR parent dist: 1831 child-A: 24 child-B: 1807
+PR parent dist: 1801 child-A: 27 child-B: 1774
+PR parent dist: 1788 child-A: 25 child-B: 1763
+PR parent dist: 1803 child-A: 18 child-B: 1785
+PR parent dist: 69 child-A: 27 child-B: 42
+PR parent dist: 1800 child-A: 26 child-B: 1774
+PR parent dist: 1786 child-A: 30 child-B: 1756
+PR parent dist: 1845 child-A: 24 child-B: 1821
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1816 cost=323343606
+  real=1820 cost=324191202
+  real=1821 cost=322888902
+  real=1821 cost=325208566
+  real=1823 cost=323461766
+  real=1824 cost=323105490
+  real=1824 cost=324526990
+[select_diverse_candidates] selected[0] -> real=1816 cost=323343606
+[select_diverse_candidates] picked index=4 dmin=216 -> real=1824 cost=323105490 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=128 -> real=1820 cost=324191202 selected_count=3
+[select_diverse_candidates] picked index=1 dmin=97 -> real=1821 cost=325208566 selected_count=4
+[select_diverse_candidates] picked index=2 dmin=52 -> real=1824 cost=324526990 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=40 -> real=1823 cost=323461766 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=25 -> real=1821 cost=322888902 selected_count=7
+Min dist: 13 Avg dist: 123.15 Threshold: 12
+Min dist: 27 Avg dist: 145.26829268292684 Threshold: 6
+Min dist: 21 Avg dist: 117.80952380952381 Threshold: 12
+Min dist: 13 Avg dist: 118.86046511627907 Threshold: 9
+Min dist: 27 Avg dist: 108.8409090909091 Threshold: 12
+Hijos insertados:  5
+Iter 15: Mejor = 323343606.0000
+Real index: 1816
+[1774, 1774, 1776, 1777, 1778, 1778, 1779, 1779, 1780, 1781]
+[1816, 1816, 1816, 1816, 1816, 1815, 1815, 1815, 1814, 1814]
+
+--- Iteración 16 ---
+PR parent dist: 1735 child-A: 11 child-B: 1724
+PR parent dist: 158 child-A: 25 child-B: 133
+PR parent dist: 1821 child-A: 27 child-B: 1794
+PR parent dist: 1755 child-A: 10 child-B: 1745
+PR parent dist: 1783 child-A: 30 child-B: 1753
+PR parent dist: 171 child-A: 11 child-B: 160
+PR parent dist: 1787 child-A: 28 child-B: 1759
+PR parent dist: 1817 child-A: 29 child-B: 1788
+PR parent dist: 1758 child-A: 15 child-B: 1743
+PR parent dist: 1831 child-A: 24 child-B: 1807
+PR parent dist: 1808 child-A: 27 child-B: 1781
+PR parent dist: 1800 child-A: 19 child-B: 1781
+PR parent dist: 1796 child-A: 17 child-B: 1779
+PR parent dist: 1763 child-A: 22 child-B: 1741
+PR parent dist: 1795 child-A: 13 child-B: 1782
+PR parent dist: 151 child-A: 20 child-B: 131
+PR parent dist: 1825 child-A: 20 child-B: 1805
+PR parent dist: 1789 child-A: 17 child-B: 1772
+PR parent dist: 1787 child-A: 16 child-B: 1771
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1816 cost=322229830
+  real=1816 cost=322727050
+  real=1821 cost=323013014
+  real=1821 cost=323153178
+  real=1825 cost=325305222
+  real=1881 cost=339471050
+  real=1885 cost=341688370
+[select_diverse_candidates] selected[0] -> real=1816 cost=322229830
+[select_diverse_candidates] picked index=4 dmin=1811 -> real=1881 cost=339471050 selected_count=2
+[select_diverse_candidates] picked index=4 dmin=1782 -> real=1885 cost=341688370 selected_count=3
+[select_diverse_candidates] picked index=2 dmin=191 -> real=1821 cost=323153178 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=79 -> real=1821 cost=323013014 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=72 -> real=1825 cost=325305222 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=61 -> real=1816 cost=322727050 selected_count=7
+Min dist: 14 Avg dist: 112.7 Threshold: 12
+Min dist: 1775 Avg dist: 1810.0731707317073 Threshold: 9
+Min dist: 1768 Avg dist: 1786.8809523809523 Threshold: 12
+Min dist: 28 Avg dist: 205.72093023255815 Threshold: 12
+Min dist: 13 Avg dist: 193.5 Threshold: 12
+Min dist: 16 Avg dist: 196.35555555555555 Threshold: 12
+Min dist: 14 Avg dist: 192.8695652173913 Threshold: 12
+Hijos insertados:  7
+Iter 16: Mejor = 322229830.0000
+Real index: 1816
+[1755, 1772, 1776, 1777, 1777, 1778, 1778, 1780, 1780, 1780]
+[1816, 1816, 1815, 1815, 1815, 1813, 1813, 1812, 1812, 1811]
+
+--- Iteración 17 ---
+PR parent dist: 1823 child-A: 27 child-B: 1796
+PR parent dist: 1790 child-A: 12 child-B: 1778
+PR parent dist: 97 child-A: 14 child-B: 83
+PR parent dist: 1814 child-A: 18 child-B: 1796
+PR parent dist: 1826 child-A: 20 child-B: 1806
+PR parent dist: 68 child-A: 11 child-B: 57
+PR parent dist: 21 child-A: 21 child-B: 0
+PR parent dist: 1796 child-A: 24 child-B: 1772
+PR parent dist: 1821 child-A: 16 child-B: 1805
+PR parent dist: 1786 child-A: 28 child-B: 1758
+PR parent dist: 1809 child-A: 28 child-B: 1781
+PR parent dist: 171 child-A: 10 child-B: 161
+PR parent dist: 1760 child-A: 30 child-B: 1730
+PR parent dist: 1723 child-A: 16 child-B: 1707
+PR parent dist: 103 child-A: 24 child-B: 79
+PR parent dist: 1834 child-A: 22 child-B: 1812
+PR parent dist: 1818 child-A: 12 child-B: 1806
+PR parent dist: 1793 child-A: 23 child-B: 1770
+PR parent dist: 1841 child-A: 12 child-B: 1829
+PR parent dist: 1746 child-A: 16 child-B: 1730
+Hijos útiles:  10
+[select_diverse_candidates] candidates=10 normalized=10 filtered=10 pool=10 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1811 cost=321595266
+  real=1815 cost=322027258
+  real=1816 cost=322523850
+  real=1817 cost=322487290
+  real=1818 cost=324196974
+  real=1819 cost=322744634
+  real=1820 cost=322197642
+  real=1822 cost=324726470
+[select_diverse_candidates] selected[0] -> real=1811 cost=321595266
+[select_diverse_candidates] picked index=7 dmin=1811 -> real=1881 cost=339805946 selected_count=2
+[select_diverse_candidates] picked index=7 dmin=1787 -> real=1884 cost=333079994 selected_count=3
+[select_diverse_candidates] picked index=4 dmin=235 -> real=1819 cost=322744634 selected_count=4
+[select_diverse_candidates] picked index=5 dmin=132 -> real=1822 cost=324726470 selected_count=5
+[select_diverse_candidates] picked index=4 dmin=109 -> real=1820 cost=322197642 selected_count=6
+[select_diverse_candidates] picked index=1 dmin=55 -> real=1816 cost=322523850 selected_count=7
+[select_diverse_candidates] picked index=1 dmin=38 -> real=1817 cost=322487290 selected_count=8
+[select_diverse_candidates] picked index=1 dmin=34 -> real=1818 cost=324196974 selected_count=9
+[select_diverse_candidates] picked index=0 dmin=24 -> real=1815 cost=322027258 selected_count=10
+Min dist: 18 Avg dist: 129.175 Threshold: 12
+Min dist: 1775 Avg dist: 1809.560975609756 Threshold: 6
+Min dist: 1749 Avg dist: 1785.857142857143 Threshold: 12
+Min dist: 26 Avg dist: 232.65116279069767 Threshold: 12
+Min dist: 30 Avg dist: 221.77272727272728 Threshold: 12
+Min dist: 30 Avg dist: 210.73333333333332 Threshold: 12
+Min dist: 16 Avg dist: 198.41304347826087 Threshold: 12
+Min dist: 12 Avg dist: 208.5744680851064 Threshold: 9
+Hijos insertados:  8
+Iter 17: Mejor = 321595266.0000
+Real index: 1811
+[1759, 1770, 1773, 1774, 1776, 1777, 1778, 1779, 1779, 1780]
+[1811, 1811, 1810, 1810, 1810, 1809, 1809, 1807, 1807, 1807]
+
+--- Iteración 18 ---
+PR parent dist: 1775 child-A: 29 child-B: 1746
+PR parent dist: 1785 child-A: 29 child-B: 1756
+PR parent dist: 1791 child-A: 24 child-B: 1767
+PR parent dist: 1778 child-A: 21 child-B: 1757
+PR parent dist: 1805 child-A: 10 child-B: 1795
+PR parent dist: 183 child-A: 27 child-B: 156
+PR parent dist: 1802 child-A: 19 child-B: 1783
+PR parent dist: 1818 child-A: 28 child-B: 1790
+PR parent dist: 1782 child-A: 21 child-B: 1761
+PR parent dist: 1773 child-A: 15 child-B: 1758
+PR parent dist: 1809 child-A: 16 child-B: 1793
+PR parent dist: 38 child-A: 10 child-B: 28
+PR parent dist: 1805 child-A: 23 child-B: 1782
+PR parent dist: 1831 child-A: 13 child-B: 1818
+PR parent dist: 1782 child-A: 14 child-B: 1768
+PR parent dist: 169 child-A: 14 child-B: 155
+PR parent dist: 1770 child-A: 29 child-B: 1741
+PR parent dist: 1792 child-A: 27 child-B: 1765
+PR parent dist: 1775 child-A: 11 child-B: 1764
+PR parent dist: 1784 child-A: 21 child-B: 1763
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1814 cost=322205322
+  real=1815 cost=322034574
+  real=1815 cost=323502514
+  real=1817 cost=321206750
+  real=1817 cost=323417894
+  real=1819 cost=323917806
+  real=1870 cost=333073482
+  real=1873 cost=334457778
+[select_diverse_candidates] selected[0] -> real=1814 cost=322205322
+[select_diverse_candidates] picked index=5 dmin=1736 -> real=1870 cost=333073482 selected_count=2
+[select_diverse_candidates] picked index=2 dmin=204 -> real=1817 cost=321206750 selected_count=3
+[select_diverse_candidates] picked index=1 dmin=146 -> real=1815 cost=323502514 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=85 -> real=1817 cost=323417894 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=59 -> real=1819 cost=323917806 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=44 -> real=1815 cost=322034574 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=35 -> real=1873 cost=334457778 selected_count=8
+Min dist: 30 Avg dist: 121.75 Threshold: 12
+Min dist: 1710 Avg dist: 1769.560975609756 Threshold: 12
+Min dist: 23 Avg dist: 194.38095238095238 Threshold: 12
+Min dist: 35 Avg dist: 189.90697674418604 Threshold: 12
+Min dist: 30 Avg dist: 193.95454545454547 Threshold: 12
+Min dist: 23 Avg dist: 167.42222222222222 Threshold: 12
+Min dist: 14 Avg dist: 168.7826086956522 Threshold: 12
+Min dist: 35 Avg dist: 1728.1063829787233 Threshold: 12
+Hijos insertados:  8
+Sin mejora.
+
+--- Iteración 19 ---
+PR parent dist: 37 child-A: 14 child-B: 23
+PR parent dist: 1804 child-A: 20 child-B: 1784
+PR parent dist: 1824 child-A: 10 child-B: 1814
+PR parent dist: 1784 child-A: 18 child-B: 1766
+PR parent dist: 1805 child-A: 19 child-B: 1786
+PR parent dist: 1782 child-A: 15 child-B: 1767
+PR parent dist: 1776 child-A: 25 child-B: 1751
+PR parent dist: 44 child-A: 22 child-B: 22
+PR parent dist: 1780 child-A: 11 child-B: 1769
+PR parent dist: 216 child-A: 15 child-B: 201
+PR parent dist: 49 child-A: 26 child-B: 23
+PR parent dist: 1791 child-A: 26 child-B: 1765
+PR parent dist: 1845 child-A: 26 child-B: 1819
+PR parent dist: 151 child-A: 24 child-B: 127
+PR parent dist: 1796 child-A: 22 child-B: 1774
+PR parent dist: 159 child-A: 15 child-B: 144
+PR parent dist: 213 child-A: 26 child-B: 187
+PR parent dist: 1762 child-A: 17 child-B: 1745
+PR parent dist: 1811 child-A: 24 child-B: 1787
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1811 cost=320814530
+  real=1812 cost=322903674
+  real=1813 cost=321200626
+  real=1813 cost=321802994
+  real=1814 cost=320708654
+  real=1815 cost=322012426
+  real=1815 cost=322823570
+[select_diverse_candidates] selected[0] -> real=1811 cost=320814530
+[select_diverse_candidates] picked index=5 dmin=233 -> real=1815 cost=322823570 selected_count=2
+[select_diverse_candidates] picked index=3 dmin=79 -> real=1814 cost=320708654 selected_count=3
+[select_diverse_candidates] picked index=3 dmin=69 -> real=1815 cost=322012426 selected_count=4
+[select_diverse_candidates] picked index=2 dmin=54 -> real=1813 cost=321802994 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=37 -> real=1812 cost=322903674 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=36 -> real=1813 cost=321200626 selected_count=7
+Min dist: 27 Avg dist: 148.225 Threshold: 12
+Min dist: 24 Avg dist: 170.6341463414634 Threshold: 9
+Min dist: 20 Avg dist: 133.28571428571428 Threshold: 12
+Min dist: 16 Avg dist: 134.2093023255814 Threshold: 12
+Min dist: 27 Avg dist: 128.0681818181818 Threshold: 12
+Min dist: 13 Avg dist: 156.55555555555554 Threshold: 12
+Min dist: 22 Avg dist: 130.32608695652175 Threshold: 12
+Hijos insertados:  7
+Iter 19: Mejor = 320814530.0000
+Real index: 1811
+[1760, 1762, 1767, 1771, 1772, 1774, 1777, 1777, 1777, 1778]
+[1811, 1811, 1809, 1808, 1808, 1808, 1806, 1806, 1806, 1805]
+
+--- Iteración 20 ---
+PR parent dist: 1805 child-A: 21 child-B: 1784
+PR parent dist: 59 child-A: 20 child-B: 39
+PR parent dist: 1733 child-A: 15 child-B: 1718
+PR parent dist: 1794 child-A: 19 child-B: 1775
+PR parent dist: 185 child-A: 16 child-B: 169
+PR parent dist: 1764 child-A: 17 child-B: 1747
+PR parent dist: 1772 child-A: 17 child-B: 1755
+PR parent dist: 1814 child-A: 30 child-B: 1784
+PR parent dist: 79 child-A: 23 child-B: 56
+PR parent dist: 22 child-A: 22 child-B: 0
+PR parent dist: 1834 child-A: 21 child-B: 1813
+PR parent dist: 1771 child-A: 14 child-B: 1757
+PR parent dist: 22 child-A: 16 child-B: 6
+PR parent dist: 68 child-A: 15 child-B: 53
+PR parent dist: 1789 child-A: 20 child-B: 1769
+PR parent dist: 169 child-A: 20 child-B: 149
+PR parent dist: 193 child-A: 15 child-B: 178
+PR parent dist: 1783 child-A: 17 child-B: 1766
+PR parent dist: 1786 child-A: 12 child-B: 1774
+PR parent dist: 84 child-A: 19 child-B: 65
+Hijos útiles:  4
+[select_diverse_candidates] candidates=4 normalized=4 filtered=4 pool=4 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1809 cost=319692578
+  real=1810 cost=321868742
+  real=1812 cost=321085042
+  real=1814 cost=321326330
+[select_diverse_candidates] selected[0] -> real=1809 cost=319692578
+[select_diverse_candidates] picked index=1 dmin=182 -> real=1812 cost=321085042 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=55 -> real=1810 cost=321868742 selected_count=3
+[select_diverse_candidates] picked index=0 dmin=43 -> real=1814 cost=321326330 selected_count=4
+Min dist: 23 Avg dist: 140.425 Threshold: 12
+Min dist: 19 Avg dist: 145.14634146341464 Threshold: 6
+Min dist: 20 Avg dist: 148.07142857142858 Threshold: 12
+Min dist: 22 Avg dist: 125.09302325581395 Threshold: 6
+Hijos insertados:  4
+Iter 20: Mejor = 319692578.0000
+Real index: 1809
+[1761, 1763, 1763, 1764, 1764, 1766, 1767, 1770, 1771, 1772]
+[1809, 1808, 1804, 1804, 1803, 1803, 1803, 1802, 1802, 1801]
+
+--- Iteración 21 ---
+PR parent dist: 1768 child-A: 24 child-B: 1744
+PR parent dist: 1779 child-A: 20 child-B: 1759
+PR parent dist: 151 child-A: 18 child-B: 133
+PR parent dist: 1795 child-A: 10 child-B: 1785
+PR parent dist: 220 child-A: 12 child-B: 208
+PR parent dist: 229 child-A: 13 child-B: 216
+PR parent dist: 1798 child-A: 20 child-B: 1778
+PR parent dist: 1841 child-A: 21 child-B: 1820
+PR parent dist: 1780 child-A: 22 child-B: 1758
+PR parent dist: 1771 child-A: 21 child-B: 1750
+PR parent dist: 1773 child-A: 17 child-B: 1756
+PR parent dist: 194 child-A: 21 child-B: 173
+PR parent dist: 178 child-A: 25 child-B: 153
+PR parent dist: 1825 child-A: 15 child-B: 1810
+PR parent dist: 78 child-A: 15 child-B: 63
+PR parent dist: 1817 child-A: 25 child-B: 1792
+PR parent dist: 1804 child-A: 28 child-B: 1776
+PR parent dist: 1790 child-A: 12 child-B: 1778
+PR parent dist: 80 child-A: 17 child-B: 63
+PR parent dist: 1780 child-A: 11 child-B: 1769
+Hijos útiles:  13
+[select_diverse_candidates] candidates=13 normalized=13 filtered=13 pool=13 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1807 cost=320139078
+  real=1808 cost=320189630
+  real=1808 cost=320878270
+  real=1808 cost=320893230
+  real=1809 cost=320808838
+  real=1809 cost=321049718
+  real=1810 cost=320629610
+  real=1810 cost=320785214
+[select_diverse_candidates] selected[0] -> real=1807 cost=320139078
+[select_diverse_candidates] picked index=2 dmin=203 -> real=1808 cost=320893230 selected_count=2
+[select_diverse_candidates] picked index=2 dmin=125 -> real=1809 cost=320808838 selected_count=3
+[select_diverse_candidates] picked index=4 dmin=114 -> real=1810 cost=320785214 selected_count=4
+[select_diverse_candidates] picked index=3 dmin=100 -> real=1810 cost=320629610 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=86 -> real=1808 cost=320878270 selected_count=6
+[select_diverse_candidates] picked index=5 dmin=74 -> real=1813 cost=320850410 selected_count=7
+[select_diverse_candidates] picked index=3 dmin=61 -> real=1812 cost=321159378 selected_count=8
+[select_diverse_candidates] picked index=1 dmin=59 -> real=1809 cost=321049718 selected_count=9
+[select_diverse_candidates] picked index=2 dmin=50 -> real=1812 cost=321715318 selected_count=10
+Min dist: 18 Avg dist: 140.25 Threshold: 12
+Min dist: 26 Avg dist: 167.1951219512195 Threshold: 6
+Min dist: 15 Avg dist: 134.02380952380952 Threshold: 6
+Min dist: 16 Avg dist: 150.72093023255815 Threshold: 9
+Min dist: 19 Avg dist: 166.6590909090909 Threshold: 12
+Min dist: 28 Avg dist: 160.6888888888889 Threshold: 12
+Min dist: 22 Avg dist: 154.67391304347825 Threshold: 6
+Min dist: 24 Avg dist: 129.53191489361703 Threshold: 12
+Min dist: 19 Avg dist: 136.70833333333334 Threshold: 12
+Min dist: 17 Avg dist: 130.48979591836735 Threshold: 9
+Hijos insertados:  10
+Iter 21: Mejor = 320139078.0000
+Real index: 1807
+[1759, 1767, 1774, 1774, 1775, 1776, 1776, 1776, 1777, 1778]
+[1807, 1806, 1805, 1805, 1804, 1804, 1803, 1802, 1802, 1801]
+
+--- Iteración 22 ---
+PR parent dist: 1767 child-A: 16 child-B: 1751
+PR parent dist: 1764 child-A: 29 child-B: 1735
+PR parent dist: 1819 child-A: 30 child-B: 1789
+PR parent dist: 158 child-A: 29 child-B: 129
+PR parent dist: 1769 child-A: 13 child-B: 1756
+PR parent dist: 1781 child-A: 15 child-B: 1766
+PR parent dist: 114 child-A: 14 child-B: 100
+PR parent dist: 1805 child-A: 19 child-B: 1786
+PR parent dist: 1779 child-A: 25 child-B: 1754
+PR parent dist: 1824 child-A: 20 child-B: 1804
+PR parent dist: 1768 child-A: 11 child-B: 1757
+PR parent dist: 1804 child-A: 29 child-B: 1775
+PR parent dist: 1787 child-A: 24 child-B: 1763
+PR parent dist: 170 child-A: 12 child-B: 158
+PR parent dist: 1791 child-A: 24 child-B: 1767
+PR parent dist: 76 child-A: 19 child-B: 57
+PR parent dist: 80 child-A: 16 child-B: 64
+PR parent dist: 1782 child-A: 27 child-B: 1755
+PR parent dist: 1856 child-A: 26 child-B: 1830
+PR parent dist: 1873 child-A: 25 child-B: 1848
+Hijos útiles:  8
+[select_diverse_candidates] candidates=8 normalized=8 filtered=8 pool=8 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1805 cost=318918870
+  real=1806 cost=318490218
+  real=1808 cost=319956722
+  real=1808 cost=321005130
+  real=1810 cost=321052878
+  real=1812 cost=321249662
+  real=1883 cost=333375254
+  real=1898 cost=340071902
+[select_diverse_candidates] selected[0] -> real=1805 cost=318918870
+[select_diverse_candidates] picked index=6 dmin=1769 -> real=1898 cost=340071902 selected_count=2
+[select_diverse_candidates] picked index=5 dmin=1737 -> real=1883 cost=333375254 selected_count=3
+[select_diverse_candidates] picked index=2 dmin=234 -> real=1808 cost=321005130 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=127 -> real=1806 cost=318490218 selected_count=5
+[select_diverse_candidates] picked index=1 dmin=98 -> real=1810 cost=321052878 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=88 -> real=1808 cost=319956722 selected_count=7
+[select_diverse_candidates] picked index=0 dmin=68 -> real=1812 cost=321249662 selected_count=8
+Min dist: 29 Avg dist: 156.675 Threshold: 12
+Min dist: 1769 Avg dist: 1804.780487804878 Threshold: 6
+Min dist: 1728 Avg dist: 1764.047619047619 Threshold: 12
+Min dist: 19 Avg dist: 217.88372093023256 Threshold: 12
+Min dist: 28 Avg dist: 232.29545454545453 Threshold: 12
+Min dist: 16 Avg dist: 227.95555555555555 Threshold: 6
+Min dist: 19 Avg dist: 203.34782608695653 Threshold: 12
+Hijos insertados:  7
+Iter 22: Mejor = 318918870.0000
+Real index: 1805
+[1760, 1762, 1763, 1765, 1765, 1766, 1766, 1768, 1768, 1773]
+[1805, 1804, 1804, 1803, 1802, 1802, 1802, 1800, 1799, 1799]
+
+--- Iteración 23 ---
+PR parent dist: 54 child-A: 10 child-B: 44
+PR parent dist: 1800 child-A: 21 child-B: 1779
+PR parent dist: 114 child-A: 16 child-B: 98
+PR parent dist: 81 child-A: 18 child-B: 63
+PR parent dist: 1817 child-A: 27 child-B: 1790
+PR parent dist: 1802 child-A: 17 child-B: 1785
+PR parent dist: 87 child-A: 16 child-B: 71
+PR parent dist: 67 child-A: 24 child-B: 43
+PR parent dist: 1773 child-A: 24 child-B: 1749
+PR parent dist: 1863 child-A: 29 child-B: 1834
+PR parent dist: 1823 child-A: 20 child-B: 1803
+PR parent dist: 1764 child-A: 24 child-B: 1740
+PR parent dist: 1754 child-A: 21 child-B: 1733
+PR parent dist: 1780 child-A: 28 child-B: 1752
+PR parent dist: 1773 child-A: 19 child-B: 1754
+PR parent dist: 1794 child-A: 25 child-B: 1769
+PR parent dist: 1787 child-A: 17 child-B: 1770
+PR parent dist: 207 child-A: 16 child-B: 191
+PR parent dist: 96 child-A: 13 child-B: 83
+PR parent dist: 1783 child-A: 11 child-B: 1772
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1804 cost=319451514
+  real=1805 cost=319496594
+  real=1806 cost=318654482
+  real=1806 cost=320068986
+  real=1808 cost=319899690
+  real=1808 cost=320626230
+  real=1882 cost=333847242
+[select_diverse_candidates] selected[0] -> real=1804 cost=319451514
+[select_diverse_candidates] picked index=5 dmin=1775 -> real=1882 cost=333847242 selected_count=2
+[select_diverse_candidates] picked index=3 dmin=273 -> real=1808 cost=319899690 selected_count=3
+[select_diverse_candidates] picked index=2 dmin=146 -> real=1806 cost=320068986 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=144 -> real=1806 cost=318654482 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=80 -> real=1805 cost=319496594 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=45 -> real=1808 cost=320626230 selected_count=7
+Min dist: 25 Avg dist: 163.425 Threshold: 12
+Min dist: 1727 Avg dist: 1760.9268292682927 Threshold: 6
+Min dist: 24 Avg dist: 218.14285714285714 Threshold: 12
+Min dist: 17 Avg dist: 201.67441860465115 Threshold: 12
+Min dist: 24 Avg dist: 191.77272727272728 Threshold: 12
+Min dist: 18 Avg dist: 191.13333333333333 Threshold: 12
+Min dist: 20 Avg dist: 199.80434782608697 Threshold: 9
+Hijos insertados:  7
+Iter 23: Mejor = 319451514.0000
+Real index: 1804
+[1761, 1764, 1768, 1771, 1771, 1775, 1775, 1776, 1776, 1777]
+[1804, 1804, 1803, 1802, 1801, 1801, 1799, 1799, 1799, 1798]
+
+--- Iteración 24 ---
+PR parent dist: 1841 child-A: 10 child-B: 1831
+PR parent dist: 144 child-A: 18 child-B: 126
+PR parent dist: 1771 child-A: 21 child-B: 1750
+PR parent dist: 1773 child-A: 14 child-B: 1759
+PR parent dist: 122 child-A: 14 child-B: 108
+PR parent dist: 1845 child-A: 13 child-B: 1832
+PR parent dist: 138 child-A: 10 child-B: 128
+PR parent dist: 1766 child-A: 26 child-B: 1740
+PR parent dist: 84 child-A: 11 child-B: 73
+PR parent dist: 1784 child-A: 30 child-B: 1754
+PR parent dist: 1763 child-A: 26 child-B: 1737
+PR parent dist: 1759 child-A: 18 child-B: 1741
+PR parent dist: 1827 child-A: 27 child-B: 1800
+PR parent dist: 80 child-A: 17 child-B: 63
+PR parent dist: 1826 child-A: 30 child-B: 1796
+PR parent dist: 203 child-A: 18 child-B: 185
+PR parent dist: 1739 child-A: 26 child-B: 1713
+PR parent dist: 223 child-A: 18 child-B: 205
+PR parent dist: 1784 child-A: 15 child-B: 1769
+PR parent dist: 1782 child-A: 12 child-B: 1770
+Hijos útiles:  5
+[select_diverse_candidates] candidates=5 normalized=5 filtered=5 pool=5 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1803 cost=319064466
+  real=1805 cost=319741906
+  real=1806 cost=319475214
+  real=1807 cost=319567558
+  real=1807 cost=319962166
+[select_diverse_candidates] selected[0] -> real=1803 cost=319064466
+[select_diverse_candidates] picked index=2 dmin=293 -> real=1807 cost=319567558 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=190 -> real=1805 cost=319741906 selected_count=3
+[select_diverse_candidates] picked index=0 dmin=41 -> real=1806 cost=319475214 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=25 -> real=1807 cost=319962166 selected_count=5
+Min dist: 21 Avg dist: 156.975 Threshold: 12
+Min dist: 27 Avg dist: 201.70731707317074 Threshold: 6
+Min dist: 17 Avg dist: 175.28571428571428 Threshold: 12
+Min dist: 14 Avg dist: 172.2093023255814 Threshold: 12
+Hijos insertados:  4
+Iter 24: Mejor = 319064466.0000
+Real index: 1803
+[1764, 1769, 1772, 1772, 1772, 1773, 1775, 1775, 1775, 1776]
+[1803, 1802, 1802, 1801, 1799, 1798, 1798, 1798, 1797, 1796]
+
+--- Iteración 25 ---
+PR parent dist: 1781 child-A: 24 child-B: 1757
+PR parent dist: 1814 child-A: 23 child-B: 1791
+PR parent dist: 52 child-A: 30 child-B: 22
+PR parent dist: 1796 child-A: 18 child-B: 1778
+PR parent dist: 1774 child-A: 19 child-B: 1755
+PR parent dist: 1848 child-A: 30 child-B: 1818
+PR parent dist: 161 child-A: 20 child-B: 141
+PR parent dist: 257 child-A: 21 child-B: 236
+PR parent dist: 1752 child-A: 24 child-B: 1728
+PR parent dist: 1762 child-A: 13 child-B: 1749
+PR parent dist: 293 child-A: 19 child-B: 274
+PR parent dist: 1748 child-A: 29 child-B: 1719
+PR parent dist: 1791 child-A: 23 child-B: 1768
+PR parent dist: 298 child-A: 16 child-B: 282
+PR parent dist: 275 child-A: 14 child-B: 261
+PR parent dist: 122 child-A: 13 child-B: 109
+PR parent dist: 1757 child-A: 25 child-B: 1732
+PR parent dist: 253 child-A: 23 child-B: 230
+PR parent dist: 150 child-A: 12 child-B: 138
+PR parent dist: 1782 child-A: 13 child-B: 1769
+Hijos útiles:  5
+[select_diverse_candidates] candidates=5 normalized=5 filtered=5 pool=5 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1798 cost=318050030
+  real=1803 cost=318504734
+  real=1804 cost=318525390
+  real=1806 cost=319532618
+  real=1807 cost=320014438
+[select_diverse_candidates] selected[0] -> real=1798 cost=318050030
+[select_diverse_candidates] picked index=1 dmin=330 -> real=1804 cost=318525390 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=204 -> real=1803 cost=318504734 selected_count=3
+[select_diverse_candidates] picked index=1 dmin=136 -> real=1807 cost=320014438 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=50 -> real=1806 cost=319532618 selected_count=5
+Min dist: 15 Avg dist: 175.7 Threshold: 12
+Min dist: 26 Avg dist: 221.0731707317073 Threshold: 6
+Min dist: 19 Avg dist: 172.8095238095238 Threshold: 12
+Min dist: 21 Avg dist: 167.86046511627907 Threshold: 9
+Min dist: 24 Avg dist: 213.5909090909091 Threshold: 12
+Hijos insertados:  5
+Iter 25: Mejor = 318050030.0000
+Real index: 1798
+[1759, 1766, 1768, 1771, 1771, 1771, 1772, 1773, 1774, 1774]
+[1798, 1798, 1797, 1796, 1795, 1795, 1795, 1794, 1794, 1793]
+
+--- Iteración 26 ---
+PR parent dist: 173 child-A: 18 child-B: 155
+PR parent dist: 1725 child-A: 30 child-B: 1695
+PR parent dist: 1841 child-A: 23 child-B: 1818
+PR parent dist: 185 child-A: 13 child-B: 172
+PR parent dist: 1821 child-A: 22 child-B: 1799
+PR parent dist: 1784 child-A: 19 child-B: 1765
+PR parent dist: 1766 child-A: 19 child-B: 1747
+PR parent dist: 1757 child-A: 30 child-B: 1727
+PR parent dist: 1856 child-A: 16 child-B: 1840
+PR parent dist: 1814 child-A: 15 child-B: 1799
+PR parent dist: 1863 child-A: 15 child-B: 1848
+PR parent dist: 1762 child-A: 25 child-B: 1737
+PR parent dist: 1789 child-A: 19 child-B: 1770
+PR parent dist: 1730 child-A: 19 child-B: 1711
+PR parent dist: 1781 child-A: 12 child-B: 1769
+PR parent dist: 1746 child-A: 16 child-B: 1730
+PR parent dist: 1776 child-A: 22 child-B: 1754
+PR parent dist: 1822 child-A: 21 child-B: 1801
+PR parent dist: 1759 child-A: 28 child-B: 1731
+PR parent dist: 1803 child-A: 27 child-B: 1776
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1796 cost=316848290
+  real=1800 cost=316254102
+  real=1800 cost=317894582
+  real=1801 cost=318324558
+  real=1802 cost=318474374
+  real=1803 cost=318032642
+  real=1804 cost=317490370
+[select_diverse_candidates] selected[0] -> real=1796 cost=316848290
+[select_diverse_candidates] picked index=4 dmin=375 -> real=1803 cost=318032642 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=256 -> real=1800 cost=316254102 selected_count=3
+[select_diverse_candidates] picked index=3 dmin=192 -> real=1804 cost=317490370 selected_count=4
+[select_diverse_candidates] picked index=1 dmin=75 -> real=1801 cost=318324558 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=61 -> real=1800 cost=317894582 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=48 -> real=1802 cost=318474374 selected_count=7
+Min dist: 20 Avg dist: 203.5 Threshold: 12
+Min dist: 33 Avg dist: 243.0 Threshold: 6
+Min dist: 19 Avg dist: 189.11904761904762 Threshold: 12
+Min dist: 28 Avg dist: 196.7906976744186 Threshold: 12
+Min dist: 19 Avg dist: 163.0 Threshold: 12
+Min dist: 26 Avg dist: 201.57777777777778 Threshold: 12
+Min dist: 15 Avg dist: 208.15217391304347 Threshold: 12
+Hijos insertados:  7
+Iter 26: Mejor = 316848290.0000
+Real index: 1796
+[1755, 1756, 1761, 1762, 1763, 1764, 1765, 1765, 1767, 1768]
+[1796, 1796, 1796, 1795, 1795, 1793, 1793, 1793, 1792, 1791]
+
+--- Iteración 27 ---
+PR parent dist: 1801 child-A: 15 child-B: 1786
+PR parent dist: 1768 child-A: 19 child-B: 1749
+PR parent dist: 1792 child-A: 14 child-B: 1778
+PR parent dist: 279 child-A: 18 child-B: 261
+PR parent dist: 75 child-A: 18 child-B: 57
+PR parent dist: 1795 child-A: 11 child-B: 1784
+PR parent dist: 172 child-A: 19 child-B: 153
+PR parent dist: 271 child-A: 10 child-B: 261
+PR parent dist: 1873 child-A: 16 child-B: 1857
+PR parent dist: 1782 child-A: 26 child-B: 1756
+PR parent dist: 1814 child-A: 11 child-B: 1803
+PR parent dist: 1770 child-A: 19 child-B: 1751
+PR parent dist: 191 child-A: 10 child-B: 181
+PR parent dist: 1831 child-A: 16 child-B: 1815
+PR parent dist: 204 child-A: 10 child-B: 194
+PR parent dist: 1848 child-A: 12 child-B: 1836
+PR parent dist: 1763 child-A: 14 child-B: 1749
+PR parent dist: 1733 child-A: 22 child-B: 1711
+PR parent dist: 1761 child-A: 10 child-B: 1751
+Hijos útiles:  6
+[select_diverse_candidates] candidates=6 normalized=6 filtered=6 pool=6 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1797 cost=315493418
+  real=1798 cost=316871710
+  real=1799 cost=316715602
+  real=1799 cost=316894170
+  real=1874 cost=332528302
+  real=1878 cost=339058394
+[select_diverse_candidates] selected[0] -> real=1797 cost=315493418
+[select_diverse_candidates] picked index=4 dmin=1758 -> real=1878 cost=339058394 selected_count=2
+[select_diverse_candidates] picked index=3 dmin=1721 -> real=1874 cost=332528302 selected_count=3
+[select_diverse_candidates] picked index=2 dmin=42 -> real=1799 cost=316894170 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=33 -> real=1798 cost=316871710 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=29 -> real=1799 cost=316715602 selected_count=6
+Min dist: 13 Avg dist: 192.85 Threshold: 12
+Min dist: 1758 Avg dist: 1785.9024390243903 Threshold: 12
+Min dist: 1720 Avg dist: 1748.2857142857142 Threshold: 12
+Min dist: 20 Avg dist: 249.06976744186048 Threshold: 12
+Min dist: 16 Avg dist: 262.3181818181818 Threshold: 12
+Hijos insertados:  5
+Sin mejora.
+
+--- Iteración 28 ---
+PR parent dist: 314 child-A: 22 child-B: 292
+PR parent dist: 1781 child-A: 29 child-B: 1752
+PR parent dist: 282 child-A: 17 child-B: 265
+PR parent dist: 1805 child-A: 20 child-B: 1785
+PR parent dist: 1748 child-A: 26 child-B: 1722
+PR parent dist: 1768 child-A: 28 child-B: 1740
+PR parent dist: 1744 child-A: 25 child-B: 1719
+PR parent dist: 63 child-A: 22 child-B: 41
+PR parent dist: 1841 child-A: 20 child-B: 1821
+PR parent dist: 88 child-A: 16 child-B: 72
+PR parent dist: 292 child-A: 22 child-B: 270
+PR parent dist: 1769 child-A: 17 child-B: 1752
+PR parent dist: 1766 child-A: 19 child-B: 1747
+PR parent dist: 36 child-A: 28 child-B: 8
+PR parent dist: 1803 child-A: 16 child-B: 1787
+PR parent dist: 1776 child-A: 11 child-B: 1765
+PR parent dist: 1731 child-A: 13 child-B: 1718
+PR parent dist: 1759 child-A: 19 child-B: 1740
+PR parent dist: 1820 child-A: 24 child-B: 1796
+PR parent dist: 1746 child-A: 22 child-B: 1724
+Hijos útiles:  3
+[select_diverse_candidates] candidates=3 normalized=3 filtered=3 pool=3 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1796 cost=316248686
+  real=1796 cost=316613702
+  real=1805 cost=319146246
+[select_diverse_candidates] selected[0] -> real=1796 cost=316248686
+[select_diverse_candidates] picked index=0 dmin=309 -> real=1796 cost=316613702 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=242 -> real=1805 cost=319146246 selected_count=3
+Min dist: 22 Avg dist: 185.325 Threshold: 9
+Min dist: 20 Avg dist: 224.29268292682926 Threshold: 9
+Min dist: 15 Avg dist: 219.52380952380952 Threshold: 9
+Hijos insertados:  3
+Iter 28: Mejor = 316248686.0000
+Real index: 1796
+[1750, 1752, 1758, 1758, 1759, 1759, 1759, 1759, 1760, 1761]
+[1796, 1796, 1796, 1796, 1795, 1794, 1794, 1794, 1794, 1793]
+
+--- Iteración 29 ---
+PR parent dist: 294 child-A: 19 child-B: 275
+PR parent dist: 1761 child-A: 25 child-B: 1736
+PR parent dist: 301 child-A: 11 child-B: 290
+PR parent dist: 227 child-A: 13 child-B: 214
+PR parent dist: 1845 child-A: 24 child-B: 1821
+PR parent dist: 1782 child-A: 10 child-B: 1772
+PR parent dist: 59 child-A: 24 child-B: 35
+PR parent dist: 1744 child-A: 21 child-B: 1723
+PR parent dist: 309 child-A: 12 child-B: 297
+PR parent dist: 1831 child-A: 29 child-B: 1802
+PR parent dist: 314 child-A: 18 child-B: 296
+PR parent dist: 1747 child-A: 15 child-B: 1732
+PR parent dist: 1825 child-A: 11 child-B: 1814
+PR parent dist: 1776 child-A: 12 child-B: 1764
+PR parent dist: 1765 child-A: 11 child-B: 1754
+PR parent dist: 237 child-A: 23 child-B: 214
+PR parent dist: 1765 child-A: 30 child-B: 1735
+PR parent dist: 1820 child-A: 16 child-B: 1804
+PR parent dist: 304 child-A: 16 child-B: 288
+PR parent dist: 42 child-A: 21 child-B: 21
+Hijos útiles:  7
+[select_diverse_candidates] candidates=7 normalized=7 filtered=7 pool=7 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1793 cost=314823550
+  real=1794 cost=314589222
+  real=1795 cost=316000786
+  real=1795 cost=316189714
+  real=1796 cost=316052246
+  real=1799 cost=316177750
+  real=1799 cost=316851374
+[select_diverse_candidates] selected[0] -> real=1793 cost=314823550
+[select_diverse_candidates] picked index=4 dmin=327 -> real=1799 cost=316177750 selected_count=2
+[select_diverse_candidates] picked index=0 dmin=75 -> real=1794 cost=314589222 selected_count=3
+[select_diverse_candidates] picked index=2 dmin=62 -> real=1796 cost=316052246 selected_count=4
+[select_diverse_candidates] picked index=2 dmin=62 -> real=1799 cost=316851374 selected_count=5
+[select_diverse_candidates] picked index=0 dmin=37 -> real=1795 cost=316000786 selected_count=6
+[select_diverse_candidates] picked index=0 dmin=33 -> real=1795 cost=316189714 selected_count=7
+Min dist: 15 Avg dist: 234.35 Threshold: 6
+Min dist: 23 Avg dist: 198.65853658536585 Threshold: 6
+Min dist: 14 Avg dist: 186.78571428571428 Threshold: 12
+Min dist: 30 Avg dist: 190.1627906976744 Threshold: 6
+Min dist: 25 Avg dist: 186.52272727272728 Threshold: 9
+Min dist: 22 Avg dist: 221.0888888888889 Threshold: 12
+Min dist: 23 Avg dist: 172.58695652173913 Threshold: 6
+Hijos insertados:  7
+Iter 29: Mejor = 314823550.0000
+Real index: 1793
+[1747, 1749, 1750, 1752, 1752, 1755, 1756, 1758, 1758, 1761]
+[1793, 1790, 1790, 1788, 1787, 1787, 1787, 1787, 1786, 1786]
+
+--- Iteración 30 ---
+PR parent dist: 309 child-A: 10 child-B: 299
+PR parent dist: 305 child-A: 19 child-B: 286
+PR parent dist: 1776 child-A: 14 child-B: 1762
+PR parent dist: 1760 child-A: 24 child-B: 1736
+PR parent dist: 1750 child-A: 30 child-B: 1720
+PR parent dist: 1758 child-A: 24 child-B: 1734
+PR parent dist: 1762 child-A: 18 child-B: 1744
+PR parent dist: 1749 child-A: 15 child-B: 1734
+PR parent dist: 1732 child-A: 23 child-B: 1709
+PR parent dist: 1771 child-A: 13 child-B: 1758
+PR parent dist: 310 child-A: 16 child-B: 294
+PR parent dist: 280 child-A: 22 child-B: 258
+PR parent dist: 309 child-A: 25 child-B: 284
+PR parent dist: 319 child-A: 19 child-B: 300
+PR parent dist: 1773 child-A: 10 child-B: 1763
+PR parent dist: 1763 child-A: 10 child-B: 1753
+PR parent dist: 1732 child-A: 20 child-B: 1712
+PR parent dist: 1762 child-A: 30 child-B: 1732
+PR parent dist: 308 child-A: 22 child-B: 286
+Hijos útiles:  5
+[select_diverse_candidates] candidates=5 normalized=5 filtered=5 pool=5 k=10
+[select_diverse_candidates] pool sample (real,cost):
+  real=1789 cost=313975066
+  real=1792 cost=313759622
+  real=1792 cost=315546762
+  real=1795 cost=315213870
+  real=1799 cost=316603082
+[select_diverse_candidates] selected[0] -> real=1789 cost=313975066
+[select_diverse_candidates] picked index=3 dmin=314 -> real=1799 cost=316603082 selected_count=2
+[select_diverse_candidates] picked index=2 dmin=92 -> real=1795 cost=315213870 selected_count=3
+[select_diverse_candidates] picked index=1 dmin=62 -> real=1792 cost=315546762 selected_count=4
+[select_diverse_candidates] picked index=0 dmin=42 -> real=1792 cost=313759622 selected_count=5
+Min dist: 27 Avg dist: 237.275 Threshold: 12
+Min dist: 10 Avg dist: 191.6341463414634 Threshold: 6
+Min dist: 30 Avg dist: 246.92857142857142 Threshold: 12
+Min dist: 20 Avg dist: 239.97674418604652 Threshold: 12
+Min dist: 19 Avg dist: 224.88636363636363 Threshold: 6
+Hijos insertados:  5
+Iter 30: Mejor = 313975066.0000
+Real index: 1789
+[1740, 1741, 1743, 1743, 1744, 1746, 1749, 1753, 1757, 1758]
+[1789, 1788, 1787, 1787, 1787, 1787, 1786, 1786, 1784, 1784]
+========================Resultados========================
+Índice de Transmisión aproximado (real): 1789
+Costo heurístico: 313975066.0000
+Carga total: 177190
+Numero de pares: 4950
+Tiempo de ejecución: 230.1049 segundos
+Press any key to continue . . .

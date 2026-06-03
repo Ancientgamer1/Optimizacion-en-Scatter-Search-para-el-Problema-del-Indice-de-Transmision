@@ -1,0 +1,1000 @@
+========================Parámetros========================
+Nodos: 256 | Población: 40 | RefSet: 10 | Iteraciones: 30
+Precomputando caminos...
+Construyendo población...
+Construyendo RefSet...
+Iteración 1: real=1584 cost=32853192.0000
+
+--- Iteración 1 ---
+Median Population distance: 12759 | POP_DISTANCE_THRESHOLD: 1020
+Median RefSet distance: 12776 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12729 child-A: 12062 child-B: 667
+PR parent dist: 12665 child-A: 12004 child-B: 661
+PR parent dist: 12776 child-A: 2 child-B: 12774
+PR parent dist: 12744 child-A: 367 child-B: 12377
+PR parent dist: 12827 child-A: 543 child-B: 12284
+PR parent dist: 12792 child-A: 12770 child-B: 22
+PR parent dist: 12785 child-A: 12584 child-B: 201
+PR parent dist: 12772 child-A: 76 child-B: 12696
+PR parent dist: 12757 child-A: 12751 child-B: 6
+PR parent dist: 12784 child-A: 49 child-B: 12735
+PR parent dist: 12732 child-A: 10 child-B: 12722
+PR parent dist: 12741 child-A: 295 child-B: 12446
+PR parent dist: 12678 child-A: 11708 child-B: 970
+PR parent dist: 12770 child-A: 100 child-B: 12670
+PR parent dist: 12803 child-A: 13 child-B: 12790
+PR parent dist: 12729 child-A: 11994 child-B: 735
+PR parent dist: 12758 child-A: 12576 child-B: 182
+PR parent dist: 12756 child-A: 12194 child-B: 562
+PR parent dist: 12798 child-A: 439 child-B: 12359
+PR parent dist: 12814 child-A: 689 child-B: 12125
+Hijos útiles:  13
+Min dist: 694 Avg dist: 12538.95 Threshold: 714
+RefSet insert: child = 1572 best_ref = 1584 worst_quality = 1592
+Min dist: 975 Avg dist: 12507.0 Threshold: 714
+RefSet insert: child = 1580 best_ref = 1572 worst_quality = 1589
+Min dist: 105 Avg dist: 12194.47619047619 Threshold: 714
+RefSet insert: child = 1581 best_ref = 1572 worst_quality = 1589
+Min dist: 300 Avg dist: 12190.767441860466 Threshold: 714
+RefSet insert: child = 1581 best_ref = 1572 worst_quality = 1589
+Min dist: 17 Avg dist: 12456.15909090909 Threshold: 714
+RefSet insert: child = 1583 best_ref = 1572 worst_quality = 1589
+Hijos insertados:  5
+Reemplazos en RefSet: 1 / 3
+Iter 1: Mejor = 32761452.0000
+Real index: 1572
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1572, 1284, 983, 972, 857, 707, 692, 681, 668, 646]
+
+--- Iteración 2 ---
+Median Population distance: 12762 | POP_DISTANCE_THRESHOLD: 1021
+Median RefSet distance: 12780 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12807 child-A: 12618 child-B: 189
+PR parent dist: 12799 child-A: 11916 child-B: 883
+PR parent dist: 12678 child-A: 533 child-B: 12145
+PR parent dist: 12798 child-A: 11981 child-B: 817
+PR parent dist: 12756 child-A: 12163 child-B: 593
+PR parent dist: 12733 child-A: 287 child-B: 12446
+PR parent dist: 12717 child-A: 12285 child-B: 432
+PR parent dist: 12772 child-A: 12554 child-B: 218
+PR parent dist: 12827 child-A: 646 child-B: 12181
+PR parent dist: 12732 child-A: 563 child-B: 12169
+PR parent dist: 12902 child-A: 12122 child-B: 780
+PR parent dist: 12729 child-A: 673 child-B: 12056
+PR parent dist: 12728 child-A: 684 child-B: 12044
+PR parent dist: 12714 child-A: 397 child-B: 12317
+PR parent dist: 12770 child-A: 12542 child-B: 228
+PR parent dist: 12821 child-A: 148 child-B: 12673
+PR parent dist: 12851 child-A: 12771 child-B: 80
+PR parent dist: 12836 child-A: 11948 child-B: 888
+PR parent dist: 12737 child-A: 736 child-B: 12001
+PR parent dist: 12838 child-A: 12762 child-B: 76
+Hijos útiles:  10
+Hijos insertados:  0
+Reemplazos en RefSet: 0 / 3
+Sin mejora.
+
+--- Iteración 3 ---
+Median Population distance: 12762 | POP_DISTANCE_THRESHOLD: 1021
+Median RefSet distance: 12780 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12814 child-A: 909 child-B: 11905
+PR parent dist: 12870 child-A: 438 child-B: 12432
+PR parent dist: 12838 child-A: 12838 child-B: 0
+PR parent dist: 12784 child-A: 280 child-B: 12504
+PR parent dist: 12799 child-A: 627 child-B: 12172
+PR parent dist: 12800 child-A: 11896 child-B: 904
+PR parent dist: 12756 child-A: 12055 child-B: 701
+PR parent dist: 12785 child-A: 12602 child-B: 183
+PR parent dist: 12821 child-A: 57 child-B: 12764
+PR parent dist: 12798 child-A: 473 child-B: 12325
+PR parent dist: 12678 child-A: 11954 child-B: 724
+PR parent dist: 12729 child-A: 12127 child-B: 602
+PR parent dist: 12729 child-A: 578 child-B: 12151
+PR parent dist: 12834 child-A: 729 child-B: 12105
+PR parent dist: 12780 child-A: 110 child-B: 12670
+PR parent dist: 12129 child-A: 11382 child-B: 747
+PR parent dist: 12798 child-A: 12074 child-B: 724
+PR parent dist: 12836 child-A: 12171 child-B: 665
+PR parent dist: 12733 child-A: 12253 child-B: 480
+Hijos útiles:  11
+Min dist: 443 Avg dist: 11984.875 Threshold: 714
+RefSet insert: child = 1566 best_ref = 1572 worst_quality = 1589
+Hijos insertados:  1
+Reemplazos en RefSet: 1 / 3
+Iter 3: Mejor = 32737280.0000
+Real index: 1566
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1566, 1287, 980, 967, 858, 710, 691, 681, 666, 649]
+
+--- Iteración 4 ---
+Median Population distance: 12766 | POP_DISTANCE_THRESHOLD: 1021
+Median RefSet distance: 12784 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12882 child-A: 12843 child-B: 39
+PR parent dist: 12435 child-A: 57 child-B: 12378
+PR parent dist: 12717 child-A: 523 child-B: 12194
+PR parent dist: 12902 child-A: 534 child-B: 12368
+PR parent dist: 12740 child-A: 534 child-B: 12206
+PR parent dist: 12784 child-A: 754 child-B: 12030
+PR parent dist: 12803 child-A: 12460 child-B: 343
+PR parent dist: 12875 child-A: 184 child-B: 12691
+PR parent dist: 12770 child-A: 386 child-B: 12384
+PR parent dist: 12776 child-A: 634 child-B: 12142
+PR parent dist: 12691 child-A: 12359 child-B: 332
+PR parent dist: 12756 child-A: 12 child-B: 12744
+PR parent dist: 12798 child-A: 149 child-B: 12649
+PR parent dist: 12834 child-A: 672 child-B: 12162
+PR parent dist: 12714 child-A: 12344 child-B: 370
+PR parent dist: 12729 child-A: 12183 child-B: 546
+PR parent dist: 12835 child-A: 803 child-B: 12032
+PR parent dist: 12798 child-A: 327 child-B: 12471
+PR parent dist: 12814 child-A: 387 child-B: 12427
+PR parent dist: 12785 child-A: 616 child-B: 12169
+Hijos útiles:  14
+Min dist: 62 Avg dist: 11680.425 Threshold: 714
+RefSet insert: child = 1560 best_ref = 1566 worst_quality = 1589
+Min dist: 537 Avg dist: 11439.731707317073 Threshold: 714
+RefSet insert: child = 1563 best_ref = 1560 worst_quality = 1586
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 4: Mejor = 32708456.0000
+Real index: 1560
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1560, 1284, 978, 963, 859, 711, 690, 684, 664, 651]
+
+--- Iteración 5 ---
+Median Population distance: 12774 | POP_DISTANCE_THRESHOLD: 1021
+Median RefSet distance: 12776 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12798 child-A: 11996 child-B: 802
+PR parent dist: 12882 child-A: 759 child-B: 12123
+PR parent dist: 12756 child-A: 12661 child-B: 95
+PR parent dist: 12905 child-A: 11978 child-B: 927
+PR parent dist: 12851 child-A: 798 child-B: 12053
+PR parent dist: 12129 child-A: 33 child-B: 12096
+PR parent dist: 12798 child-A: 12646 child-B: 152
+PR parent dist: 12737 child-A: 821 child-B: 11916
+PR parent dist: 12966 child-A: 12135 child-B: 831
+PR parent dist: 12814 child-A: 801 child-B: 12013
+PR parent dist: 12902 child-A: 12264 child-B: 638
+PR parent dist: 12226 child-A: 101 child-B: 12125
+PR parent dist: 12948 child-A: 133 child-B: 12815
+PR parent dist: 12870 child-A: 12274 child-B: 596
+PR parent dist: 12729 child-A: 12424 child-B: 305
+Hijos útiles:  7
+Min dist: 106 Avg dist: 11074.95 Threshold: 714
+RefSet insert: child = 1557 best_ref = 1560 worst_quality = 1584
+Hijos insertados:  1
+Reemplazos en RefSet: 1 / 3
+Iter 5: Mejor = 32697254.0000
+Real index: 1557
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1557, 1284, 979, 961, 862, 710, 687, 686, 662, 648]
+
+--- Iteración 6 ---
+Median Population distance: 12778 | POP_DISTANCE_THRESHOLD: 1022
+Median RefSet distance: 12784 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12882 child-A: 12244 child-B: 638
+PR parent dist: 12898 child-A: 830 child-B: 12068
+PR parent dist: 12836 child-A: 12161 child-B: 675
+PR parent dist: 12906 child-A: 444 child-B: 12462
+PR parent dist: 12784 child-A: 25 child-B: 12759
+PR parent dist: 12893 child-A: 12013 child-B: 880
+PR parent dist: 12975 child-A: 12214 child-B: 761
+PR parent dist: 12921 child-A: 12350 child-B: 571
+PR parent dist: 12905 child-A: 179 child-B: 12726
+PR parent dist: 12917 child-A: 12000 child-B: 917
+PR parent dist: 12925 child-A: 12099 child-B: 826
+PR parent dist: 12902 child-A: 49 child-B: 12853
+PR parent dist: 12834 child-A: 21 child-B: 12813
+PR parent dist: 12929 child-A: 10 child-B: 12919
+Hijos útiles:  7
+Min dist: 835 Avg dist: 10985.7 Threshold: 715
+RefSet insert: child = 1551 best_ref = 1557 worst_quality = 1572
+Min dist: 15 Avg dist: 10541.609756097561 Threshold: 715
+RefSet insert: child = 1556 best_ref = 1551 worst_quality = 1566
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 6: Mejor = 32662932.0000
+Real index: 1551
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1551, 1284, 979, 975, 852, 707, 693, 692, 672, 654]
+
+--- Iteración 7 ---
+Median Population distance: 12787 | POP_DISTANCE_THRESHOLD: 1022
+Median RefSet distance: 12740 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13023 child-A: 1 child-B: 13022
+PR parent dist: 12898 child-A: 148 child-B: 12750
+PR parent dist: 12966 child-A: 32 child-B: 12934
+PR parent dist: 12921 child-A: 12158 child-B: 763
+PR parent dist: 13024 child-A: 47 child-B: 12977
+PR parent dist: 12072 child-A: 11140 child-B: 932
+PR parent dist: 1771 child-A: 145 child-B: 1626
+PR parent dist: 12917 child-A: 12205 child-B: 712
+PR parent dist: 12232 child-A: 430 child-B: 11802
+PR parent dist: 12395 child-A: 11593 child-B: 802
+PR parent dist: 12125 child-A: 19 child-B: 12106
+PR parent dist: 12834 child-A: 0 child-B: 12834
+PR parent dist: 12893 child-A: 12237 child-B: 656
+PR parent dist: 12923 child-A: 12052 child-B: 871
+PR parent dist: 12226 child-A: 11437 child-B: 789
+PR parent dist: 12984 child-A: 287 child-B: 12697
+PR parent dist: 12516 child-A: 11859 child-B: 657
+Hijos útiles:  8
+Min dist: 292 Avg dist: 10266.1 Threshold: 715
+RefSet insert: child = 1548 best_ref = 1551 worst_quality = 1563
+Min dist: 52 Avg dist: 10200.19512195122 Threshold: 715
+RefSet insert: child = 1549 best_ref = 1548 worst_quality = 1560
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 7: Mejor = 32644090.0000
+Real index: 1548
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1548, 1282, 979, 959, 860, 705, 690, 681, 665, 651]
+
+--- Iteración 8 ---
+Median Population distance: 12792 | POP_DISTANCE_THRESHOLD: 1023
+Median RefSet distance: 12702 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12702 child-A: 11965 child-B: 737
+PR parent dist: 12072 child-A: 40 child-B: 12032
+PR parent dist: 12975 child-A: 12318 child-B: 657
+PR parent dist: 12090 child-A: 99 child-B: 11991
+PR parent dist: 1918 child-A: 1808 child-B: 110
+PR parent dist: 2122 child-A: 85 child-B: 2037
+PR parent dist: 12532 child-A: 3 child-B: 12529
+PR parent dist: 1874 child-A: 1786 child-B: 88
+PR parent dist: 12930 child-A: 110 child-B: 12820
+PR parent dist: 12882 child-A: 66 child-B: 12816
+PR parent dist: 12365 child-A: 11477 child-B: 888
+PR parent dist: 12827 child-A: 12083 child-B: 744
+PR parent dist: 12516 child-A: 11556 child-B: 960
+PR parent dist: 12395 child-A: 42 child-B: 12353
+PR parent dist: 12776 child-A: 384 child-B: 12392
+PR parent dist: 12737 child-A: 11967 child-B: 770
+PR parent dist: 12125 child-A: 11867 child-B: 258
+PR parent dist: 12979 child-A: 52 child-B: 12927
+PR parent dist: 12376 child-A: 11718 child-B: 658
+PR parent dist: 12929 child-A: 40 child-B: 12889
+Hijos útiles:  14
+Min dist: 104 Avg dist: 9845.65 Threshold: 716
+RefSet insert: child = 1544 best_ref = 1548 worst_quality = 1557
+Min dist: 90 Avg dist: 9499.731707317073 Threshold: 716
+RefSet insert: child = 1544 best_ref = 1544 worst_quality = 1556
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 8: Mejor = 32609806.0000
+Real index: 1544
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1544, 1278, 981, 972, 849, 708, 692, 688, 667, 653]
+
+--- Iteración 9 ---
+Median Population distance: 12799 | POP_DISTANCE_THRESHOLD: 1023
+Median RefSet distance: 12568 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13023 child-A: 12742 child-B: 281
+PR parent dist: 12799 child-A: 111 child-B: 12688
+PR parent dist: 11995 child-A: 11448 child-B: 547
+PR parent dist: 12740 child-A: 589 child-B: 12151
+PR parent dist: 12967 child-A: 12149 child-B: 818
+PR parent dist: 2166 child-A: 1900 child-B: 266
+PR parent dist: 12213 child-A: 534 child-B: 11679
+PR parent dist: 12737 child-A: 283 child-B: 12454
+PR parent dist: 12568 child-A: 146 child-B: 12422
+PR parent dist: 12798 child-A: 12435 child-B: 363
+PR parent dist: 12979 child-A: 12272 child-B: 707
+PR parent dist: 12365 child-A: 12254 child-B: 111
+PR parent dist: 12776 child-A: 252 child-B: 12524
+PR parent dist: 12681 child-A: 12113 child-B: 568
+PR parent dist: 12469 child-A: 11689 child-B: 780
+PR parent dist: 13063 child-A: 7 child-B: 13056
+PR parent dist: 12495 child-A: 11787 child-B: 708
+PR parent dist: 13037 child-A: 12252 child-B: 785
+Hijos útiles:  7
+Min dist: 151 Avg dist: 9300.875 Threshold: 716
+RefSet insert: child = 1542 best_ref = 1544 worst_quality = 1551
+Min dist: 539 Avg dist: 9109.463414634147 Threshold: 1023
+RefSet insert: child = 1547 best_ref = 1542 worst_quality = 1549
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 9: Mejor = 32602946.0000
+Real index: 1542
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1542, 1279, 981, 972, 847, 706, 692, 688, 668, 652]
+
+--- Iteración 10 ---
+Median Population distance: 12803 | POP_DISTANCE_THRESHOLD: 1024
+Median RefSet distance: 12681 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12798 child-A: 12339 child-B: 459
+PR parent dist: 12838 child-A: 12172 child-B: 666
+PR parent dist: 13003 child-A: 12564 child-B: 439
+PR parent dist: 12834 child-A: 12289 child-B: 545
+PR parent dist: 11995 child-A: 11128 child-B: 867
+PR parent dist: 12882 child-A: 12694 child-B: 188
+PR parent dist: 2383 child-A: 416 child-B: 1967
+PR parent dist: 2258 child-A: 0 child-B: 2258
+PR parent dist: 12213 child-A: 122 child-B: 12091
+PR parent dist: 12429 child-A: 60 child-B: 12369
+PR parent dist: 12737 child-A: 12693 child-B: 44
+PR parent dist: 13003 child-A: 12087 child-B: 916
+PR parent dist: 12427 child-A: 5 child-B: 12422
+PR parent dist: 12702 child-A: 12691 child-B: 11
+PR parent dist: 12967 child-A: 633 child-B: 12334
+PR parent dist: 13059 child-A: 12138 child-B: 921
+PR parent dist: 12776 child-A: 291 child-B: 12485
+Hijos útiles:  9
+Min dist: 65 Avg dist: 8742.9 Threshold: 716
+RefSet insert: child = 1539 best_ref = 1542 worst_quality = 1548
+Min dist: 421 Avg dist: 8435.731707317073 Threshold: 716
+RefSet insert: child = 1540 best_ref = 1539 worst_quality = 1547
+Min dist: 638 Avg dist: 8460.285714285714 Threshold: 716
+RefSet insert: child = 1541 best_ref = 1539 worst_quality = 1544
+Hijos insertados:  3
+Reemplazos en RefSet: 3 / 3
+Iter 10: Mejor = 32584640.0000
+Real index: 1539
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1539, 1279, 980, 970, 845, 705, 691, 688, 667, 649]
+
+--- Iteración 11 ---
+Median Population distance: 12807 | POP_DISTANCE_THRESHOLD: 1024
+Median RefSet distance: 12623 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13018 child-A: 105 child-B: 12913
+PR parent dist: 12568 child-A: 11699 child-B: 869
+PR parent dist: 12799 child-A: 12705 child-B: 94
+PR parent dist: 12740 child-A: 984 child-B: 11756
+PR parent dist: 12776 child-A: 992 child-B: 11784
+PR parent dist: 12882 child-A: 11972 child-B: 910
+PR parent dist: 12827 child-A: 38 child-B: 12789
+PR parent dist: 13059 child-A: 12361 child-B: 698
+PR parent dist: 12734 child-A: 12040 child-B: 694
+PR parent dist: 12834 child-A: 11998 child-B: 836
+PR parent dist: 12629 child-A: 6 child-B: 12623
+PR parent dist: 1972 child-A: 1626 child-B: 346
+PR parent dist: 13066 child-A: 12360 child-B: 706
+PR parent dist: 12316 child-A: 11494 child-B: 822
+PR parent dist: 11995 child-A: 11129 child-B: 866
+PR parent dist: 12031 child-A: 200 child-B: 11831
+PR parent dist: 2767 child-A: 502 child-B: 2265
+PR parent dist: 12427 child-A: 11668 child-B: 759
+PR parent dist: 12050 child-A: 11080 child-B: 970
+PR parent dist: 12827 child-A: 200 child-B: 12627
+Hijos útiles:  8
+Min dist: 507 Avg dist: 7960.675 Threshold: 716
+RefSet insert: child = 1529 best_ref = 1539 worst_quality = 1544
+Min dist: 350 Avg dist: 7743.487804878048 Threshold: 716
+RefSet insert: child = 1529 best_ref = 1529 worst_quality = 1542
+Min dist: 11 Avg dist: 7405.0952380952385 Threshold: 716
+RefSet insert: child = 1537 best_ref = 1529 worst_quality = 1541
+Hijos insertados:  3
+Reemplazos en RefSet: 2 / 3
+Iter 11: Mejor = 32509874.0000
+Real index: 1529
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1529, 1283, 975, 961, 857, 698, 694, 682, 664, 652]
+
+--- Iteración 12 ---
+Median Population distance: 12808 | POP_DISTANCE_THRESHOLD: 1024
+Median RefSet distance: 12629 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12374 child-A: 56 child-B: 12318
+PR parent dist: 13035 child-A: 12125 child-B: 910
+PR parent dist: 12277 child-A: 11752 child-B: 525
+PR parent dist: 12870 child-A: 209 child-B: 12661
+PR parent dist: 12834 child-A: 666 child-B: 12168
+PR parent dist: 12784 child-A: 12590 child-B: 194
+PR parent dist: 12727 child-A: 12575 child-B: 152
+PR parent dist: 2023 child-A: 469 child-B: 1554
+PR parent dist: 12497 child-A: 373 child-B: 12124
+PR parent dist: 2477 child-A: 2475 child-B: 2
+PR parent dist: 12190 child-A: 11382 child-B: 808
+PR parent dist: 12423 child-A: 452 child-B: 11971
+PR parent dist: 13083 child-A: 2 child-B: 13081
+PR parent dist: 12316 child-A: 11691 child-B: 625
+PR parent dist: 12773 child-A: 11936 child-B: 837
+PR parent dist: 12737 child-A: 11907 child-B: 830
+PR parent dist: 1630 child-A: 256 child-B: 1374
+PR parent dist: 12776 child-A: 12365 child-B: 411
+Hijos útiles:  11
+Min dist: 378 Avg dist: 7213.5 Threshold: 716
+RefSet insert: child = 1525 best_ref = 1529 worst_quality = 1541
+Min dist: 457 Avg dist: 7151.951219512195 Threshold: 716
+RefSet insert: child = 1526 best_ref = 1525 worst_quality = 1540
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 12: Mejor = 32478186.0000
+Real index: 1525
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1525, 1279, 972, 966, 852, 703, 691, 684, 665, 652]
+
+--- Iteración 13 ---
+Median Population distance: 12788 | POP_DISTANCE_THRESHOLD: 1023
+Median RefSet distance: 12529 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12827 child-A: 145 child-B: 12682
+PR parent dist: 2065 child-A: 1707 child-B: 358
+PR parent dist: 12277 child-A: 132 child-B: 12145
+PR parent dist: 12882 child-A: 12284 child-B: 598
+PR parent dist: 13089 child-A: 12474 child-B: 615
+PR parent dist: 12834 child-A: 12065 child-B: 769
+PR parent dist: 12762 child-A: 87 child-B: 12675
+PR parent dist: 2667 child-A: 2288 child-B: 379
+PR parent dist: 12784 child-A: 0 child-B: 12784
+PR parent dist: 11973 child-A: 55 child-B: 11918
+PR parent dist: 12773 child-A: 11775 child-B: 998
+PR parent dist: 2428 child-A: 2099 child-B: 329
+PR parent dist: 12740 child-A: 885 child-B: 11855
+PR parent dist: 13019 child-A: 12410 child-B: 609
+PR parent dist: 12776 child-A: 177 child-B: 12599
+PR parent dist: 12374 child-A: 11511 child-B: 863
+PR parent dist: 12126 child-A: 3 child-B: 12123
+PR parent dist: 12423 child-A: 1 child-B: 12422
+Hijos útiles:  12
+Min dist: 384 Avg dist: 6696.925 Threshold: 716
+RefSet insert: child = 1520 best_ref = 1525 worst_quality = 1539
+Min dist: 363 Avg dist: 6365.707317073171 Threshold: 716
+RefSet insert: child = 1521 best_ref = 1520 worst_quality = 1529
+Min dist: 8 Avg dist: 6392.428571428572 Threshold: 716
+RefSet insert: child = 1523 best_ref = 1520 worst_quality = 1529
+Hijos insertados:  3
+Reemplazos en RefSet: 3 / 3
+Iter 13: Mejor = 32432706.0000
+Real index: 1520
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1520, 1279, 970, 967, 856, 699, 698, 686, 659, 655]
+
+--- Iteración 14 ---
+Median Population distance: 12760 | POP_DISTANCE_THRESHOLD: 1020
+Median RefSet distance: 12593 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12126 child-A: 11352 child-B: 774
+PR parent dist: 12077 child-A: 11208 child-B: 869
+PR parent dist: 12315 child-A: 11678 child-B: 637
+PR parent dist: 12827 child-A: 16 child-B: 12811
+PR parent dist: 12128 child-A: 380 child-B: 11748
+PR parent dist: 12533 child-A: 12419 child-B: 114
+PR parent dist: 12776 child-A: 12655 child-B: 121
+PR parent dist: 12740 child-A: 380 child-B: 12360
+PR parent dist: 13172 child-A: 788 child-B: 12384
+PR parent dist: 12819 child-A: 12233 child-B: 586
+PR parent dist: 12838 child-A: 12405 child-B: 433
+PR parent dist: 12798 child-A: 350 child-B: 12448
+PR parent dist: 12859 child-A: 0 child-B: 12859
+PR parent dist: 13149 child-A: 12481 child-B: 668
+PR parent dist: 12493 child-A: 198 child-B: 12295
+PR parent dist: 12310 child-A: 11445 child-B: 865
+PR parent dist: 13178 child-A: 12565 child-B: 613
+PR parent dist: 13127 child-A: 16 child-B: 13111
+Hijos útiles:  8
+Min dist: 5 Avg dist: 5843.8 Threshold: 714
+RefSet insert: child = 1517 best_ref = 1520 worst_quality = 1526
+Min dist: 203 Avg dist: 5595.4390243902435 Threshold: 714
+RefSet insert: child = 1518 best_ref = 1517 worst_quality = 1525
+Min dist: 793 Avg dist: 5853.023809523809 Threshold: 714
+RefSet insert: child = 1519 best_ref = 1517 worst_quality = 1523
+Hijos insertados:  3
+Reemplazos en RefSet: 3 / 3
+Iter 14: Mejor = 32412586.0000
+Real index: 1517
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1517, 1277, 967, 966, 854, 698, 697, 685, 659, 654]
+
+--- Iteración 15 ---
+Median Population distance: 2658 | POP_DISTANCE_THRESHOLD: 212
+Median RefSet distance: 12620 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13067 child-A: 47 child-B: 13020
+PR parent dist: 13207 child-A: 12575 child-B: 632
+PR parent dist: 12882 child-A: 11995 child-B: 887
+PR parent dist: 13078 child-A: 12271 child-B: 807
+PR parent dist: 12077 child-A: 11377 child-B: 700
+PR parent dist: 12209 child-A: 11460 child-B: 749
+PR parent dist: 12719 child-A: 162 child-B: 12557
+PR parent dist: 2069 child-A: 479 child-B: 1590
+PR parent dist: 12194 child-A: 11536 child-B: 658
+PR parent dist: 12620 child-A: 438 child-B: 12182
+PR parent dist: 12799 child-A: 97 child-B: 12702
+PR parent dist: 12819 child-A: 12225 child-B: 594
+PR parent dist: 12593 child-A: 117 child-B: 12476
+PR parent dist: 12331 child-A: 12237 child-B: 94
+PR parent dist: 12776 child-A: 12449 child-B: 327
+PR parent dist: 12388 child-A: 1 child-B: 12387
+PR parent dist: 12824 child-A: 12190 child-B: 634
+PR parent dist: 1916 child-A: 1707 child-B: 209
+Hijos útiles:  7
+Min dist: 483 Avg dist: 4922.925 Threshold: 148
+RefSet insert: child = 1514 best_ref = 1517 worst_quality = 1521
+Min dist: 122 Avg dist: 4661.8536585365855 Threshold: 148
+RefSet insert: child = 1515 best_ref = 1514 worst_quality = 1520
+Min dist: 167 Avg dist: 5083.357142857143 Threshold: 148
+RefSet insert: child = 1516 best_ref = 1514 worst_quality = 1519
+Min dist: 441 Avg dist: 5122.813953488372 Threshold: 148
+RefSet insert: child = 1516 best_ref = 1514 worst_quality = 1518
+Hijos insertados:  4
+Reemplazos en RefSet: 3 / 3
+Iter 15: Mejor = 32400702.0000
+Real index: 1514
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1514, 1273, 966, 961, 854, 700, 700, 677, 657, 655]
+
+--- Iteración 16 ---
+Median Population distance: 2217 | POP_DISTANCE_THRESHOLD: 177
+Median RefSet distance: 12620 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12209 child-A: 11466 child-B: 743
+PR parent dist: 12737 child-A: 12682 child-B: 55
+PR parent dist: 13078 child-A: 557 child-B: 12521
+PR parent dist: 2358 child-A: 2004 child-B: 354
+PR parent dist: 12620 child-A: 5 child-B: 12615
+PR parent dist: 12799 child-A: 11983 child-B: 816
+PR parent dist: 12298 child-A: 887 child-B: 11411
+PR parent dist: 12243 child-A: 54 child-B: 12189
+PR parent dist: 13167 child-A: 157 child-B: 13010
+PR parent dist: 1639 child-A: 1631 child-B: 8
+PR parent dist: 12784 child-A: 12020 child-B: 764
+PR parent dist: 2027 child-A: 235 child-B: 1792
+PR parent dist: 12801 child-A: 173 child-B: 12628
+PR parent dist: 1595 child-A: 1355 child-B: 240
+PR parent dist: 12376 child-A: 408 child-B: 11968
+PR parent dist: 2069 child-A: 1810 child-B: 259
+PR parent dist: 13210 child-A: 12866 child-B: 344
+PR parent dist: 12476 child-A: 319 child-B: 12157
+PR parent dist: 13163 child-A: 65 child-B: 13098
+Hijos útiles:  17
+Min dist: 245 Avg dist: 3750.55 Threshold: 123
+RefSet insert: child = 1503 best_ref = 1514 worst_quality = 1518
+Min dist: 324 Avg dist: 3713.9756097560976 Threshold: 123
+RefSet insert: child = 1508 best_ref = 1503 worst_quality = 1517
+Min dist: 359 Avg dist: 3693.5 Threshold: 123
+RefSet insert: child = 1509 best_ref = 1503 worst_quality = 1516
+Min dist: 162 Avg dist: 3509.186046511628 Threshold: 123
+RefSet insert: child = 1510 best_ref = 1503 worst_quality = 1515
+Min dist: 178 Avg dist: 3638.9545454545455 Threshold: 123
+RefSet insert: child = 1511 best_ref = 1503 worst_quality = 1515
+Min dist: 13 Avg dist: 3441.1111111111113 Threshold: 123
+RefSet insert: child = 1511 best_ref = 1503 worst_quality = 1515
+Min dist: 239 Avg dist: 3254.282608695652 Threshold: 123
+RefSet insert: child = 1511 best_ref = 1503 worst_quality = 1515
+Min dist: 59 Avg dist: 3192.5106382978724 Threshold: 123
+RefSet insert: child = 1511 best_ref = 1503 worst_quality = 1515
+Min dist: 70 Avg dist: 3685.8958333333335 Threshold: 123
+RefSet insert: child = 1512 best_ref = 1503 worst_quality = 1515
+Min dist: 264 Avg dist: 3149.612244897959 Threshold: 123
+RefSet insert: child = 1512 best_ref = 1503 worst_quality = 1515
+Min dist: 413 Avg dist: 3816.82 Threshold: 123
+RefSet insert: child = 1513 best_ref = 1503 worst_quality = 1515
+Min dist: 562 Avg dist: 3431.9607843137255 Threshold: 150
+RefSet insert: child = 1516 best_ref = 1503 worst_quality = 1515
+Min dist: 892 Avg dist: 3636.903846153846 Threshold: 150
+RefSet insert: child = 1516 best_ref = 1503 worst_quality = 1515
+Hijos insertados:  13
+Reemplazos en RefSet: 3 / 3
+Iter 16: Mejor = 32339902.0000
+Real index: 1503
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1503, 1276, 964, 954, 851, 700, 698, 676, 654, 653]
+
+--- Iteración 17 ---
+Median Population distance: 1782 | POP_DISTANCE_THRESHOLD: 142
+Median RefSet distance: 12737 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12798 child-A: 12786 child-B: 12
+PR parent dist: 12784 child-A: 12704 child-B: 80
+PR parent dist: 12827 child-A: 732 child-B: 12095
+PR parent dist: 1749 child-A: 1465 child-B: 284
+PR parent dist: 13293 child-A: 12643 child-B: 650
+PR parent dist: 13225 child-A: 13122 child-B: 103
+PR parent dist: 1639 child-A: 1353 child-B: 286
+PR parent dist: 12295 child-A: 11654 child-B: 641
+PR parent dist: 12740 child-A: 640 child-B: 12100
+PR parent dist: 1566 child-A: 1539 child-B: 27
+PR parent dist: 12315 child-A: 148 child-B: 12167
+PR parent dist: 13185 child-A: 12669 child-B: 516
+PR parent dist: 12521 child-A: 25 child-B: 12496
+PR parent dist: 13274 child-A: 23 child-B: 13251
+PR parent dist: 12882 child-A: 12390 child-B: 492
+PR parent dist: 13147 child-A: 12354 child-B: 793
+PR parent dist: 12998 child-A: 12207 child-B: 791
+Hijos útiles:  8
+Min dist: 153 Avg dist: 1667.1 Threshold: 105
+RefSet insert: child = 1498 best_ref = 1503 worst_quality = 1515
+Min dist: 288 Avg dist: 1512.121951219512 Threshold: 105
+RefSet insert: child = 1501 best_ref = 1498 worst_quality = 1514
+Min dist: 28 Avg dist: 1493.404761904762 Threshold: 105
+RefSet insert: child = 1502 best_ref = 1498 worst_quality = 1509
+Min dist: 291 Avg dist: 1468.6976744186047 Threshold: 150
+RefSet insert: child = 1506 best_ref = 1498 worst_quality = 1508
+Hijos insertados:  4
+Reemplazos en RefSet: 3 / 3
+Iter 17: Mejor = 32313522.0000
+Real index: 1498
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1498, 1269, 965, 950, 853, 704, 698, 672, 653, 652]
+
+--- Iteración 18 ---
+Median Population distance: 1710 | POP_DISTANCE_THRESHOLD: 136
+Median RefSet distance: 12737 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12776 child-A: 195 child-B: 12581
+PR parent dist: 12331 child-A: 311 child-B: 12020
+PR parent dist: 13185 child-A: 155 child-B: 13030
+PR parent dist: 12315 child-A: 117 child-B: 12198
+PR parent dist: 12827 child-A: 12485 child-B: 342
+PR parent dist: 12829 child-A: 11994 child-B: 835
+PR parent dist: 12636 child-A: 15 child-B: 12621
+PR parent dist: 12343 child-A: 46 child-B: 12297
+PR parent dist: 13252 child-A: 608 child-B: 12644
+PR parent dist: 12176 child-A: 11 child-B: 12165
+PR parent dist: 12799 child-A: 860 child-B: 11939
+PR parent dist: 12723 child-A: 6 child-B: 12717
+PR parent dist: 12740 child-A: 12353 child-B: 387
+PR parent dist: 12882 child-A: 12192 child-B: 690
+PR parent dist: 12784 child-A: 12441 child-B: 343
+PR parent dist: 13008 child-A: 44 child-B: 12964
+Hijos útiles:  14
+Min dist: 613 Avg dist: 1936.1 Threshold: 105
+RefSet insert: child = 1496 best_ref = 1498 worst_quality = 1508
+Min dist: 122 Avg dist: 1459.5853658536585 Threshold: 127
+RefSet insert: child = 1499 best_ref = 1496 worst_quality = 1503
+Min dist: 316 Avg dist: 1795.2857142857142 Threshold: 150
+RefSet insert: child = 1506 best_ref = 1496 worst_quality = 1502
+Min dist: 160 Avg dist: 1628.2558139534883 Threshold: 150
+RefSet insert: child = 1507 best_ref = 1496 worst_quality = 1502
+Hijos insertados:  4
+Reemplazos en RefSet: 2 / 3
+Iter 18: Mejor = 32323354.0000
+Real index: 1496
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1496, 1275, 970, 954, 850, 706, 701, 675, 652, 645]
+
+--- Iteración 19 ---
+Median Population distance: 1652 | POP_DISTANCE_THRESHOLD: 132
+Median RefSet distance: 12737 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13311 child-A: 12702 child-B: 609
+PR parent dist: 13252 child-A: 50 child-B: 13202
+PR parent dist: 12176 child-A: 11464 child-B: 712
+PR parent dist: 13027 child-A: 175 child-B: 12852
+PR parent dist: 12737 child-A: 12480 child-B: 257
+PR parent dist: 12415 child-A: 17 child-B: 12398
+PR parent dist: 12326 child-A: 11476 child-B: 850
+PR parent dist: 12199 child-A: 11519 child-B: 680
+PR parent dist: 12210 child-A: 11444 child-B: 766
+PR parent dist: 12829 child-A: 11871 child-B: 958
+PR parent dist: 12648 child-A: 402 child-B: 12246
+PR parent dist: 12295 child-A: 11654 child-B: 641
+PR parent dist: 13078 child-A: 12325 child-B: 753
+PR parent dist: 12776 child-A: 12089 child-B: 687
+PR parent dist: 12834 child-A: 9 child-B: 12825
+Hijos útiles:  6
+Min dist: 406 Avg dist: 2193.3 Threshold: 105
+RefSet insert: child = 1488 best_ref = 1496 worst_quality = 1502
+Min dist: 22 Avg dist: 1820.9756097560976 Threshold: 105
+RefSet insert: child = 1494 best_ref = 1488 worst_quality = 1501
+Min dist: 180 Avg dist: 1540.9761904761904 Threshold: 127
+RefSet insert: child = 1498 best_ref = 1488 worst_quality = 1499
+Hijos insertados:  3
+Reemplazos en RefSet: 2 / 3
+Iter 19: Mejor = 32283674.0000
+Real index: 1488
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1488, 1268, 972, 953, 846, 708, 698, 674, 651, 647]
+
+--- Iteración 20 ---
+Median Population distance: 1629 | POP_DISTANCE_THRESHOLD: 130
+Median RefSet distance: 12658 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13085 child-A: 285 child-B: 12800
+PR parent dist: 13078 child-A: 12236 child-B: 842
+PR parent dist: 12834 child-A: 12479 child-B: 355
+PR parent dist: 12295 child-A: 11510 child-B: 785
+PR parent dist: 12867 child-A: 39 child-B: 12828
+PR parent dist: 12882 child-A: 12164 child-B: 718
+PR parent dist: 13004 child-A: 12128 child-B: 876
+PR parent dist: 13027 child-A: 12080 child-B: 947
+PR parent dist: 12297 child-A: 18 child-B: 12279
+PR parent dist: 13005 child-A: 85 child-B: 12920
+PR parent dist: 12402 child-A: 11667 child-B: 735
+PR parent dist: 12827 child-A: 929 child-B: 11898
+PR parent dist: 12784 child-A: 4 child-B: 12780
+PR parent dist: 12648 child-A: 12001 child-B: 647
+PR parent dist: 12799 child-A: 196 child-B: 12603
+PR parent dist: 12740 child-A: 12422 child-B: 318
+Hijos útiles:  8
+Min dist: 290 Avg dist: 1972.575 Threshold: 150
+RefSet insert: child = 1492 best_ref = 1488 worst_quality = 1499
+Hijos insertados:  1
+Reemplazos en RefSet: 1 / 3
+Sin mejora.
+
+--- Iteración 21 ---
+Median Population distance: 1629 | POP_DISTANCE_THRESHOLD: 130
+Median RefSet distance: 12658 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12882 child-A: 112 child-B: 12770
+PR parent dist: 13133 child-A: 270 child-B: 12863
+PR parent dist: 12402 child-A: 301 child-B: 12101
+PR parent dist: 12716 child-A: 12009 child-B: 707
+PR parent dist: 13085 child-A: 26 child-B: 13059
+PR parent dist: 12834 child-A: 603 child-B: 12231
+PR parent dist: 12188 child-A: 0 child-B: 12188
+PR parent dist: 12396 child-A: 11533 child-B: 863
+PR parent dist: 13281 child-A: 559 child-B: 12722
+PR parent dist: 12926 child-A: 12114 child-B: 812
+PR parent dist: 12465 child-A: 73 child-B: 12392
+PR parent dist: 12799 child-A: 49 child-B: 12750
+PR parent dist: 12737 child-A: 17 child-B: 12720
+PR parent dist: 13004 child-A: 12043 child-B: 961
+Hijos útiles:  10
+Min dist: 275 Avg dist: 2226.825 Threshold: 105
+RefSet insert: child = 1481 best_ref = 1488 worst_quality = 1498
+Min dist: 78 Avg dist: 1947.439024390244 Threshold: 127
+RefSet insert: child = 1490 best_ref = 1481 worst_quality = 1496
+Min dist: 306 Avg dist: 1871.095238095238 Threshold: 150
+RefSet insert: child = 1491 best_ref = 1481 worst_quality = 1496
+Min dist: 563 Avg dist: 1807.8139534883721 Threshold: 150
+RefSet insert: child = 1491 best_ref = 1481 worst_quality = 1496
+Hijos insertados:  4
+Reemplazos en RefSet: 1 / 3
+Iter 21: Mejor = 32257812.0000
+Real index: 1481
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1481, 1267, 967, 959, 844, 708, 696, 675, 653, 648]
+
+--- Iteración 22 ---
+Median Population distance: 1601 | POP_DISTANCE_THRESHOLD: 128
+Median RefSet distance: 12648 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12838 child-A: 12616 child-B: 222
+PR parent dist: 13085 child-A: 12580 child-B: 505
+PR parent dist: 12740 child-A: 12329 child-B: 411
+PR parent dist: 12295 child-A: 11672 child-B: 623
+PR parent dist: 12827 child-A: 913 child-B: 11914
+PR parent dist: 12465 child-A: 11658 child-B: 807
+PR parent dist: 12297 child-A: 11421 child-B: 876
+PR parent dist: 12922 child-A: 1 child-B: 12921
+PR parent dist: 12976 child-A: 12250 child-B: 726
+PR parent dist: 12882 child-A: 305 child-B: 12577
+PR parent dist: 12834 child-A: 12316 child-B: 518
+PR parent dist: 12784 child-A: 12274 child-B: 510
+PR parent dist: 12310 child-A: 11637 child-B: 673
+PR parent dist: 13040 child-A: 12409 child-B: 631
+PR parent dist: 12867 child-A: 12119 child-B: 748
+PR parent dist: 12361 child-A: 11392 child-B: 969
+PR parent dist: 12798 child-A: 445 child-B: 12353
+Hijos útiles:  7
+Hijos insertados:  0
+Reemplazos en RefSet: 0 / 3
+Sin mejora.
+
+--- Iteración 23 ---
+Median Population distance: 1601 | POP_DISTANCE_THRESHOLD: 128
+Median RefSet distance: 12648 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13133 child-A: 81 child-B: 13052
+PR parent dist: 12361 child-A: 17 child-B: 12344
+PR parent dist: 12827 child-A: 12600 child-B: 227
+PR parent dist: 12922 child-A: 12068 child-B: 854
+PR parent dist: 12716 child-A: 11843 child-B: 873
+PR parent dist: 12434 child-A: 11536 child-B: 898
+PR parent dist: 12517 child-A: 4 child-B: 12513
+PR parent dist: 12838 child-A: 776 child-B: 12062
+PR parent dist: 12580 child-A: 11888 child-B: 692
+PR parent dist: 12834 child-A: 853 child-B: 11981
+PR parent dist: 12867 child-A: 35 child-B: 12832
+PR parent dist: 12802 child-A: 541 child-B: 12261
+PR parent dist: 13040 child-A: 26 child-B: 13014
+PR parent dist: 12310 child-A: 11756 child-B: 554
+Hijos útiles:  9
+Min dist: 31 Avg dist: 2097.525 Threshold: 105
+RefSet insert: child = 1479 best_ref = 1481 worst_quality = 1496
+Min dist: 546 Avg dist: 2225.439024390244 Threshold: 127
+RefSet insert: child = 1481 best_ref = 1479 worst_quality = 1494
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 23: Mejor = 32244066.0000
+Real index: 1479
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1479, 1266, 965, 958, 844, 708, 695, 674, 653, 648]
+
+--- Iteración 24 ---
+Median Population distance: 1599 | POP_DISTANCE_THRESHOLD: 127
+Median RefSet distance: 12594 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12799 child-A: 12093 child-B: 706
+PR parent dist: 12434 child-A: 549 child-B: 11885
+PR parent dist: 12361 child-A: 11867 child-B: 494
+PR parent dist: 12597 child-A: 11692 child-B: 905
+PR parent dist: 12740 child-A: 12343 child-B: 397
+PR parent dist: 12580 child-A: 11678 child-B: 902
+PR parent dist: 12834 child-A: 12229 child-B: 605
+PR parent dist: 12819 child-A: 2 child-B: 12817
+PR parent dist: 13133 child-A: 12400 child-B: 733
+PR parent dist: 12882 child-A: 12812 child-B: 70
+PR parent dist: 12246 child-A: 11731 child-B: 515
+PR parent dist: 12838 child-A: 43 child-B: 12795
+PR parent dist: 12798 child-A: 492 child-B: 12306
+PR parent dist: 12517 child-A: 1 child-B: 12516
+PR parent dist: 12737 child-A: 11923 child-B: 814
+PR parent dist: 12310 child-A: 11648 child-B: 662
+Hijos útiles:  7
+Min dist: 554 Avg dist: 2395.125 Threshold: 105
+RefSet insert: child = 1478 best_ref = 1479 worst_quality = 1492
+Hijos insertados:  1
+Reemplazos en RefSet: 1 / 3
+Iter 24: Mejor = 32243132.0000
+Real index: 1478
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1478, 1267, 970, 966, 844, 707, 702, 680, 650, 648]
+
+--- Iteración 25 ---
+Median Population distance: 1640 | POP_DISTANCE_THRESHOLD: 131
+Median RefSet distance: 12594 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12875 child-A: 202 child-B: 12673
+PR parent dist: 12594 child-A: 12452 child-B: 142
+PR parent dist: 13091 child-A: 12625 child-B: 466
+PR parent dist: 13040 child-A: 809 child-B: 12231
+PR parent dist: 12580 child-A: 12125 child-B: 455
+PR parent dist: 12740 child-A: 11812 child-B: 928
+PR parent dist: 12834 child-A: 12200 child-B: 634
+PR parent dist: 12737 child-A: 12501 child-B: 236
+PR parent dist: 12798 child-A: 155 child-B: 12643
+PR parent dist: 12396 child-A: 67 child-B: 12329
+PR parent dist: 12402 child-A: 11449 child-B: 953
+PR parent dist: 12819 child-A: 12105 child-B: 714
+PR parent dist: 13004 child-A: 12360 child-B: 644
+Hijos útiles:  6
+Min dist: 207 Avg dist: 2101.3 Threshold: 105
+RefSet insert: child = 1474 best_ref = 1478 worst_quality = 1488
+Min dist: 814 Avg dist: 2523.6585365853657 Threshold: 105
+RefSet insert: child = 1477 best_ref = 1474 worst_quality = 1481
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 25: Mejor = 32204826.0000
+Real index: 1474
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1474, 1266, 963, 955, 845, 709, 692, 672, 654, 648]
+
+--- Iteración 26 ---
+Median Population distance: 1681 | POP_DISTANCE_THRESHOLD: 134
+Median RefSet distance: 12597 | MIN_PR_DISTANCE: 1500
+PR parent dist: 13056 child-A: 12106 child-B: 950
+PR parent dist: 12677 child-A: 21 child-B: 12656
+PR parent dist: 12395 child-A: 11423 child-B: 972
+PR parent dist: 12784 child-A: 399 child-B: 12385
+PR parent dist: 12691 child-A: 11994 child-B: 697
+PR parent dist: 12819 child-A: 46 child-B: 12773
+PR parent dist: 12509 child-A: 11590 child-B: 919
+PR parent dist: 12402 child-A: 187 child-B: 12215
+PR parent dist: 12321 child-A: 0 child-B: 12321
+PR parent dist: 12594 child-A: 0 child-B: 12594
+PR parent dist: 12717 child-A: 12056 child-B: 661
+PR parent dist: 13091 child-A: 6 child-B: 13085
+PR parent dist: 12663 child-A: 2 child-B: 12661
+PR parent dist: 13017 child-A: 5 child-B: 13012
+PR parent dist: 12838 child-A: 12826 child-B: 12
+Hijos útiles:  10
+Min dist: 26 Avg dist: 2016.45 Threshold: 105
+RefSet insert: child = 1471 best_ref = 1474 worst_quality = 1481
+Min dist: 192 Avg dist: 2358.7073170731705 Threshold: 105
+RefSet insert: child = 1473 best_ref = 1471 worst_quality = 1479
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 26: Mejor = 32188506.0000
+Real index: 1471
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1471, 1264, 962, 955, 843, 707, 692, 672, 653, 647]
+
+--- Iteración 27 ---
+Median Population distance: 1710 | POP_DISTANCE_THRESHOLD: 136
+Median RefSet distance: 12663 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12584 child-A: 11692 child-B: 892
+PR parent dist: 12671 child-A: 1 child-B: 12670
+PR parent dist: 12400 child-A: 6 child-B: 12394
+PR parent dist: 12234 child-A: 11522 child-B: 712
+PR parent dist: 12493 child-A: 11619 child-B: 874
+PR parent dist: 12834 child-A: 594 child-B: 12240
+PR parent dist: 12218 child-A: 150 child-B: 12068
+PR parent dist: 12663 child-A: 2 child-B: 12661
+PR parent dist: 12799 child-A: 12150 child-B: 649
+PR parent dist: 12737 child-A: 726 child-B: 12011
+PR parent dist: 12402 child-A: 11537 child-B: 865
+PR parent dist: 12509 child-A: 11632 child-B: 877
+PR parent dist: 12948 child-A: 11 child-B: 12937
+PR parent dist: 12979 child-A: 12255 child-B: 724
+Hijos útiles:  7
+Min dist: 155 Avg dist: 2410.475 Threshold: 105
+RefSet insert: child = 1468 best_ref = 1471 worst_quality = 1478
+Min dist: 11 Avg dist: 1909.3170731707316 Threshold: 105
+RefSet insert: child = 1469 best_ref = 1468 worst_quality = 1477
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 27: Mejor = 32189130.0000
+Real index: 1468
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1468, 1264, 964, 962, 844, 707, 700, 676, 653, 648]
+
+--- Iteración 28 ---
+Median Population distance: 1683 | POP_DISTANCE_THRESHOLD: 134
+Median RefSet distance: 12668 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12790 child-A: 66 child-B: 12724
+PR parent dist: 12784 child-A: 374 child-B: 12410
+PR parent dist: 12671 child-A: 23 child-B: 12648
+PR parent dist: 13027 child-A: 16 child-B: 13011
+PR parent dist: 12737 child-A: 205 child-B: 12532
+PR parent dist: 12072 child-A: 11425 child-B: 647
+PR parent dist: 11953 child-A: 168 child-B: 11785
+PR parent dist: 13133 child-A: 12384 child-B: 749
+PR parent dist: 12827 child-A: 5 child-B: 12822
+PR parent dist: 12525 child-A: 317 child-B: 12208
+PR parent dist: 12509 child-A: 18 child-B: 12491
+PR parent dist: 12676 child-A: 2 child-B: 12674
+PR parent dist: 12740 child-A: 775 child-B: 11965
+PR parent dist: 12400 child-A: 11716 child-B: 684
+PR parent dist: 13171 child-A: 12339 child-B: 832
+PR parent dist: 13064 child-A: 12181 child-B: 883
+PR parent dist: 12838 child-A: 8 child-B: 12830
+Hijos útiles:  11
+Min dist: 322 Avg dist: 2052.0 Threshold: 105
+RefSet insert: child = 1462 best_ref = 1468 worst_quality = 1474
+Min dist: 21 Avg dist: 2241.390243902439 Threshold: 105
+RefSet insert: child = 1465 best_ref = 1462 worst_quality = 1473
+Min dist: 7 Avg dist: 1738.7380952380952 Threshold: 105
+RefSet insert: child = 1466 best_ref = 1462 worst_quality = 1471
+Min dist: 173 Avg dist: 2174.9767441860463 Threshold: 127
+RefSet insert: child = 1469 best_ref = 1462 worst_quality = 1469
+Hijos insertados:  4
+Reemplazos en RefSet: 3 / 3
+Iter 28: Mejor = 32150550.0000
+Real index: 1462
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1462, 1255, 960, 954, 840, 706, 691, 667, 654, 647]
+
+--- Iteración 29 ---
+Median Population distance: 1669 | POP_DISTANCE_THRESHOLD: 133
+Median RefSet distance: 12676 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12072 child-A: 43 child-B: 12029
+PR parent dist: 12827 child-A: 12125 child-B: 702
+PR parent dist: 13077 child-A: 21 child-B: 13056
+PR parent dist: 12834 child-A: 11881 child-B: 953
+PR parent dist: 13099 child-A: 0 child-B: 13099
+PR parent dist: 12397 child-A: 11436 child-B: 961
+PR parent dist: 12838 child-A: 239 child-B: 12599
+PR parent dist: 12528 child-A: 11896 child-B: 632
+PR parent dist: 12882 child-A: 470 child-B: 12412
+PR parent dist: 12798 child-A: 12336 child-B: 462
+PR parent dist: 13171 child-A: 12672 child-B: 499
+PR parent dist: 12793 child-A: 11950 child-B: 843
+PR parent dist: 13073 child-A: 12136 child-B: 937
+PR parent dist: 12011 child-A: 11638 child-B: 373
+Hijos útiles:  5
+Min dist: 5 Avg dist: 1833.025 Threshold: 105
+RefSet insert: child = 1461 best_ref = 1462 worst_quality = 1469
+Hijos insertados:  1
+Reemplazos en RefSet: 1 / 3
+Iter 29: Mejor = 32142648.0000
+Real index: 1461
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1461, 1255, 960, 952, 838, 705, 690, 666, 652, 647]
+
+--- Iteración 30 ---
+Median Population distance: 1633 | POP_DISTANCE_THRESHOLD: 130
+Median RefSet distance: 12695 | MIN_PR_DISTANCE: 1500
+PR parent dist: 12784 child-A: 12097 child-B: 687
+PR parent dist: 13171 child-A: 12518 child-B: 653
+PR parent dist: 12011 child-A: 11348 child-B: 663
+PR parent dist: 12827 child-A: 12165 child-B: 662
+PR parent dist: 13014 child-A: 12245 child-B: 769
+PR parent dist: 12073 child-A: 52 child-B: 12021
+PR parent dist: 12776 child-A: 12773 child-B: 3
+PR parent dist: 12672 child-A: 11971 child-B: 701
+PR parent dist: 12838 child-A: 908 child-B: 11930
+PR parent dist: 12072 child-A: 1 child-B: 12071
+PR parent dist: 12834 child-A: 535 child-B: 12299
+PR parent dist: 13027 child-A: 12346 child-B: 681
+PR parent dist: 12430 child-A: 186 child-B: 12244
+PR parent dist: 12695 child-A: 1 child-B: 12694
+PR parent dist: 13077 child-A: 135 child-B: 12942
+PR parent dist: 12697 child-A: 11761 child-B: 936
+PR parent dist: 12882 child-A: 4 child-B: 12878
+PR parent dist: 12677 child-A: 12042 child-B: 635
+Hijos útiles:  10
+Min dist: 191 Avg dist: 1900.025 Threshold: 105
+RefSet insert: child = 1457 best_ref = 1461 worst_quality = 1468
+Min dist: 140 Avg dist: 1586.341463414634 Threshold: 127
+RefSet insert: child = 1463 best_ref = 1457 worst_quality = 1466
+Hijos insertados:  2
+Reemplazos en RefSet: 2 / 3
+Iter 30: Mejor = 32133648.0000
+Real index: 1457
+[3, 4, 4, 6, 6, 7, 7, 8, 8, 8]
+[1457, 1256, 958, 952, 839, 706, 690, 668, 653, 645]
+========================Resultados========================
+Índice de Transmisión aproximado (real): 1457
+Costo heurístico: 32133648.0000
+Carga total: 131074
+Numero de pares: 32640
+Tiempo de ejecución: 6697.5329 segundos
