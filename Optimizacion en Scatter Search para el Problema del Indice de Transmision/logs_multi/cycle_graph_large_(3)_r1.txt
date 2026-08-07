@@ -1,0 +1,56 @@
+========================Parámetros========================
+Archivo: test2.txt
+Nodos: 300 | Población: 30 | RefSet: 15 | Iteraciones: 5
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=22522
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=22522 cost=151875131032.0000
+
+--- Iteración 1 ---
+Median Population dist: 4296 | POP_DISTANCE_THRESHOLD: 171
+Median RefSet dist: 3370 | MIN_PR_DISTANCE: 505
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=22522 cost=151875131032.0000
+
+--- Iteración 2 ---
+Median Population dist: 3379 | POP_DISTANCE_THRESHOLD: 135
+Median RefSet dist: 3356 | MIN_PR_DISTANCE: 503
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=22522 cost=151875131032.0000
+
+--- Iteración 3 ---
+Median Population dist: 4299 | POP_DISTANCE_THRESHOLD: 171
+Median RefSet dist: 3361 | MIN_PR_DISTANCE: 504
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 269 pares modificados (de 25213 conflictivos)
+Hijos PR: 0 | Total (inc. perturbación): 1
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=22522 cost=151875131032.0000
+Diversificando población...
+Población convergida (ratio=0.048), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 5317 | POP_DISTANCE_THRESHOLD: 212
+Median RefSet dist: 4517 | MIN_PR_DISTANCE: 677
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=22522 cost=151875131032.0000
+
+--- Iteración 5 ---
+Median Population dist: 5325 | POP_DISTANCE_THRESHOLD: 213
+Median RefSet dist: 5324 | MIN_PR_DISTANCE: 798
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=22522 cost=151875131032.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 22522
+Costo heurístico: 151875131032.0000
+Carga total: 6750000
+Numero de pares: 89700
+Tiempo de ejecución: 5212.5986 segundos
