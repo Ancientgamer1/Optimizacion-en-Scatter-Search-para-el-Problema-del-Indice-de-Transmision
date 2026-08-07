@@ -362,9 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-<<<<<<< HEAD
-!logs_multi/*.log
-=======
 # Conservar los logs experimentales del TEG (anula la regla *.log de arriba)
 !logs_multi/*.log
->>>>>>> 36db883e81006038b089e9460bd5538a1a95731d
