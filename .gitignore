@@ -363,4 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Conservar los logs experimentales del TEG (anula la regla *.log de arriba)
-!logs_multi/*.log
+!**/logs_multi/*.log
