@@ -1,0 +1,55 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\cycle_graph\large\cycle_graph_large_(1).txt
+Nodos: 100 | Población: 30 | RefSet: 15 | Iteraciones: 5
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=2512
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=2512 cost=625012112.0000
+
+--- Iteración 1 ---
+Median Population dist: 2844 | POP_DISTANCE_THRESHOLD: 113
+Median RefSet dist: 2091 | MIN_PR_DISTANCE: 313
+Hijos PR: 6 | Total (inc. perturbación): 6
+Insertados en población: 6 (PR=6, perturbación=0)
+Sin mejora. real=2512 cost=625012112.0000
+
+--- Iteración 2 ---
+Median Population dist: 2130 | POP_DISTANCE_THRESHOLD: 85
+Median RefSet dist: 1217 | MIN_PR_DISTANCE: 200
+Hijos PR: 3 | Total (inc. perturbación): 3
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=2512 cost=625012112.0000
+
+--- Iteración 3 ---
+Median Population dist: 2116 | POP_DISTANCE_THRESHOLD: 84
+Median RefSet dist: 1234 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 3403 conflictivos)
+Hijos PR: 3 | Total (inc. perturbación): 4
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=2512 cost=625012112.0000
+Diversificando población...
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 2107 | POP_DISTANCE_THRESHOLD: 84
+Median RefSet dist: 1238 | MIN_PR_DISTANCE: 200
+Hijos PR: 4 | Total (inc. perturbación): 4
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=2512 cost=625012112.0000
+
+--- Iteración 5 ---
+Median Population dist: 2069 | POP_DISTANCE_THRESHOLD: 82
+Median RefSet dist: 1237 | MIN_PR_DISTANCE: 200
+Hijos PR: 3 | Total (inc. perturbación): 3
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=2512 cost=625012112.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 2512
+Costo heurístico: 625012112.0000
+Carga total: 250000
+Numero de pares: 9900
+Tiempo de ejecución: 49.1226 segundos

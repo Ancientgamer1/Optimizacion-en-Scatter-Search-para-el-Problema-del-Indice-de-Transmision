@@ -1,0 +1,101 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\cycle_graph\medium\cycle_graph_medium_(6).txt
+Nodos: 60 | Población: 20 | RefSet: 10 | Iteraciones: 10
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=909
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=907 cost=48631228.0000
+
+--- Iteración 1 ---
+Median Population dist: 1881 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1577 | MIN_PR_DISTANCE: 236
+Hijos PR: 4 | Total (inc. perturbación): 4
+Insertados en población: 4 (PR=4, perturbación=0)
+Sin mejora. real=907 cost=48631228.0000
+
+--- Iteración 2 ---
+Median Population dist: 1865 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1191 | MIN_PR_DISTANCE: 200
+Hijos PR: 17 | Total (inc. perturbación): 17
+Insertados en población: 14 (PR=14, perturbación=0)
+Sin mejora. real=907 cost=48631228.0000
+
+--- Iteración 3 ---
+Median Population dist: 98 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 107 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 1438 conflictivos)
+Hijos PR: 5 | Total (inc. perturbación): 6
+Insertados en población: 6 (PR=5, perturbación=1)
+Sin mejora. real=907 cost=48631228.0000
+Diversificando población...
+Población convergida (ratio=0.028), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 481 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 482 | MIN_PR_DISTANCE: 200
+Hijos PR: 16 | Total (inc. perturbación): 16
+Insertados en población: 16 (PR=16, perturbación=0)
+Sin mejora. real=907 cost=48631228.0000
+
+--- Iteración 5 ---
+Median Population dist: 88 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 92 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=907 cost=48631228.0000
+
+--- Iteración 6 ---
+Median Population dist: 87 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 97 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=907 cost=48631228.0000
+Diversificando población...
+Población convergida (ratio=0.025), reemplazando 50%
+Diversificaciones sin mejora: 2
+
+--- Iteración 7 ---
+Median Population dist: 476 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 458 | MIN_PR_DISTANCE: 200
+Hijos PR: 15 | Total (inc. perturbación): 15
+Insertados en población: 15 (PR=15, perturbación=0)
+Iter 7: Mejor real=906 cost=48838392.0000 [PR+Improve (PR dejó=908, improve bajó a 906)]
+  Cargas min (10): [896, 896, 896, 898, 898, 898, 898, 898, 898, 898]
+  Cargas max (10): [906, 906, 906, 906, 906, 906, 906, 906, 906, 906]
+
+--- Iteración 8 ---
+Median Population dist: 92 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 88 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=906 cost=48838392.0000
+
+--- Iteración 9 ---
+Median Population dist: 90 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 87 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=906 cost=48838392.0000
+
+--- Iteración 10 ---
+Median Population dist: 92 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 88 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 2718 conflictivos)
+Hijos PR: 0 | Total (inc. perturbación): 1
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=906 cost=48838392.0000
+Diversificando población...
+Población convergida (ratio=0.026), reemplazando 50%
+Diversificaciones sin mejora: 1
+========================Resultados========================
+Índice de Transmisión aproximado (real): 906
+Costo heurístico: 48838392.0000
+Carga total: 54132
+Numero de pares: 3540
+Tiempo de ejecución: 19.1419 segundos

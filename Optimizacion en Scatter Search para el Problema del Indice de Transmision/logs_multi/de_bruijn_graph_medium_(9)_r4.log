@@ -1,0 +1,104 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\de_bruijn_graph\medium\de_bruijn_graph_medium_(9).txt
+Nodos: 90 | Población: 20 | RefSet: 10 | Iteraciones: 10
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=259
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=244 cost=6029234.0000
+
+--- Iteración 1 ---
+Median Population dist: 2886 | POP_DISTANCE_THRESHOLD: 115
+Median RefSet dist: 2864 | MIN_PR_DISTANCE: 429
+Hijos PR: 30 | Total (inc. perturbación): 30
+Insertados en población: 30 (PR=30, perturbación=0)
+Iter 1: Mejor real=234 cost=5978498.0000 [PR puro (antes=243 -> después=237) +deep=234]
+  Cargas min (10): [80, 82, 87, 91, 93, 95, 95, 101, 102, 103]
+  Cargas max (10): [234, 234, 234, 234, 234, 233, 232, 232, 231, 231]
+
+--- Iteración 2 ---
+Median Population dist: 1316 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1281 | MIN_PR_DISTANCE: 200
+Hijos PR: 29 | Total (inc. perturbación): 29
+Insertados en población: 29 (PR=29, perturbación=0)
+Iter 2: Mejor real=228 cost=5697608.0000 [PR+Improve (PR dejó=234, improve bajó a 230) +deep=228]
+  Cargas min (10): [71, 80, 85, 87, 88, 90, 93, 94, 94, 94]
+  Cargas max (10): [228, 227, 226, 225, 225, 225, 224, 224, 224, 224]
+
+--- Iteración 3 ---
+Median Population dist: 1236 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1130 | MIN_PR_DISTANCE: 200
+Hijos PR: 28 | Total (inc. perturbación): 28
+Insertados en población: 28 (PR=28, perturbación=0)
+Iter 3: Mejor real=225 cost=5686056.0000 [PR+Improve (PR dejó=231, improve bajó a 227) +deep=225]
+  Cargas min (10): [71, 82, 87, 87, 88, 91, 92, 93, 95, 97]
+  Cargas max (10): [225, 225, 224, 224, 224, 224, 224, 223, 223, 223]
+
+--- Iteración 4 ---
+Median Population dist: 331 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 362 | MIN_PR_DISTANCE: 200
+Hijos PR: 28 | Total (inc. perturbación): 28
+Insertados en población: 28 (PR=28, perturbación=0)
+Iter 4: Mejor real=222 cost=5671902.0000 [PR+Improve (PR dejó=225, improve bajó a 223) +deep=222]
+  Cargas min (10): [73, 81, 81, 88, 91, 91, 92, 97, 97, 98]
+  Cargas max (10): [222, 222, 221, 221, 221, 221, 221, 220, 220, 220]
+
+--- Iteración 5 ---
+Median Population dist: 292 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 332 | MIN_PR_DISTANCE: 200
+Hijos PR: 25 | Total (inc. perturbación): 25
+Insertados en población: 25 (PR=25, perturbación=0)
+Iter 5: Mejor real=221 cost=5666427.0000 [PR+Improve (PR dejó=225, improve bajó a 222) +deep=221]
+  Cargas min (10): [73, 80, 84, 88, 90, 91, 93, 94, 97, 97]
+  Cargas max (10): [221, 221, 221, 221, 221, 220, 220, 220, 220, 220]
+
+--- Iteración 6 ---
+Median Population dist: 277 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 270 | MIN_PR_DISTANCE: 200
+Hijos PR: 23 | Total (inc. perturbación): 23
+Insertados en población: 23 (PR=23, perturbación=0)
+Iter 6: Mejor real=219 cost=5661868.0000 [PR+Improve (PR dejó=224, improve bajó a 220) +deep=219]
+  Cargas min (10): [73, 81, 87, 88, 90, 91, 91, 91, 95, 100]
+  Cargas max (10): [219, 219, 219, 219, 219, 218, 218, 218, 218, 218]
+
+--- Iteración 7 ---
+Median Population dist: 263 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 256 | MIN_PR_DISTANCE: 200
+Hijos PR: 21 | Total (inc. perturbación): 21
+Insertados en población: 21 (PR=21, perturbación=0)
+Sin mejora. real=219 cost=5661868.0000
+
+--- Iteración 8 ---
+Median Population dist: 228 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 229 | MIN_PR_DISTANCE: 200
+Hijos PR: 21 | Total (inc. perturbación): 21
+Insertados en población: 21 (PR=21, perturbación=0)
+Iter 8: Mejor real=219 cost=5648830.0000 [PR+Improve (PR dejó=221, improve bajó a 219)]
+  Cargas min (10): [74, 82, 84, 86, 92, 94, 94, 95, 97, 99]
+  Cargas max (10): [219, 219, 219, 218, 218, 218, 218, 218, 218, 217]
+
+--- Iteración 9 ---
+Median Population dist: 196 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 192 | MIN_PR_DISTANCE: 200
+Hijos PR: 17 | Total (inc. perturbación): 17
+Insertados en población: 17 (PR=17, perturbación=0)
+Iter 9: Mejor real=218 cost=5650037.0000 [PR+Improve (PR dejó=221, improve bajó a 218)]
+  Cargas min (10): [73, 80, 84, 88, 91, 92, 94, 94, 98, 99]
+  Cargas max (10): [218, 218, 218, 217, 217, 217, 217, 217, 216, 216]
+
+--- Iteración 10 ---
+Median Population dist: 181 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 181 | MIN_PR_DISTANCE: 200
+Hijos PR: 11 | Total (inc. perturbación): 11
+Insertados en población: 11 (PR=11, perturbación=0)
+Iter 10: Mejor real=217 cost=5644545.0000 [PR+Improve (PR dejó=221, improve bajó a 218) +deep=217]
+  Cargas min (10): [76, 83, 85, 88, 92, 93, 93, 96, 98, 100]
+  Cargas max (10): [217, 217, 217, 217, 217, 217, 217, 216, 216, 216]
+========================Resultados========================
+Índice de Transmisión aproximado (real): 217
+Costo heurístico: 5644545.0000
+Carga total: 30831
+Numero de pares: 8010
+Tiempo de ejecución: 13.0362 segundos

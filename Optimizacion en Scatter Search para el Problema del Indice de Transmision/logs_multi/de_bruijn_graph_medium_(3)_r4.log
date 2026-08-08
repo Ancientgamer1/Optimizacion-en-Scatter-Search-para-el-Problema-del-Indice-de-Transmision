@@ -1,0 +1,103 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\de_bruijn_graph\medium\de_bruijn_graph_medium_(3).txt
+Nodos: 30 | Población: 20 | RefSet: 10 | Iteraciones: 10
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=71
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=71 cost=114782.0000
+
+--- Iteración 1 ---
+Median Population dist: 225 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 230 | MIN_PR_DISTANCE: 200
+Hijos PR: 30 | Total (inc. perturbación): 30
+Insertados en población: 30 (PR=30, perturbación=0)
+Iter 1: Mejor real=61 cost=117830.0000 [PR puro (antes=69 -> después=65) +deep=61]
+  Cargas min (10): [19, 20, 22, 24, 27, 29, 29, 30, 30, 31]
+  Cargas max (10): [61, 61, 60, 60, 60, 60, 58, 58, 58, 57]
+
+--- Iteración 2 ---
+Median Population dist: 282 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 238 | MIN_PR_DISTANCE: 200
+Hijos PR: 21 | Total (inc. perturbación): 21
+Insertados en población: 21 (PR=21, perturbación=0)
+Iter 2: Mejor real=59 cost=116425.0000 [PR+Improve (PR dejó=65, improve bajó a 61) +deep=59]
+  Cargas min (10): [21, 22, 24, 25, 28, 29, 29, 29, 33, 34]
+  Cargas max (10): [59, 59, 59, 59, 58, 58, 58, 58, 57, 57]
+
+--- Iteración 3 ---
+Median Population dist: 182 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 459 | MIN_PR_DISTANCE: 200
+Hijos PR: 19 | Total (inc. perturbación): 19
+Insertados en población: 19 (PR=19, perturbación=0)
+Sin mejora. real=59 cost=116425.0000
+
+--- Iteración 4 ---
+Median Population dist: 136 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 143 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=59 cost=116425.0000
+
+--- Iteración 5 ---
+Median Population dist: 137 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 143 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 520 conflictivos)
+Hijos PR: 0 | Total (inc. perturbación): 1
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=59 cost=116425.0000
+Diversificando población...
+Diversificaciones sin mejora: 1
+
+--- Iteración 6 ---
+Median Population dist: 166 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 180 | MIN_PR_DISTANCE: 200
+Hijos PR: 18 | Total (inc. perturbación): 18
+Insertados en población: 18 (PR=18, perturbación=0)
+Iter 6: Mejor real=58 cost=114674.0000 [PR+Improve (PR dejó=60, improve bajó a 59) +deep=58]
+  Cargas min (10): [18, 21, 25, 25, 27, 28, 30, 31, 35, 35]
+  Cargas max (10): [58, 58, 58, 57, 57, 57, 57, 57, 57, 57]
+
+--- Iteración 7 ---
+Median Population dist: 119 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 140 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=58 cost=114674.0000
+
+--- Iteración 8 ---
+Median Population dist: 119 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 141 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=58 cost=114674.0000
+
+--- Iteración 9 ---
+Median Population dist: 121 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 126 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 497 conflictivos)
+Hijos PR: 0 | Total (inc. perturbación): 1
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=58 cost=114674.0000
+Diversificando población...
+Población convergida (ratio=0.140), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 10 ---
+Median Population dist: 237 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 172 | MIN_PR_DISTANCE: 200
+Hijos PR: 4 | Total (inc. perturbación): 4
+Insertados en población: 4 (PR=4, perturbación=0)
+Iter 10: Mejor real=58 cost=112937.0000 [PR+Improve (PR dejó=59, improve bajó a 58)]
+  Cargas min (10): [20, 21, 26, 27, 29, 29, 29, 31, 32, 35]
+  Cargas max (10): [58, 58, 58, 58, 58, 58, 58, 58, 57, 57]
+========================Resultados========================
+Índice de Transmisión aproximado (real): 58
+Costo heurístico: 112937.0000
+Carga total: 2445
+Numero de pares: 870
+Tiempo de ejecución: 1.9896 segundos

@@ -1,0 +1,100 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\hypercube_graph\medium\hypercube_graph_medium_(2).txt
+Nodos: 32 | Población: 20 | RefSet: 10 | Iteraciones: 10
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=44
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=44 cost=84630.0000
+
+--- Iteración 1 ---
+Median Population dist: 135 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 137 | MIN_PR_DISTANCE: 200
+Hijos PR: 7 | Total (inc. perturbación): 7
+Insertados en población: 7 (PR=7, perturbación=0)
+Iter 1: Mejor real=37 cost=83458.0000 [PR puro (antes=43 -> después=37)]
+  Cargas min (10): [16, 20, 22, 22, 22, 23, 25, 25, 26, 27]
+  Cargas max (10): [37, 37, 37, 36, 36, 36, 36, 36, 36, 36]
+
+--- Iteración 2 ---
+Median Population dist: 869 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 138 | MIN_PR_DISTANCE: 200
+Hijos PR: 9 | Total (inc. perturbación): 9
+Insertados en población: 9 (PR=9, perturbación=0)
+Sin mejora. real=37 cost=83458.0000
+
+--- Iteración 3 ---
+Median Population dist: 112 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 173 | MIN_PR_DISTANCE: 200
+Hijos PR: 11 | Total (inc. perturbación): 11
+Insertados en población: 11 (PR=11, perturbación=0)
+Sin mejora. real=37 cost=83458.0000
+
+--- Iteración 4 ---
+Median Population dist: 107 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 125 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 301 conflictivos)
+Hijos PR: 1 | Total (inc. perturbación): 2
+Insertados en población: 2 (PR=1, perturbación=1)
+Sin mejora. real=37 cost=83458.0000
+Diversificando población...
+Población convergida (ratio=0.108), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 5 ---
+Median Population dist: 530 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 190 | MIN_PR_DISTANCE: 200
+Hijos PR: 12 | Total (inc. perturbación): 12
+Insertados en población: 12 (PR=12, perturbación=0)
+Sin mejora. real=37 cost=83458.0000
+
+--- Iteración 6 ---
+Median Population dist: 104 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 145 | MIN_PR_DISTANCE: 200
+Hijos PR: 6 | Total (inc. perturbación): 6
+Insertados en población: 6 (PR=6, perturbación=0)
+Iter 6: Mejor real=37 cost=83246.0000 [PR+Improve (PR dejó=38, improve bajó a 37)]
+  Cargas min (10): [19, 21, 23, 23, 23, 25, 26, 27, 27, 27]
+  Cargas max (10): [37, 37, 37, 37, 36, 36, 36, 36, 36, 36]
+
+--- Iteración 7 ---
+Median Population dist: 115 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 125 | MIN_PR_DISTANCE: 200
+Hijos PR: 1 | Total (inc. perturbación): 1
+Insertados en población: 1 (PR=1, perturbación=0)
+Sin mejora. real=37 cost=83246.0000
+
+--- Iteración 8 ---
+Median Population dist: 112 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 132 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=37 cost=83246.0000
+
+--- Iteración 9 ---
+Median Population dist: 110 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 132 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 273 conflictivos)
+Hijos PR: 1 | Total (inc. perturbación): 2
+Insertados en población: 2 (PR=1, perturbación=1)
+Sin mejora. real=37 cost=83246.0000
+Diversificando población...
+Población convergida (ratio=0.111), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 10 ---
+Median Population dist: 526 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 191 | MIN_PR_DISTANCE: 200
+Hijos PR: 10 | Total (inc. perturbación): 10
+Insertados en población: 10 (PR=10, perturbación=0)
+Sin mejora. real=37 cost=83246.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 37
+Costo heurístico: 83246.0000
+Carga total: 2560
+Numero de pares: 992
+Tiempo de ejecución: 1.7840 segundos

@@ -1,0 +1,58 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\wheel_graph\large\wheel_graph_large_(2).txt
+Nodos: 200 | Población: 30 | RefSet: 15 | Iteraciones: 5
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=391
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=391 cost=30276604.0000
+
+--- Iteración 1 ---
+Median Population dist: 3315 | POP_DISTANCE_THRESHOLD: 132
+Median RefSet dist: 4545 | MIN_PR_DISTANCE: 681
+Hijos PR: 40 | Total (inc. perturbación): 40
+Insertados en población: 40 (PR=40, perturbación=0)
+Sin mejora. real=391 cost=30276604.0000
+
+--- Iteración 2 ---
+Median Population dist: 1733 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1248 | MIN_PR_DISTANCE: 200
+Hijos PR: 35 | Total (inc. perturbación): 35
+Insertados en población: 34 (PR=34, perturbación=0)
+Sin mejora. real=391 cost=30276604.0000
+
+--- Iteración 3 ---
+Median Population dist: 145 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 193 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 119 pares modificados (de 3839 conflictivos)
+Hijos PR: 19 | Total (inc. perturbación): 20
+Insertados en población: 14 (PR=13, perturbación=1)
+Sin mejora. real=391 cost=30276604.0000
+Diversificando población...
+Población convergida (ratio=0.004), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 4300 | POP_DISTANCE_THRESHOLD: 172
+Median RefSet dist: 7238 | MIN_PR_DISTANCE: 1085
+Hijos PR: 35 | Total (inc. perturbación): 35
+Insertados en población: 35 (PR=35, perturbación=0)
+Sin mejora. real=391 cost=30276604.0000
+
+--- Iteración 5 ---
+Median Population dist: 185 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 194 | MIN_PR_DISTANCE: 200
+Hijos PR: 24 | Total (inc. perturbación): 24
+Insertados en población: 23 (PR=23, perturbación=0)
+Iter 5: Mejor real=391 cost=30276493.0000 [PR+Improve (PR dejó=392, improve bajó a 391)]
+  Cargas min (10): [6, 6, 6, 6, 6, 6, 6, 6, 6, 6]
+  Cargas max (10): [391, 391, 391, 391, 391, 391, 391, 391, 391, 391]
+========================Resultados========================
+Índice de Transmisión aproximado (real): 391
+Costo heurístico: 30276493.0000
+Carga total: 78899
+Numero de pares: 39800
+Tiempo de ejecución: 71.7636 segundos

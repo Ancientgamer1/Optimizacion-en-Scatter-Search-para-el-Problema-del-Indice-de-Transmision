@@ -1,0 +1,95 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\cycle_graph\medium\cycle_graph_medium_(2).txt
+Nodos: 20 | Población: 20 | RefSet: 10 | Iteraciones: 10
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=105
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=105 cost=200340.0000
+
+--- Iteración 1 ---
+Median Population dist: 19 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 20 | MIN_PR_DISTANCE: 200
+Hijos PR: 4 | Total (inc. perturbación): 4
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=105 cost=200340.0000
+
+--- Iteración 2 ---
+Median Population dist: 19 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 21 | MIN_PR_DISTANCE: 200
+Hijos PR: 6 | Total (inc. perturbación): 6
+Insertados en población: 6 (PR=6, perturbación=0)
+Iter 2: Mejor real=104 cost=208984.0000 [PR+Improve (PR dejó=106, improve bajó a 104)]
+  Cargas min (10): [98, 98, 100, 100, 100, 100, 102, 102, 102, 102]
+  Cargas max (10): [104, 104, 104, 104, 104, 104, 104, 104, 104, 104]
+
+--- Iteración 3 ---
+Median Population dist: 325 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 324 | MIN_PR_DISTANCE: 200
+Hijos PR: 16 | Total (inc. perturbación): 16
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+
+--- Iteración 4 ---
+Median Population dist: 33 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 324 | MIN_PR_DISTANCE: 200
+Hijos PR: 16 | Total (inc. perturbación): 16
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+
+--- Iteración 5 ---
+Median Population dist: 41 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 324 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 100 pares modificados (de 320 conflictivos)
+Hijos PR: 18 | Total (inc. perturbación): 19
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=104 cost=208984.0000
+Diversificando población...
+Población convergida (ratio=0.108), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 6 ---
+Median Population dist: 65 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 70 | MIN_PR_DISTANCE: 200
+Hijos PR: 6 | Total (inc. perturbación): 6
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+
+--- Iteración 7 ---
+Median Population dist: 65 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 69 | MIN_PR_DISTANCE: 200
+Hijos PR: 4 | Total (inc. perturbación): 4
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+
+--- Iteración 8 ---
+Median Population dist: 64 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 71 | MIN_PR_DISTANCE: 200
+Hijos PR: 5 | Total (inc. perturbación): 5
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+Diversificando población...
+Diversificaciones sin mejora: 2
+
+--- Iteración 9 ---
+Median Population dist: 64 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 60 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+
+--- Iteración 10 ---
+Median Population dist: 63 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 60 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=104 cost=208984.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 104
+Costo heurístico: 208984.0000
+Carga total: 2044
+Numero de pares: 380
+Tiempo de ejecución: 3.9728 segundos

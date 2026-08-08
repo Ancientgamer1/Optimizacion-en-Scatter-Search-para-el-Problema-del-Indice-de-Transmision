@@ -1,0 +1,55 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\de_bruijn_graph\small\de_bruijn_graph_small_(2).txt
+Nodos: 5 | Población: 10 | RefSet: 5 | Iteraciones: 5
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=6
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=4 cost=112.0000
+
+--- Iteración 1 ---
+Median Population dist: 7 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 8 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=4 cost=112.0000
+
+--- Iteración 2 ---
+Median Population dist: 7 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 8 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=4 cost=112.0000
+
+--- Iteración 3 ---
+Median Population dist: 7 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 8 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 20 pares modificados (de 20 conflictivos)
+Hijos PR: 0 | Total (inc. perturbación): 1
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=4 cost=112.0000
+Diversificando población...
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 6 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 6 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=4 cost=112.0000
+
+--- Iteración 5 ---
+Median Population dist: 6 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 6 | MIN_PR_DISTANCE: 200
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=4 cost=112.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 4
+Costo heurístico: 112.0000
+Carga total: 28
+Numero de pares: 20
+Tiempo de ejecución: 0.0089 segundos

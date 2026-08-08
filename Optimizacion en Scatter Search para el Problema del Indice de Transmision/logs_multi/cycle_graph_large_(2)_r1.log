@@ -1,0 +1,56 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\cycle_graph\large\cycle_graph_large_(2).txt
+Nodos: 200 | Población: 30 | RefSet: 15 | Iteraciones: 5
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=10019
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=10018 cost=20001332832.0000
+
+--- Iteración 1 ---
+Median Population dist: 3279 | POP_DISTANCE_THRESHOLD: 131
+Median RefSet dist: 3281 | MIN_PR_DISTANCE: 492
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=10018 cost=20001332832.0000
+
+--- Iteración 2 ---
+Median Population dist: 3285 | POP_DISTANCE_THRESHOLD: 131
+Median RefSet dist: 3296 | MIN_PR_DISTANCE: 494
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=10018 cost=20001332832.0000
+
+--- Iteración 3 ---
+Median Population dist: 3285 | POP_DISTANCE_THRESHOLD: 131
+Median RefSet dist: 3313 | MIN_PR_DISTANCE: 496
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 119 pares modificados (de 11809 conflictivos)
+Hijos PR: 0 | Total (inc. perturbación): 1
+Insertados en población: 1 (PR=0, perturbación=1)
+Sin mejora. real=10018 cost=20001332832.0000
+Diversificando población...
+Población convergida (ratio=0.083), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 5065 | POP_DISTANCE_THRESHOLD: 202
+Median RefSet dist: 2379 | MIN_PR_DISTANCE: 356
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=10018 cost=20001332832.0000
+
+--- Iteración 5 ---
+Median Population dist: 5069 | POP_DISTANCE_THRESHOLD: 202
+Median RefSet dist: 2370 | MIN_PR_DISTANCE: 355
+Hijos PR: 0 | Total (inc. perturbación): 0
+Insertados en población: 0 (PR=0, perturbación=0)
+Sin mejora. real=10018 cost=20001332832.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 10018
+Costo heurístico: 20001332832.0000
+Carga total: 2000064
+Numero de pares: 39800
+Tiempo de ejecución: 328.3761 segundos

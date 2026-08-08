@@ -1,0 +1,56 @@
+========================Parámetros========================
+Archivo: C:\Users\luisj\source\repos\Optimizacion en Scatter Search para el Problema del Indice de Transmision\Optimizacion en Scatter Search para el Problema del Indice de Transmision\test_graphs\wheel_graph\large\wheel_graph_large_(3).txt
+Nodos: 300 | Población: 30 | RefSet: 15 | Iteraciones: 5
+Precomputando caminos...
+Construyendo base balanceada genérica...
+Base inicial: indice=591
+Construyendo población...
+Mejorando población inicial...
+Construyendo RefSet...
+Iteración 1: real=591 cost=104095004.0000
+
+--- Iteración 1 ---
+Median Population dist: 4310 | POP_DISTANCE_THRESHOLD: 172
+Median RefSet dist: 3371 | MIN_PR_DISTANCE: 505
+Hijos PR: 40 | Total (inc. perturbación): 40
+Insertados en población: 40 (PR=40, perturbación=0)
+Sin mejora. real=591 cost=104095004.0000
+
+--- Iteración 2 ---
+Median Population dist: 2208 | POP_DISTANCE_THRESHOLD: 88
+Median RefSet dist: 1232 | MIN_PR_DISTANCE: 200
+Hijos PR: 36 | Total (inc. perturbación): 36
+Insertados en población: 36 (PR=36, perturbación=0)
+Sin mejora. real=591 cost=104095004.0000
+
+--- Iteración 3 ---
+Median Population dist: 1097 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1055 | MIN_PR_DISTANCE: 200
+Estancamiento detectado, perturbación estratégica...
+Perturbación: 269 pares modificados (de 5839 conflictivos)
+Hijos PR: 25 | Total (inc. perturbación): 26
+Insertados en población: 24 (PR=23, perturbación=1)
+Sin mejora. real=591 cost=104095004.0000
+Diversificando población...
+Población convergida (ratio=0.012), reemplazando 50%
+Diversificaciones sin mejora: 1
+
+--- Iteración 4 ---
+Median Population dist: 4578 | POP_DISTANCE_THRESHOLD: 183
+Median RefSet dist: 7620 | MIN_PR_DISTANCE: 1143
+Hijos PR: 38 | Total (inc. perturbación): 38
+Insertados en población: 38 (PR=38, perturbación=0)
+Sin mejora. real=591 cost=104095004.0000
+
+--- Iteración 5 ---
+Median Population dist: 210 | POP_DISTANCE_THRESHOLD: 80
+Median RefSet dist: 1034 | MIN_PR_DISTANCE: 200
+Hijos PR: 32 | Total (inc. perturbación): 32
+Insertados en población: 26 (PR=26, perturbación=0)
+Sin mejora. real=591 cost=104095004.0000
+========================Resultados========================
+Índice de Transmisión aproximado (real): 591
+Costo heurístico: 104095004.0000
+Carga total: 178204
+Numero de pares: 89700
+Tiempo de ejecución: 197.2569 segundos
