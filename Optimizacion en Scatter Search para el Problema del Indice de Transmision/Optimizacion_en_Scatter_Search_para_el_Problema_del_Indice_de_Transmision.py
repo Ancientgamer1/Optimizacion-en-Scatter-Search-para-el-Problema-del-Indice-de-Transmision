@@ -713,7 +713,7 @@ def path_relinking(solA, solB, global_edge_load):
 
     Parte del mejor padre (base) y adopta pares del guía en orden de beneficio neto
     de congestión (relief al salir de aristas del base − cost al entrar las del guía),
-    aceptando cada cambio solo si no supera el techo del peor padre + tolerancia.
+    aceptando cada cambio solo si no supera el techo del mejor padre —la base— más una tolerancia.
     """
     if get_real_index(solA) <= get_real_index(solB):
         base, guide = solA, solB
