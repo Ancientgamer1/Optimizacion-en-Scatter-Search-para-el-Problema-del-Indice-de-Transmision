@@ -45,10 +45,10 @@ REFSET_SAME_REAL_PENALTY = 5       # penalización por repetir índice real en e
 # --- Path Relinking ---
 PR_MAX_MOVES = 100                 # tope de movimientos (cambios de ruta) por hijo
 PR_PRE_CAP_FACTOR = 3              # pre-filtro de candidatos = PR_MAX_MOVES * factor
-PR_CRITICAL_EDGE_SLACK = 2         # aristas "críticas": carga >= (máximo - slack)
+PR_CRITICAL_EDGE_SLACK = 2         # aristas "críticas": congestión >= (máximo - slack)
 PR_RELIEF_GLOBAL_WEIGHT = 0.3      # peso de la memoria histórica en el alivio
 PR_COST_GLOBAL_WEIGHT = 0.1        # peso de la memoria histórica en el costo de entrada
-PR_TOLERANCE_DIVISOR = 100         # tolerancia sobre el techo del peor padre (ceiling // divisor)
+PR_TOLERANCE_DIVISOR = 100         # tolerancia sobre el techo del mejor padre, la base (ceiling // divisor)
 
 # --- Búsqueda local (improve) ---
 IMPROVE_GLOBAL_WEIGHT = 0.4        # peso de la congestión histórica al puntuar aristas
@@ -79,7 +79,7 @@ def normalize_edge(u, v):
 
 
 def real_transmission_index(solution):
-    """Índice de transmisión real: carga máxima sobre todas las aristas."""
+    """Índice de transmisión real: congestión máxima sobre todas las aristas."""
     return max(solution.edge_load.values()) if solution.edge_load else 0
 
 
@@ -111,13 +111,13 @@ def path_to_edges(path):
 
 
 def congestion_signature(solution, limit=10):
-    """Firma de congestión: tupla de las cargas más altas, usada para comparar estados."""
+    """Firma de congestión: tupla de las congestiones más altas, usada para comparar estados."""
     loads = sorted(solution.edge_load.values(), reverse=True)[:limit]
     return tuple(loads)
 
 
 def improves_congestion(old_sig, new_sig):
-    # True si la nueva firma de cargas es lexicográficamente menor (menos congestión arriba).
+    # True si la nueva firma de congestiones es lexicográficamente menor (menos congestión arriba).
     return new_sig < old_sig
 
 
@@ -180,14 +180,14 @@ class Solution:
     """
     Representa una asignación de caminos a todos los pares origen-destino.
 
-    Mantiene cargas de aristas de forma incremental: update_pair() actualiza
+    Mantiene las congestiones de las aristas de forma incremental: update_pair() actualiza
     solo las aristas afectadas sin recalcular todo desde cero.
 
     Atributos clave:
         routing:       dict (u,v) -> lista de nodos del camino
         edge_load:     dict arista -> número de caminos que la usan
         edge_to_pairs: dict arista -> conjunto de pares que la usan
-        max_load:      carga máxima actual (= índice real de transmisión)
+        max_load:      congestión máxima actual (= índice real de transmisión)
         real_index:    cache del índice real (None si está desactualizado)
     """
 
@@ -195,15 +195,15 @@ class Solution:
         self.routing = routing
         self.graph = graph
 
-        # Estadísticas de carga (se mantienen incrementalmente en update_pair)
+        # Estadísticas de congestión (se mantienen incrementalmente en update_pair)
         self.edge_load = defaultdict(int)
-        self.load_count = defaultdict(int)  # histograma: carga -> nº de aristas con esa carga
+        self.load_count = defaultdict(int)  # histograma: congestión -> nº de aristas con esa congestión
         self.total_load = 0
         self.sum_sq_load = 0
         self.max_load = 0
         self.edge_to_pairs = defaultdict(set)
         self.real_index = None
-        # Provenance para atribución de mejoras (asignados por el ciclo principal)
+        # Procedencia para la atribución de mejoras (asignados por el ciclo principal)
         self._origin = "pr"
         self._pr_real_before = None
         self._pr_real_after = None
@@ -218,7 +218,7 @@ class Solution:
         routing y edge_to_pairs se comparten por referencia y solo se duplican
         cuando update_pair los modifica por primera vez; un clon que nunca se
         muta no paga el costo O(P·L) de duplicar el enrutamiento.
-        Las cargas (edge_load, load_count) y los escalares sí se copian de una
+        Las congestiones (edge_load, load_count) y los escalares sí se copian de una
         vez para poder evaluar el clon de forma independiente.
         graph se comparte (es inmutable).
         """
@@ -237,7 +237,7 @@ class Solution:
         new.max_load = self.max_load
         new.real_index = self.real_index
         new.cost = self.cost
-        # La provenance se reinicia en cada clon (se re-asigna al generarlo)
+        # La procedencia se reinicia en cada clon (se re-asigna al generarlo)
         new._origin = "pr"
         new._pr_real_before = None
         new._pr_real_after = None
@@ -248,7 +248,7 @@ class Solution:
         return new
 
     def _initialize_edge_load(self):
-        """Calcula cargas iniciales recorriendo todos los caminos del routing."""
+        """Calcula congestiones iniciales recorriendo todos los caminos del routing."""
         # Fase 1: contar cuántas cadenas cruzan cada arista (= vector de congestiones)
         for (u, v), path in self.routing.items():
             for i in range(len(path) - 1):
@@ -265,7 +265,7 @@ class Solution:
 
     def update_pair(self, u, v, new_path):
         """
-        Reemplaza el camino del par (u,v) actualizando cargas de forma incremental.
+        Reemplaza el camino del par (u,v) actualizando las congestiones de forma incremental.
         Solo toca las aristas del camino viejo y del nuevo, no recalcula todo.
         Recalcula max_load solo si el máximo podría haber bajado (caso poco frecuente).
         """
@@ -280,7 +280,7 @@ class Solution:
         old_path = self.routing[(u, v)]
         max_might_have_dropped = False
 
-        # Restar carga del camino viejo
+        # Restar congestión del camino viejo
         for i in range(len(old_path) - 1):
             e = normalize_edge(old_path[i], old_path[i + 1])
             old = self.edge_load[e]
@@ -303,7 +303,7 @@ class Solution:
                 if not self.edge_to_pairs[e]:
                     del self.edge_to_pairs[e]
 
-        # Sumar carga del nuevo camino
+        # Sumar congestión del nuevo camino
         for i in range(len(new_path) - 1):
             e = normalize_edge(new_path[i], new_path[i + 1])
             old = self.edge_load.get(e, 0)
@@ -328,7 +328,7 @@ class Solution:
         self.routing[(u, v)] = new_path
 
         if max_might_have_dropped:
-            # Baja max_load al siguiente bucket no vacío — O(descenso), no O(E)
+            # Baja max_load a la siguiente cubeta no vacía — O(descenso), no O(E)
             while self.max_load > 0 and self.load_count.get(self.max_load, 0) == 0:
                 self.max_load -= 1
 
@@ -337,9 +337,9 @@ class Solution:
 
     def compute_cost(self):
         """
-        Costo heurístico: suma de cuadrados de cargas.
+        Costo heurístico: suma de cuadrados de las congestiones.
         Se usa como desempate cuando dos soluciones tienen el mismo índice real.
-        Minimizar esta suma distribuye la carga más uniformemente.
+        Minimizar esta suma distribuye la congestión más uniformemente.
         """
         if not self.edge_load:
             return float('inf')
@@ -378,7 +378,7 @@ def precompute_all_pairs(graph):
     """
     Precomputa caminos más cortos para todos los pares dirigidos (u, v) con u ≠ v.
     Usa rutas dirigidas: C(u,v) y C(v,u) son independientes, permitiendo mayor
-    flexibilidad para balancear la carga y alcanzar el óptimo teórico.
+    flexibilidad para balancear la congestión y alcanzar el óptimo teórico.
     """
     all_paths = {}
     nodes = graph.nodes()
@@ -446,8 +446,8 @@ def build_balanced_base(graph, all_paths, K=10):
 
     Para cada par (s,t) genera K caminos mínimos aleatorios (descendiendo desde t
     por el gradiente de distancias del BFS de s) y se queda con el que menos
-    congestiona las aristas ya cargadas. A diferencia de asignar directamente el
-    árbol BFS único —que concentraría la carga—, este método la distribuye entre
+    congestiona las aristas ya congestionadas. A diferencia de asignar directamente el
+    árbol BFS único —que concentraría la congestión—, este método la distribuye entre
     los múltiples caminos mínimos equivalentes, bajando el índice de partida.
 
     Es GENÉRICO: no asume hipercubo ni ninguna estructura, solo usa caminos
@@ -485,12 +485,12 @@ def build_balanced_base(graph, all_paths, K=10):
                     cur = random.choice(cands)
                     path.append(cur)
                 path.reverse()
-                # Carga máxima que provocaría este camino sobre las aristas ya cargadas
+                # Congestión máxima que provocaría este camino sobre las aristas ya congestionadas
                 mx = max((edge_load[normalize_edge(path[i], path[i + 1])]
                           for i in range(len(path) - 1)), default=0)
                 if best_max is None or mx < best_max:
                     best_max, best_path = mx, path
-            # Fija el mejor camino y acumula su carga para influir en los siguientes pares
+            # Fija el mejor camino y acumula su congestión para influir en los siguientes pares
             routing[(s, t)] = best_path
             for i in range(len(best_path) - 1):
                 edge_load[normalize_edge(best_path[i], best_path[i + 1])] += 1
@@ -543,7 +543,7 @@ def generate_initial_variant(base_solution, graph, num_changes=800):
         if len(old_path) < 2:
             continue
 
-        # Prohíbe una arista aleatoria del camino actual y reroutea si hay alternativa distinta
+        # Prohíbe una arista aleatoria del camino actual y reencamina si hay alternativa distinta
         old_edges = list(path_to_edges(old_path))
         forbidden = {random.choice(old_edges)}
         new_path = shortest_path_avoiding(graph, u, v, forbidden)
@@ -722,8 +722,8 @@ def path_relinking(solA, solB, global_edge_load):
 
     child = base.copy()
 
-    # Solo pares que usan aristas en o cerca del max_load actual —
-    # son las únicas que pueden mover el índice real
+    # Solo se consideran los pares que cruzan aristas críticas (en el máximo o cerca):
+    # cambiar la ruta de un par que no toca el máximo no puede bajar el índice real.
     max_load_val = child.max_load
     critical_edges = [e for e in child.edge_load if child.edge_load[e] >= max_load_val - PR_CRITICAL_EDGE_SLACK]
 
@@ -742,7 +742,7 @@ def path_relinking(solA, solB, global_edge_load):
     MAX_PR_MOVES = PR_MAX_MOVES
     PRE_CAP = MAX_PR_MOVES * PR_PRE_CAP_FACTOR  # filtro barato antes del costoso pair_edges/scoring
 
-    # Pre-cap por incidencia antes del scoring costoso (si difieren mucho, D ~ decenas de miles).
+    # Pre-filtro por incidencia antes de la costosa puntuación (si difieren mucho, D ~ decenas de miles).
     if len(differing_pairs) > PRE_CAP:
         differing_pairs = sorted(
             differing_pairs, key=lambda p: pair_count[p], reverse=True
@@ -766,7 +766,7 @@ def path_relinking(solA, solB, global_edge_load):
         cost   = sum(child.edge_load.get(e, 0) + PR_COST_GLOBAL_WEIGHT * global_edge_load.get(e, 0) for e in exclusive_in)
         return relief - cost
 
-    # Cap final a los top-K de mayor beneficio: acota el fan-out del rescoring (que sería
+    # Tope final a los de mayor beneficio: acota la propagación de la repuntuación (que sería
     # O(D²) en soluciones balanceadas) y descarta movimientos marginales o dañinos.
     initial_scores = {pair: compute_score(pair) for pair in differing_pairs}
     if len(differing_pairs) > MAX_PR_MOVES:
@@ -776,7 +776,7 @@ def path_relinking(solA, solB, global_edge_load):
 
     remaining = set(differing_pairs)
 
-    # Índice arista -> pares que la usan, para rescoring parcial acotado por MAX_PR_MOVES.
+    # Índice arista -> pares que la usan, para la repuntuación parcial acotada por MAX_PR_MOVES.
     edge_to_remaining = defaultdict(set)
     for pair in remaining:
         for e in pair_edges[pair][0] | pair_edges[pair][1]:
@@ -784,8 +784,8 @@ def path_relinking(solA, solB, global_edge_load):
 
     cached_score = {pair: initial_scores[pair] for pair in remaining}
 
-    # Heap con lazy deletion (O(D log D) vs O(D²) del max lineal): las entradas
-    # obsoletas se descartan al popear comparando con _valid_id.
+    # Heap con borrado perezoso (O(D log D) vs O(D²) del máximo lineal): las entradas
+    # obsoletas se descartan al extraerlas comparando con _valid_id.
     _counter = [0]
     _valid_id = {}
 
@@ -800,7 +800,7 @@ def path_relinking(solA, solB, global_edge_load):
         _heap_push(heap, pair, cached_score[pair])
 
     while remaining:
-        # Saca del heap el par de mayor beneficio, descartando entradas obsoletas (lazy deletion)
+        # Saca del heap el par de mayor beneficio, descartando entradas obsoletas (borrado perezoso)
         while heap:
             _, eid, pair = heapq.heappop(heap)
             if pair in remaining and _valid_id.get(pair) == eid:
@@ -826,7 +826,7 @@ def path_relinking(solA, solB, global_edge_load):
             # Cambio aceptado: solo las aristas que entraron o salieron (diferencia simétrica)
             changed_edges = pair_edges[best_pair][0] ^ pair_edges[best_pair][1]
 
-        # Recalcula el score de los pares afectados por las aristas que cambiaron
+        # Recalcula el beneficio de los pares afectados por las aristas que cambiaron
         to_rescore = set()
         for e in changed_edges:
             to_rescore.update(edge_to_remaining[e] & remaining)
@@ -848,14 +848,14 @@ def _improve_one_pass(sol, graph, global_edge_load, max_moves=50):
     """
     Un paso de búsqueda local sobre la solución.
 
-    Identifica las aristas más críticas (alta carga actual + histórica),
+    Identifica las aristas más críticas (alta congestión actual + histórica),
     luego intenta reroutear los pares que las usan por caminos que eviten
     esas aristas. Acepta el cambio si mejora el índice real, el costo,
     o la firma de congestión de las top-10 aristas.
 
     Retorna el número de cambios aceptados.
     """
-    # Puntaje combinado: carga actual + contribución histórica
+    # Puntaje combinado: congestión actual + contribución histórica
     score = {
         e: sol.edge_load[e] + IMPROVE_GLOBAL_WEIGHT * global_edge_load.get(e, 0)
         for e in sol.edge_load
@@ -864,7 +864,7 @@ def _improve_one_pass(sol, graph, global_edge_load, max_moves=50):
     critical = sorted(score, key=score.get, reverse=True)[:10]
     critical_set = set(critical)
 
-    # Candidatos: pares que usan las aristas de carga máxima
+    # Candidatos: pares que usan las aristas de congestión máxima
     max_edges = [e for e in sol.edge_load if sol.edge_load[e] == sol.max_load]
     candidate_pairs = set()
     for e in max_edges:
@@ -895,7 +895,7 @@ def _improve_one_pass(sol, graph, global_edge_load, max_moves=50):
         old_real = sol.max_load
         old_cost = sol.cost
 
-        # Aplica tentativamente el rerouteo evitando esas aristas críticas
+        # Aplica tentativamente el reencaminamiento evitando esas aristas críticas
         new_path = shortest_path_avoiding(graph, u, v, local_forbidden)
 
         if not new_path or new_path == old_path:
@@ -948,20 +948,20 @@ def improve(sol, graph, global_edge_load, max_moves=50, max_rounds=3):
 def perturb_solution(solution, graph, num_changes=5):
     """
     Perturbación dirigida: reroutea num_changes pares que usan las aristas
-    más cargadas, prohibiendo esas aristas para forzar diversificación.
+    más congestionadas, prohibiendo esas aristas para forzar diversificación.
     Usada tanto en perturbación estratégica durante el loop como en
     post-procesamiento.
     """
     new_sol = solution.copy()
 
-    # Las 10 aristas más cargadas y los pares que las cruzan (candidatos a reroutear)
+    # Las 10 aristas más congestionadas y los pares que las cruzan (candidatos a reencaminar)
     hot_edges = sorted(new_sol.edge_load, key=new_sol.edge_load.get, reverse=True)[:10]
 
     candidate_pairs = set()
     for e in hot_edges:
         candidate_pairs.update(new_sol.edge_to_pairs.get(e, set()))
 
-    if not candidate_pairs:   # fallback: si no hay aristas calientes, cualquier par sirve
+    if not candidate_pairs:   # respaldo: si no hay aristas calientes, cualquier par sirve
         candidate_pairs = set(new_sol.routing.keys())
 
     chosen_pairs = random.sample(
@@ -971,7 +971,7 @@ def perturb_solution(solution, graph, num_changes=5):
 
     changes = 0
     for (u, v) in chosen_pairs:
-        # Prohíbe las aristas calientes del camino actual y reroutea evitándolas
+        # Prohíbe las aristas calientes del camino actual y reencamina evitándolas
         old_path = new_sol.routing[(u, v)]
         forbidden = set(hot_edges) & path_to_edges(old_path)
 
@@ -1027,7 +1027,7 @@ def scatter_search(graph, pop_size, refset_size, iterations):
             changes = VARIANT_CHANGES[2]
         population.append(generate_initial_variant(base_solution, graph, num_changes=changes))
 
-    # Mejorar población inicial usando carga acumulada como guía global
+    # Mejorar población inicial usando la congestión acumulada como guía global
     print("Mejorando población inicial...")
     seed_edge_load = defaultdict(int)
     for sol in population:
@@ -1042,7 +1042,8 @@ def scatter_search(graph, pop_size, refset_size, iterations):
     best = min(refset, key=lambda s: (get_real_index(s), s.cost)).copy()
     print(f"Iteración 1: real={get_real_index(best)} cost={best.cost:.4f}")
 
-    # global_edge_load: memoria histórica de congestión, actualizada cuando mejora best
+    # global_edge_load: memoria histórica de congestión mediante promedio móvil exponencial;
+    # se actualiza al mejorar best, envejeciendo la información previa (MEMORY_DECAY).
     global_edge_load = {e: load for e, load in best.edge_load.items()}
 
     stagnation = 0
@@ -1063,7 +1064,7 @@ def scatter_search(graph, pop_size, refset_size, iterations):
 
         print(f"\n--- Iteración {it + 1} ---")
 
-        # --- Thresholds adaptativos ---
+        # --- Umbrales adaptativos ---
 
         # Distancia mediana de población (muestreada): base para POP_DISTANCE_THRESHOLD
         population_distances = sampled_population_distances(population, sample_size=120)
@@ -1093,14 +1094,14 @@ def scatter_search(graph, pop_size, refset_size, iterations):
         print(f"Median Population dist: {int(median_population_dist)} | POP_DISTANCE_THRESHOLD: {POP_DISTANCE_THRESHOLD}")
         print(f"Median RefSet dist: {int(median_refset_dist)} | MIN_PR_DISTANCE: {MIN_PR_DISTANCE}")
 
-        # Snapshot ANTES del quality_half improve: cualquier mejora posterior
-        # (ya sea por quality_half o por PR) debe superar esta línea base.
+        # Registro del estado ANTES de mejorar la mitad de calidad: cualquier mejora posterior
+        # (ya sea por esa mejora o por PR) debe superar esta línea base.
         prev_best_real = get_real_index(best)
         prev_best_cost = best.cost
 
         # --- Preparar padres para PR: copias mejoradas de la mitad de calidad ---
-        # Se mejoran copias, NO el RefSet original: así quality_half no puede
-        # modificar miembros del RefSet que luego se conviertan en current_best.
+        # Se mejoran copias en lugar de los miembros originales del RefSet: así la mejora
+        # de la mitad de calidad no altera soluciones que luego podrían ser el current_best.
         quality_half = refset_size // 2
         pr_parents = []
         for idx in range(len(refset)):
@@ -1168,7 +1169,7 @@ def scatter_search(graph, pop_size, refset_size, iterations):
         print(f"Hijos PR: {pr_count} | Total (inc. perturbación): {len(new_solutions)}")
 
         # --- Insertar hijos en población (memoria extendida) ---
-        # Dedup contra el RefSet actual, no contra toda la población: como los hijos de PR
+        # Descarte de duplicados contra el RefSet actual, no contra toda la población: como los hijos de PR
         # son cercanos a sus padres (que están en población), verificar contra toda la
         # población rechazaba casi todo y frenaba la evolución.
         inserted_pr = 0
@@ -1232,8 +1233,8 @@ def scatter_search(graph, pop_size, refset_size, iterations):
             deep_note = f" +deep={real_after_deep}" if real_after_deep < real_before_deep else ""
 
             print(f"Iter {it + 1}: Mejor real={real_after_deep} cost={best.cost:.4f} [{attribution}{deep_note}]")
-            print(f"  Cargas min (10): {sorted(best.edge_load.values())[:10]}")
-            print(f"  Cargas max (10): {sorted(best.edge_load.values(), reverse=True)[:10]}")
+            print(f"  Congestión min (10): {sorted(best.edge_load.values())[:10]}")
+            print(f"  Congestión max (10): {sorted(best.edge_load.values(), reverse=True)[:10]}")
 
             # Actualizar memoria histórica de congestión con decay exponencial
             for e in global_edge_load:
@@ -1299,6 +1300,6 @@ if __name__ == "__main__":
     print("========================Resultados========================")
     print(f"Índice de Transmisión aproximado (real): {real_index}")
     print(f"Costo heurístico: {best.cost:.4f}")
-    print(f"Carga total: {total_load}")
+    print(f"Congestión total: {total_load}")
     print(f"Numero de pares: {len(best.routing)}")
     print(f"Tiempo de ejecución: {end - start:.4f} segundos")
