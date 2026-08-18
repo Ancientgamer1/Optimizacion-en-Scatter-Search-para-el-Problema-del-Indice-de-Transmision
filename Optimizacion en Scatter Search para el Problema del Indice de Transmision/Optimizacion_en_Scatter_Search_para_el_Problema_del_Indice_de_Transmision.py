@@ -198,7 +198,6 @@ class Solution:
         # Estadísticas de congestión (se mantienen incrementalmente en update_pair)
         self.edge_load = defaultdict(int)
         self.load_count = defaultdict(int)  # histograma: congestión -> nº de aristas con esa congestión
-        self.total_load = 0
         self.sum_sq_load = 0
         self.max_load = 0
         self.edge_to_pairs = defaultdict(set)
@@ -232,7 +231,6 @@ class Solution:
 
         new.graph = self.graph
 
-        new.total_load = self.total_load
         new.sum_sq_load = self.sum_sq_load
         new.max_load = self.max_load
         new.real_index = self.real_index
@@ -258,7 +256,6 @@ class Solution:
 
         # Fase 2: agregar el vector en escalares (suma, suma de cuadrados, máximo, histograma)
         for load in self.edge_load.values():
-            self.total_load += load
             self.sum_sq_load += load * load
             self.load_count[load] += 1
             self.max_load = max(self.max_load, load)
@@ -292,7 +289,6 @@ class Solution:
             self.edge_load[e] = new
             self.edge_to_pairs[e].discard((u, v))
             self.sum_sq_load += new ** 2 - old ** 2
-            self.total_load -= 1
 
             self.load_count[old] -= 1
             if new > 0:
@@ -316,7 +312,6 @@ class Solution:
             self.edge_to_pairs[e].add((u, v))
 
             self.sum_sq_load += new ** 2 - old ** 2
-            self.total_load += 1
 
             if old > 0:
                 self.load_count[old] -= 1
@@ -713,7 +708,7 @@ def path_relinking(solA, solB, global_edge_load):
 
     Parte del mejor padre (base) y adopta pares del guía en orden de beneficio neto
     de congestión (relief al salir de aristas del base − cost al entrar las del guía),
-    aceptando cada cambio solo si no supera el techo del mejor padre —la base— más una tolerancia.
+    aceptando cada cambio solo si no supera el techo del peor padre + tolerancia.
     """
     if get_real_index(solA) <= get_real_index(solB):
         base, guide = solA, solB
@@ -784,8 +779,9 @@ def path_relinking(solA, solB, global_edge_load):
 
     cached_score = {pair: initial_scores[pair] for pair in remaining}
 
-    # Heap con borrado perezoso (O(D log D) vs O(D²) del máximo lineal): las entradas
-    # obsoletas se descartan al extraerlas comparando con _valid_id.
+    # Heap con borrado perezoso: las entradas obsoletas se descartan al extraerlas
+    # comparando con _valid_id. Acota el peor caso a O(D log D) si se eleva
+    # PR_MAX_MOVES; con el tope actual un máximo lineal rinde igual.
     _counter = [0]
     _valid_id = {}
 
